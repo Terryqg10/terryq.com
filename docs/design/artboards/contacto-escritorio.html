@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Contacto · Terry Quiñonez</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f2f0eb}
+.tq{--paper:#f2f0eb;--surface:#fbfaf7;--surface-sunken:#e8e5de;--line:#dad6cd;--line-strong:#8c877c;--ink:#141414;--ink-muted:#57534b;--ink-subtle:#8a857a;--accent:#1f5b44;--accent-hover:#174636;--on-accent:#ffffff;--accent-soft:#dce9e1;--live:#2c8c5e;--danger:#b3261e;--inverse-bg:#141414;--inverse-ink:#f2f0eb;--shadow-sm:0 1px 2px rgba(20,20,20,.05);--shadow-md:0 1px 2px rgba(20,20,20,.04),0 12px 32px rgba(20,20,20,.07);--shadow-float:0 6px 20px rgba(20,20,20,.18)}
+a{color:inherit}a:hover{color:inherit}
+.tq :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tq-lnk{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1px no-repeat;transition:background-size 150ms cubic-bezier(.22,1,.36,1)}
+.tq-lnk:hover{background-size:100% 1px}
+.tq-btnp{transition:background-color 150ms}
+.tq-btnp:hover{background:var(--accent-hover)!important}
+.tq-btns{transition:border-color 150ms}
+.tq-btns:hover{border-color:var(--ink)!important}
+.tq-row{transition:background-color 150ms}
+.tq-row:hover{background:var(--surface)}
+.tq-row:hover .tq-arrow{transform:translate(2px,-2px)}
+.tq-arrow{transition:transform 150ms cubic-bezier(.22,1,.36,1)}
+.tq-in{display:block;width:100%;box-sizing:border-box;min-height:48px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);color:var(--ink);font:400 16px/24px 'Instrument Sans',system-ui,sans-serif;transition:border-color 150ms,box-shadow 150ms}
+.tq-in::placeholder{color:var(--ink-muted);opacity:1}
+.tq-in:hover{border-color:var(--ink)}
+.tq-in:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.tq-in--err,.tq-in--err:hover{border-color:var(--danger)}
+.tq-in--err:focus{border-color:var(--danger);box-shadow:0 0 0 3px rgba(179,38,30,.16)}
+textarea.tq-in{min-height:148px;resize:vertical}
+.tq-opt{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line-strong);border-radius:999px;font:600 14px/20px 'Instrument Sans',system-ui,sans-serif;cursor:pointer;transition:border-color 150ms,background-color 150ms,color 150ms}
+.tq-opt:hover{border-color:var(--ink)}
+.tq-opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.tq-opt:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.tq-opt:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.tq-opts--err .tq-opt{border-color:var(--danger)}
+.tq-check{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--accent);cursor:pointer}
+.tq-spin{animation:tq-spin 900ms linear infinite}
+@keyframes tq-spin{to{transform:rotate(360deg)}}
+.tq-fab{transition:transform 150ms cubic-bezier(.22,1,.36,1)}
+.tq-fab:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tq *{transition:none!important}.tq-spin{animation-duration:2.4s}}
+.tq-skip{position:absolute;left:16px;top:-120px;z-index:60;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--paper)!important;font:600 15px/20px 'Instrument Sans',system-ui,sans-serif;text-decoration:none}.tq-skip:focus{top:12px}
+</style>
+</helmet>
+<div id="top" class="tq" style="background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh; -webkit-font-smoothing: antialiased">
+<a href="#contenido" class="tq-skip">Saltar al contenido</a>
+
+<header style="position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="inicio-escritorio-claro.html" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; align-items: center; height: 40px"><img src="assets/tq-logo-negro.svg" alt="" style="height: 36px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; line-height: 20px; font-weight: 600">
+<a href="trabajos-escritorio.html" class="tq-lnk" style="padding: 12px 0">Trabajos</a>
+<a href="servicios-escritorio.html" class="tq-lnk" style="padding: 12px 0">Servicios</a>
+<a href="sobre-mi-escritorio.html" class="tq-lnk" style="padding: 12px 0">Sobre mí</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 12px 0">GitHub ↗</a>
+<a href="contacto-escritorio.html" aria-current="page" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 20px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none">Contacto</a>
+<a href="contacto-escritorio.html" aria-label="ES / EN: cambiar idioma a inglés" hreflang="en" style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted); text-decoration: none; padding: 12px 0"><span style="color: var(--ink)">ES</span> / EN</a>
+</nav>
+</div>
+</header>
+
+<main id="contenido" style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+<div style="padding: 96px 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: start">
+
+<section aria-labelledby="page-t" style="grid-column: span 5; display: flex; flex-direction: column; gap: 24px; padding-right: 24px; position: sticky; top: 104px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>contacto</p>
+<h1 id="page-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance">Hablemos de tu proyecto</h1>
+<p style="margin: 0; font-size: 19px; line-height: 30px; color: var(--ink-muted)">Cuéntame qué tienes en mente y te respondo en 24 h laborables. Si lo prefieres, escríbeme directamente por WhatsApp.</p>
+
+<div style="margin-top: 16px; display: flex; flex-direction: column">
+<p style="margin: 0 0 8px; font: 500 12px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-muted)">Otros canales</p>
+<a href="https://wa.me/34614312673?text=Hola%20Terry%2C%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20pedir%20presupuesto%20para%20" class="tq-row" style="display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; min-height: 64px; padding: 0 12px; margin: 0 -12px; border-top: 1px solid var(--line); border-radius: 12px; text-decoration: none">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: var(--surface-sunken); display: grid; place-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></span>
+<span style="display: flex; flex-direction: column"><strong style="font-size: 16px; line-height: 22px; font-weight: 600">WhatsApp</strong><span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">+34 614 312 673</span></span>
+<svg class="tq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+</a>
+<a href="mailto:contacto@terryq.com" class="tq-row" style="display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; min-height: 64px; padding: 0 12px; margin: 0 -12px; border-top: 1px solid var(--line); border-radius: 12px; text-decoration: none">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: var(--surface-sunken); display: grid; place-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
+<span style="display: flex; flex-direction: column"><strong style="font-size: 16px; line-height: 22px; font-weight: 600">Email</strong><span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">contacto@terryq.com</span></span>
+<svg class="tq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+</a>
+<a href="https://www.linkedin.com/in/terry-qui%C3%B1onez-601337195/" class="tq-row" style="display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; min-height: 64px; padding: 0 12px; margin: 0 -12px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 12px; text-decoration: none">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: var(--surface-sunken); display: grid; place-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"></path></svg></span>
+<span style="display: flex; flex-direction: column"><strong style="font-size: 16px; line-height: 22px; font-weight: 600">LinkedIn</strong><span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Terry Quiñonez</span></span>
+<svg class="tq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+</a>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">
+<li style="display: flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Respondo en 24 h laborables</li>
+<li style="display: flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Quijorna, Madrid · Remoto en toda España</li>
+</ul>
+</section>
+
+<section aria-label="Formulario de contacto" style="grid-column: 7 / span 6; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+
+<sc-if value="{{isForm}}" hint-placeholder-val="{{true}}">
+<form onSubmit="{{submit}}" style="padding: 40px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 26px; line-height: 1.2; font-weight: 700; letter-spacing: -0.015em">Escríbeme</h2>
+<p style="margin: 0; font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Todos los campos son obligatorios salvo el opcional.</p>
+</div>
+
+<sc-if value="{{isValidation}}" hint-placeholder-val="{{false}}">
+<div role="alert" style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--danger); border-radius: 12px; background: var(--paper); color: var(--danger); font-size: 15px; line-height: 22px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>
+<span><strong style="font-weight: 600">Faltan datos para poder enviarlo.</strong> <span style="color: var(--ink)">{{errorText}}</span></span>
+</div>
+</sc-if>
+
+<sc-if value="{{isError}}" hint-placeholder-val="{{false}}">
+<div role="alert" style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--danger); border-radius: 12px; background: var(--paper); font-size: 15px; line-height: 22px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4M12 17v.01"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-weight: 600; color: var(--danger)">No se ha podido enviar.</strong><span>Inténtalo de nuevo o escríbeme a <a href="mailto:contacto@terryq.com" style="font-weight: 600; text-underline-offset: 3px">contacto@terryq.com</a>.</span></span>
+</div>
+</sc-if>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-nombre" style="font-size: 15px; line-height: 20px; font-weight: 600">Nombre</label>
+<input id="f-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" aria-invalid="{{f.nombre.invalid}}" aria-describedby="f-nombre-err" class="{{f.nombre.cls}}">
+<sc-if value="{{f.nombre.has}}" hint-placeholder-val="{{false}}"><p id="f-nombre-err" style="margin: 0; display: flex; gap: 6px; align-items: center; font-size: 14px; line-height: 20px; color: var(--danger)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>{{f.nombre.msg}}</p></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-contacto" style="font-size: 15px; line-height: 20px; font-weight: 600">Email o teléfono</label>
+<input id="f-contacto" name="contacto" type="text" autocomplete="email" placeholder="tu@email.com o 600 000 000" aria-invalid="{{f.contacto.invalid}}" aria-describedby="f-contacto-err" class="{{f.contacto.cls}}">
+<sc-if value="{{f.contacto.has}}" hint-placeholder-val="{{false}}"><p id="f-contacto-err" style="margin: 0; display: flex; gap: 6px; align-items: center; font-size: 14px; line-height: 20px; color: var(--danger)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>{{f.contacto.msg}}</p></sc-if>
+</div>
+</div>
+
+<fieldset aria-describedby="f-necesidad-err" style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<legend style="padding: 0 0 10px; font-size: 15px; line-height: 20px; font-weight: 600">¿Qué necesitas?</legend>
+<div class="{{f.necesidad.groupCls}}" style="display: flex; flex-wrap: wrap; gap: 8px">
+<label class="tq-opt"><input type="radio" name="necesidad" value="web-nueva">Web nueva</label>
+<label class="tq-opt"><input type="radio" name="necesidad" value="rediseno">Rediseñar mi web</label>
+<label class="tq-opt"><input type="radio" name="necesidad" value="identidad">Logo e identidad</label>
+<label class="tq-opt"><input type="radio" name="necesidad" value="empleo">Propuesta de trabajo</label>
+<label class="tq-opt"><input type="radio" name="necesidad" value="otra">Otra cosa</label>
+</div>
+<sc-if value="{{f.necesidad.has}}" hint-placeholder-val="{{false}}"><p id="f-necesidad-err" style="margin: 0; display: flex; gap: 6px; align-items: center; font-size: 14px; line-height: 20px; color: var(--danger)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>{{f.necesidad.msg}}</p></sc-if>
+</fieldset>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-web" style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 15px; line-height: 20px; font-weight: 600">Web actual, si tienes<span style="font: 400 12px/16px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Opcional</span></label>
+<input id="f-web" name="web" type="url" inputmode="url" autocomplete="url" placeholder="https://" class="tq-in">
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="f-mensaje" style="font-size: 15px; line-height: 20px; font-weight: 600">Cuéntame tu proyecto</label>
+<textarea id="f-mensaje" name="mensaje" rows="5" placeholder="Qué haces, qué necesitas y para cuándo, más o menos." aria-invalid="{{f.mensaje.invalid}}" aria-describedby="f-mensaje-err" class="{{f.mensaje.cls}}"></textarea>
+<sc-if value="{{f.mensaje.has}}" hint-placeholder-val="{{false}}"><p id="f-mensaje-err" style="margin: 0; display: flex; gap: 6px; align-items: center; font-size: 14px; line-height: 20px; color: var(--danger)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>{{f.mensaje.msg}}</p></sc-if>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label style="display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 24px; cursor: pointer"><input type="checkbox" name="privacidad" class="tq-check" aria-invalid="{{f.privacidad.invalid}}" aria-describedby="f-privacidad-err"><span>He leído la <a href="#top" style="font-weight: 600; text-underline-offset: 3px">política de privacidad</a>.</span></label>
+<sc-if value="{{f.privacidad.has}}" hint-placeholder-val="{{false}}"><p id="f-privacidad-err" style="margin: 0 0 0 32px; display: flex; gap: 6px; align-items: center; font-size: 14px; line-height: 20px; color: var(--danger)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>{{f.privacidad.msg}}</p></sc-if>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line)">
+<p style="margin: 0; font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Llega a contacto@terryq.com</p>
+<sc-if value="{{isIdle}}" hint-placeholder-val="{{true}}">
+<button type="submit" class="tq-btnp" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: 600 16px/20px 'Instrument Sans', system-ui, sans-serif; cursor: pointer">Enviar mensaje<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</sc-if>
+<sc-if value="{{isSending}}" hint-placeholder-val="{{false}}">
+<button type="button" disabled="{{true}}" aria-live="polite" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: 600 16px/20px 'Instrument Sans', system-ui, sans-serif; opacity: .75; cursor: progress"><svg class="tq-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.2-8.6"></path></svg>Enviando…</button>
+</sc-if>
+</div>
+</form>
+</sc-if>
+
+<sc-if value="{{isSent}}" hint-placeholder-val="{{false}}">
+<div role="status" style="padding: 56px 40px; min-height: 560px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px">
+<span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">Mensaje enviado</p>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 48px; line-height: 1; font-weight: 700; letter-spacing: -0.03em">¡Recibido!</h2>
+<p style="margin: 0; max-width: 440px; font-size: 18px; line-height: 29px; color: var(--ink-muted)">Te escribo en menos de 24 h. Si es urgente, escríbeme por WhatsApp.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 8px">
+<a href="https://wa.me/34614312673" class="tq-btns" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1px solid var(--line-strong); font-size: 15px; font-weight: 600; text-decoration: none">Escribir por WhatsApp ↗</a>
+<button type="button" onClick="{{reset}}" style="min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--ink); font: 600 15px/20px 'Instrument Sans', system-ui, sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Enviar otro mensaje</button>
+</div>
+<a href="trabajos-escritorio.html" class="tq-lnk" style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); align-self: stretch; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Mientras tanto, puedes ver mis trabajos →</a>
+</div>
+</sc-if>
+
+</section>
+</div>
+</main>
+
+<footer style="border-top: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<a href="inicio-escritorio-claro.html" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; width: fit-content"><img src="assets/tq-logo-negro.svg" alt="" style="height: 32px; width: auto; display: block"></a>
+<div style="font-size: 14px; line-height: 22px; color: var(--ink-muted)"><strong style="color: var(--ink); font-weight: 600">Terry Quiñonez</strong> · Diseño y desarrollo web<br>Quijorna, Madrid · Trabajo en remoto en toda España</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+<nav aria-label="Contacto y redes" style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; line-height: 22px; font-weight: 600">
+<a href="mailto:contacto@terryq.com" class="tq-lnk" style="padding: 11px 0">contacto@terryq.com</a>
+<a href="https://wa.me/34614312673" class="tq-lnk" style="padding: 11px 0">WhatsApp</a>
+<a href="https://www.linkedin.com/in/terry-qui%C3%B1onez-601337195/" class="tq-lnk" style="padding: 11px 0">LinkedIn</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 11px 0">GitHub</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; line-height: 22px; color: var(--ink-muted)">
+<a href="#top" class="tq-lnk" style="padding: 11px 0">Aviso legal</a>
+<a href="#top" class="tq-lnk" style="padding: 11px 0">Privacidad</a>
+<span>© 2026</span>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 40px">
+<p style="margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Hecha con Next.js · Desplegada en Vercel · <a href="https://github.com/Terryqg10" class="tq-lnk" style="color: var(--ink)">Código en GitHub ↗</a></p>
+</div>
+</footer>
+
+<a href="https://wa.me/34614312673" class="tq-fab" aria-label="Escríbeme por WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 10; width: 56px; height: 56px; border-radius: 50%; background: var(--inverse-bg); color: var(--inverse-ink); display: grid; place-items: center; box-shadow: var(--shadow-float); text-decoration: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"estado":{"editor":"enum","options":["normal","validacion","error","enviado"],"default":"normal"},"simularFallo":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+const estado = props.estado ?? 'normal';
+this.state = { estado: estado, errors: estado === 'validacion' ? this.demoErrors() : {} };
+}
+demoErrors() {
+return {
+nombre: 'Escribe tu nombre.',
+contacto: 'Necesito un email o un teléfono para responderte.',
+necesidad: 'Elige una opción.',
+mensaje: 'Cuéntame un poco de tu proyecto.',
+privacidad: 'Acepta la política de privacidad para poder enviarlo.'
+};
+}
+componentDidUpdate(prev) {
+if (prev.estado !== this.props.estado) {
+const estado = this.props.estado ?? 'normal';
+this.setState({ estado: estado, errors: estado === 'validacion' ? this.demoErrors() : {} });
+}
+}
+componentWillUnmount() {
+if (this.timer) clearTimeout(this.timer);
+}
+validate(fd) {
+const v = (k) => String(fd.get(k) || '').trim();
+const errs = {};
+if (!v('nombre')) errs.nombre = 'Escribe tu nombre.';
+const c = v('contacto');
+if (!c) errs.contacto = 'Necesito un email o un teléfono para responderte.';
+else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c) && c.replace(/\D/g, '').length < 9) errs.contacto = 'Revisa el formato: un email (tu@email.com) o un teléfono.';
+if (!v('necesidad')) errs.necesidad = 'Elige una opción.';
+if (!v('mensaje')) errs.mensaje = 'Cuéntame un poco de tu proyecto.';
+if (!fd.get('privacidad')) errs.privacidad = 'Acepta la política de privacidad para poder enviarlo.';
+return errs;
+}
+renderVals() {
+const st = this.state.estado;
+const errs = this.state.errors || {};
+const field = (k) => ({
+has: !!errs[k],
+msg: errs[k] || '',
+invalid: errs[k] ? 'true' : 'false',
+cls: errs[k] ? 'tq-in tq-in--err' : 'tq-in',
+groupCls: errs[k] ? 'tq-opts--err' : ''
+});
+return {
+isForm: st !== 'enviado',
+isSent: st === 'enviado',
+isValidation: st === 'validacion',
+isError: st === 'error',
+isSending: st === 'enviando',
+isIdle: st !== 'enviando',
+errorText: Object.keys(errs).length === 1 ? 'Revisa el campo marcado abajo.' : 'Revisa los ' + Object.keys(errs).length + ' campos marcados abajo.',
+f: { nombre: field('nombre'), contacto: field('contacto'), necesidad: field('necesidad'), mensaje: field('mensaje'), privacidad: field('privacidad') },
+submit: (e) => {
+e.preventDefault();
+if (this.state.estado === 'enviando') return;
+const errors = this.validate(new FormData(e.currentTarget));
+if (Object.keys(errors).length) { this.setState({ estado: 'validacion', errors: errors }); return; }
+this.setState({ estado: 'enviando', errors: {} });
+this.timer = setTimeout(() => this.setState({ estado: (this.props.simularFallo ?? false) ? 'error' : 'enviado' }), 900);
+},
+reset: () => this.setState({ estado: 'normal', errors: {} })
+};
+}
+}
+</script>
+</body>
+</html>

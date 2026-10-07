@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Inicio · Terry Quiñonez</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f2f0eb}
+.tq{--paper:#f2f0eb;--surface:#fbfaf7;--surface-sunken:#e8e5de;--line:#dad6cd;--line-strong:#8c877c;--ink:#141414;--ink-muted:#57534b;--ink-subtle:#8a857a;--accent:#1f5b44;--accent-hover:#174636;--on-accent:#ffffff;--accent-soft:#dce9e1;--live:#2c8c5e;--inverse-bg:#141414;--inverse-ink:#f2f0eb;--shadow-sm:0 1px 2px rgba(20,20,20,.05);--shadow-md:0 1px 2px rgba(20,20,20,.04),0 12px 32px rgba(20,20,20,.07);--shadow-float:0 6px 20px rgba(20,20,20,.18)}
+.tq--oscuro{--paper:#111110;--surface:#1a1918;--surface-sunken:#232220;--line:#2e2c29;--line-strong:#6e6a62;--ink:#f2f0eb;--ink-muted:#a8a398;--ink-subtle:#77736b;--accent:#7ccfa6;--accent-hover:#9adcbb;--on-accent:#0e2419;--accent-soft:#1c3328;--live:#4cc287;--inverse-bg:#f2f0eb;--inverse-ink:#141414;--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.45);--shadow-float:0 6px 20px rgba(0,0,0,.6)}
+.tq .logo-oscuro{display:none}
+.tq--oscuro .logo-claro{display:none}
+.tq--oscuro .logo-oscuro{display:block}
+a{color:inherit}a:hover{color:inherit}
+.tq :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tq-lnk{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1px no-repeat;transition:background-size 150ms cubic-bezier(.22,1,.36,1)}
+.tq-lnk:hover{background-size:100% 1px}
+.tq-btnp{transition:background-color 150ms}
+.tq-btnp:hover{background:var(--accent-hover)!important}
+.tq-btns{transition:border-color 150ms}
+.tq-btns:hover{border-color:var(--ink)!important}
+.tq-card{transition:box-shadow 250ms,border-color 250ms}
+.tq-card:hover{box-shadow:var(--shadow-md)!important;border-color:var(--line-strong)!important}
+.tq-card:hover .tq-go{background-size:100% 1px}
+.tq-fab{transition:transform 150ms cubic-bezier(.22,1,.36,1)}
+.tq-fab:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tq *{transition:none!important}}
+.tq-skip{position:absolute;left:16px;top:-120px;z-index:60;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--paper)!important;font:600 15px/20px 'Instrument Sans',system-ui,sans-serif;text-decoration:none}.tq-skip:focus{top:12px}
+</style>
+</helmet>
+<div class="tq {{temaClass}}" style="background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh; -webkit-font-smoothing: antialiased">
+<a href="#inicio" class="tq-skip">Saltar al contenido</a>
+
+<header style="position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="#inicio" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; align-items: center; height: 40px">
+<img class="logo-claro" src="assets/tq-logo-negro.svg" alt="" style="height: 36px; width: auto; display: block">
+<img class="logo-oscuro" src="assets/tq-logo-blanco.svg" alt="" style="height: 36px; width: auto">
+</a>
+<nav aria-label="Principal" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; line-height: 20px; font-weight: 600">
+<a href="trabajos-escritorio.html" class="tq-lnk" style="padding: 12px 0">Trabajos</a>
+<a href="servicios-escritorio.html" class="tq-lnk" style="padding: 12px 0">Servicios</a>
+<a href="sobre-mi-escritorio.html" class="tq-lnk" style="padding: 12px 0">Sobre mí</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 12px 0">GitHub ↗</a>
+<a href="contacto-escritorio.html" class="tq-btns" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 20px; border: 1px solid var(--line-strong); border-radius: 999px; text-decoration: none">Contacto</a>
+<a href="inicio-escritorio-en.html" aria-label="ES / EN: cambiar idioma a inglés" hreflang="en" style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted); text-decoration: none; padding: 12px 0"><span style="color: var(--ink)">ES</span> / EN</a>
+</nav>
+</div>
+</header>
+
+<main id="inicio" style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+
+<section aria-labelledby="hero-t" style="display: flex; flex-wrap: wrap; gap: 56px; align-items: center; padding: 104px 0 112px">
+<div style="flex: 7 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 12px">
+<svg width="52" height="52" viewBox="0 0 52 52" role="img" aria-label="Avatar de Terry (ilustración pendiente)" style="flex: none; border-radius: 50%; background: var(--surface-sunken); border: 1px solid var(--line)"><circle cx="26" cy="21" r="8.5" fill="var(--ink-subtle)"></circle><path d="M10 50c1.6-9 8.2-14 16-14s14.4 5 16 14" fill="var(--ink-subtle)"></path></svg>
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Hola, soy <span style="color: var(--ink)">Terry Quiñonez</span> · Madrid</p>
+</div>
+<h1 id="hero-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: clamp(44px, 6.4vw, 92px); line-height: 0.96; font-weight: 700; letter-spacing: -0.04em; text-wrap: balance"><span aria-hidden="true" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 400; color: var(--ink-subtle); letter-spacing: -0.08em">&lt;</span>Desarrollador web<span aria-hidden="true" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-weight: 400; color: var(--ink-subtle); letter-spacing: -0.08em">&gt;</span></h1>
+<p style="margin: 0; max-width: 600px; font-size: 19px; line-height: 30px; color: var(--ink-muted)">Diseño y construyo webs, PWAs y sistemas que da gusto usar. Me apasiona todo el recorrido, del primer boceto a la última línea de código, cuidando cada detalle para que se vean bien y funcionen todavía mejor.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 4px">
+<a href="#trabajos" class="tq-btnp" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 16px; font-weight: 600; text-decoration: none">Ver trabajos<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="https://github.com/Terryqg10" class="tq-btns" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1px solid var(--line-strong); font-size: 16px; font-weight: 600; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"></path></svg>GitHub ↗</a>
+<a href="https://www.linkedin.com/in/terry-qui%C3%B1onez-601337195/" class="tq-lnk" style="margin-left: 8px; padding: 14px 0; font-size: 16px; font-weight: 600">LinkedIn ↗</a>
+</div>
+<ul style="list-style: none; margin: 12px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 28px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Proyectos en producción</li>
+<li>Next.js · TypeScript · Supabase</li>
+<li>Madrid · Remoto</li>
+</ul>
+</div>
+
+<figure style="flex: 5 1 400px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="position: relative; padding: 0 0 36px 36px; transform: perspective(1200px) rotateY(-5deg) rotateX(3deg); transform-origin: 60% 50%">
+<div style="background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 10px; box-shadow: var(--shadow-md)">
+<div style="display: flex; align-items: center; gap: 12px; padding: 4px 6px 12px">
+<span style="display: flex; gap: 6px" aria-hidden="true"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span></span>
+<span style="flex: 1; min-width: 0; text-align: center; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted); background: var(--paper); border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">hb-construcciones.vercel.app</span>
+<span style="width: 42px" aria-hidden="true"></span>
+</div>
+<img src="assets/hb-portada-escritorio.webp" alt="Portada de la web de HB Construcciones en escritorio" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 14px; background: var(--surface-sunken)">
+</div>
+<div style="position: absolute; left: 0; bottom: 0; width: 26%; aspect-ratio: 9 / 19; box-sizing: border-box; padding: 6px; background: var(--inverse-bg); border-radius: 22px; box-shadow: var(--shadow-md)">
+<img src="assets/hb-movil.webp" alt="Portada de HB Construcciones en móvil" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 16px; background: var(--surface-sunken)">
+</div>
+</div>
+<figcaption style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-left: 36px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Online · HB Construcciones · 2026</span>
+<a href="https://hb-construcciones.vercel.app/" class="tq-lnk" style="color: var(--ink); font-weight: 500">Abrir web ↗</a>
+</figcaption>
+</figure>
+</section>
+
+<section id="trabajos" aria-labelledby="work-t" style="padding: 96px 0; border-top: 1px solid var(--line)">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>trabajos</p>
+<h2 id="work-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 44px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em">Trabajos recientes</h2>
+<p style="margin: 0; font-size: 17px; line-height: 28px; color: var(--ink-muted)">Proyectos reales, en producción o como demo funcional. Puedes abrirlos y probarlos.</p>
+</div>
+<a href="trabajos-escritorio.html" class="tq-lnk" style="font-size: 15px; font-weight: 600; padding: 12px 0">Ver todos los trabajos →</a>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+
+<a href="caso-hb-escritorio.html" class="tq-card" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink)">
+<img src="assets/hb-trabajos-escritorio.webp" alt="Galería de obras en la web de HB Construcciones" style="flex: 7 1 440px; min-width: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--line); box-sizing: border-box; background: var(--surface-sunken)">
+<div style="flex: 5 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 16px 24px 16px 0">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">2026 · <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Online</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">HB Construcciones</h3>
+<p style="margin: 0; font-size: 17px; line-height: 28px; color: var(--ink-muted)">Web para una empresa de reformas y piscinas, pensada para recibir presupuestos por WhatsApp.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; line-height: 20px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line)">Web</li>
+<li style="font-size: 13px; line-height: 20px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line)">Propuesta de identidad</li>
+</ul>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--line)">
+<span style="font: 500 12px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; color: var(--ink-muted)">NEXT.JS · TAILWIND · VERCEL</span>
+<span class="tq-go tq-lnk" style="font-size: 15px; font-weight: 600">Ver caso →</span>
+</div>
+</div>
+</a>
+
+<a href="#trabajos" class="tq-card" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink)">
+<img src="assets/zonaf-escritorio.webp" alt="Zona F: partidos en vivo, cuotas y boleto de apuestas" style="flex: 7 1 440px; min-width: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--line); box-sizing: border-box; background: var(--surface-sunken)">
+<div style="flex: 5 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 16px 24px 16px 0">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">2026 · <span aria-hidden="true" style="width: 8px; height: 8px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid var(--ink-muted)"></span>Demo</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Zona F</h3>
+<p style="margin: 0; font-size: 17px; line-height: 28px; color: var(--ink-muted)">Prototipo de casa de apuestas deportivas con boleto, combinadas y cuotas en vivo.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; line-height: 20px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line)">Producto web</li>
+<li style="font-size: 13px; line-height: 20px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line)">Demo</li>
+</ul>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--line)">
+<span style="font: 500 12px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; color: var(--ink-muted)">NEXT.JS · SUPABASE · ZUSTAND</span>
+<span class="tq-go tq-lnk" style="font-size: 15px; font-weight: 600">Ver caso →</span>
+</div>
+</div>
+</a>
+
+<a href="#trabajos" class="tq-card" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink)">
+<img src="assets/finanzas-escritorio.webp" alt="Panel de Finanzas Personales en modo demo: saldo, resumen del mes y gráficos" style="flex: 7 1 440px; min-width: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--line); box-sizing: border-box; background: var(--surface-sunken)">
+<div style="flex: 5 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 16px 24px 16px 0">
+<span style="display: inline-flex; align-items: center; gap: 8px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">2026 · <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Online</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em">Finanzas Personales</h3>
+<p style="margin: 0; font-size: 17px; line-height: 28px; color: var(--ink-muted)">App para controlar ingresos, gastos, presupuestos y ahorro mes a mes.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; line-height: 20px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line)">Aplicación web</li>
+</ul>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--line)">
+<span style="font: 500 12px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; color: var(--ink-muted)">NEXT.JS · SUPABASE · RLS</span>
+<span class="tq-go tq-lnk" style="font-size: 15px; font-weight: 600">Ver caso →</span>
+</div>
+</div>
+</a>
+
+</div>
+</section>
+
+<section id="opiniones" aria-labelledby="rev-t" style="padding: 96px 0; border-top: 1px solid var(--line)">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>opiniones</p>
+<h2 id="rev-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 44px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em">Lo que dicen mis clientes</h2>
+<p style="margin: 0; font-size: 17px; line-height: 28px; color: var(--ink-muted)">Opiniones reales, verificables en Google.</p>
+</div>
+<a href="#opiniones" class="tq-lnk" style="font-size: 15px; font-weight: 600; padding: 12px 0">Ver todas en Google ↗</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+<figure style="margin: 0; padding: 28px; display: flex; flex-direction: column; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span aria-hidden="true" style="color: var(--ink)">★★★★★</span> · Google</span>
+<span style="font: 500 11px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px">Ejemplo</span>
+</div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 28px; color: var(--ink)">“[Reseña real del dueño de HB. Este texto es solo para el diseño y nunca se publica.]”</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 20px; color: var(--ink-muted)">
+<span aria-hidden="true" style="width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--surface-sunken); display: grid; place-items: center; font: 500 13px/1 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">HB</span>
+<span><strong style="display: block; color: var(--ink); font-size: 15px; font-weight: 600">[Nombre del cliente]</strong>HB Construcciones · <a href="#trabajos" class="tq-lnk" style="color: var(--ink)">Ver proyecto</a></span>
+</figcaption>
+</figure>
+
+<figure style="margin: 0; padding: 28px; display: flex; flex-direction: column; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span aria-hidden="true" style="color: var(--ink)">★★★★★</span> · Google</span>
+<span style="font: 500 11px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px">Ejemplo</span>
+</div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 28px; color: var(--ink)">“[Reseña real del cliente de Finanzas Personales, cuando haya recibido el servicio.]”</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 20px; color: var(--ink-muted)">
+<span aria-hidden="true" style="width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--surface-sunken); display: grid; place-items: center; font: 500 13px/1 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">FP</span>
+<span><strong style="display: block; color: var(--ink); font-size: 15px; font-weight: 600">[Nombre del cliente]</strong>Finanzas Personales · <a href="#trabajos" class="tq-lnk" style="color: var(--ink)">Ver proyecto</a></span>
+</figcaption>
+</figure>
+
+<figure style="margin: 0; padding: 28px; display: flex; flex-direction: column; gap: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Opinión tras revisar la demo</span>
+<span style="font: 500 11px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px">Ejemplo</span>
+</div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 28px; color: var(--ink)">“[Valoración de la empresa que revisó la demo de Zona F, publicada con su permiso.]”</blockquote>
+<figcaption style="display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 20px; color: var(--ink-muted)">
+<span aria-hidden="true" style="width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--surface-sunken); display: grid; place-items: center; font: 500 13px/1 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">ZF</span>
+<span><strong style="display: block; color: var(--ink); font-size: 15px; font-weight: 600">[Nombre y cargo]</strong>[Empresa] · <a href="#trabajos" class="tq-lnk" style="color: var(--ink)">Ver proyecto</a></span>
+</figcaption>
+</figure>
+
+</div>
+</section>
+
+<section id="servicios" aria-labelledby="serv-t" style="padding: 96px 0; border-top: 1px solid var(--line)">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>servicios</p>
+<h2 id="serv-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 44px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em">Qué puedo hacer por tu negocio</h2>
+</div>
+<a href="servicios-escritorio.html" class="tq-lnk" style="font-size: 15px; font-weight: 600; padding: 12px 0">Ver servicios →</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+
+<article style="flex: 7 1 480px; min-width: 0; padding: 40px; display: flex; flex-direction: column; gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+<span style="font: 500 12px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--accent)">Lo principal</span>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ink-subtle)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"></path></svg>
+</div>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 40px; line-height: 1.05; font-weight: 700; letter-spacing: -0.025em">Web</h3>
+<p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 28px; color: var(--ink-muted)">Tu web diseñada y programada a medida. Rápida en el móvil, fácil de encontrar en Google y preparada para que te contacten.</p>
+<dl style="margin: 8px 0 0; border-top: 1px solid var(--line)">
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font-weight: 600">Landing page</dt><dd style="grid-column: span 8; margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted)">Para captar contactos rápido, con WhatsApp o formulario.</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font-weight: 600">Web corporativa</dt><dd style="grid-column: span 8; margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted)">Varias páginas y una estructura pensada para Google.</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font-weight: 600">Aplicación a medida</dt><dd style="grid-column: span 8; margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted)">Usuarios, base de datos y funciones propias de tu negocio.</dd></div>
+</dl>
+</article>
+
+<div style="flex: 5 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">También me encargo de…</p>
+<article style="flex: 1; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ink-subtle)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 3-4 3h-2.5a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22Z"></path><circle cx="7.5" cy="10.5" r="1"></circle><circle cx="12" cy="7" r="1"></circle><circle cx="16.5" cy="10.5" r="1"></circle></svg>
+<h3 style="margin: 6px 0 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -0.015em">Tu imagen de marca</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted)">Logo y versiones para web, redes e impresión.</p>
+</article>
+<article style="flex: 1; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ink-subtle)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+<h3 style="margin: 6px 0 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -0.015em">Mantenimiento y hosting</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted)">Tu web siempre online, actualizada y con alguien que responde si algo falla.</p>
+</article>
+</div>
+
+</div>
+</section>
+
+<section id="sobre-mi" aria-labelledby="about-t" style="padding: 96px 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 4 1 280px; min-width: 0; max-width: 400px">
+<svg viewBox="0 0 400 440" role="img" aria-label="Avatar ilustrado de Terry (pendiente de foto de referencia)" style="display: block; width: 100%; height: auto; border-radius: 24px; background: var(--surface-sunken); border: 1px solid var(--line)"><circle cx="200" cy="170" r="62" fill="var(--ink-subtle)"></circle><path d="M78 440c8-82 58-130 122-130s114 48 122 130" fill="var(--ink-subtle)"></path><text x="200" y="64" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="var(--ink-muted)">avatar ilustrado · pendiente</text></svg>
+</div>
+<div style="flex: 8 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>sobre-mi</p>
+<h2 id="about-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 44px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em">Sobre mí</h2>
+<p style="margin: 0; max-width: 640px; font-size: 19px; line-height: 30px; color: var(--ink-muted)">Soy Terry. Empecé aprendiendo por mi cuenta, atrapado por las interfaces limpias y bien hechas, con ganas de entender cómo se construían por dentro. <span style="color: var(--ink)">Hoy estudio Ingeniería del Software en la Universidad Politécnica de Madrid y vivo en Quijorna, en la sierra oeste de Madrid.</span></p>
+<dl style="margin: 0; max-width: 640px; border-top: 1px solid var(--line); font-size: 15px; line-height: 24px">
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 13px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Ubicación</dt><dd style="grid-column: span 9; margin: 0">Quijorna, Madrid · Remoto en toda España</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 13px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Formación</dt><dd style="grid-column: span 9; margin: 0">Ingeniería del Software · UPM (en curso)</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 13px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Stack</dt><dd style="grid-column: span 9; margin: 0">Next.js · TypeScript · React · Supabase · Tailwind CSS · Vercel</dd></div>
+</dl>
+<a href="sobre-mi-escritorio.html" class="tq-lnk" style="align-self: flex-start; font-size: 15px; font-weight: 600; padding: 4px 0">Conóceme →</a>
+</div>
+</section>
+
+<section id="contacto" aria-labelledby="cta-t" style="margin: 0 0 96px; padding: 72px 64px; border-radius: 24px; background: var(--accent-soft); display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-end">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">/contacto</p>
+<h2 id="cta-t" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -0.035em">¿Hablamos?</h2>
+<p style="margin: 0; max-width: 520px; font-size: 19px; line-height: 30px; color: var(--ink-muted)">Si te gusta lo que hago y tienes una idea en mente, escríbeme.</p>
+</div>
+<div style="flex: 0 1 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+<a href="mailto:contacto@terryq.com" class="tq-lnk" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 30px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; padding: 4px 0">contacto@terryq.com</a>
+<div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap">
+<a href="https://wa.me/34614312673" class="tq-lnk" style="font-size: 16px; font-weight: 600; padding: 12px 0">WhatsApp ↗</a>
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Respondo en 24 h laborables</span>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer style="border-top: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<a href="#inicio" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; width: fit-content">
+<img class="logo-claro" src="assets/tq-logo-negro.svg" alt="" style="height: 32px; width: auto; display: block">
+<img class="logo-oscuro" src="assets/tq-logo-blanco.svg" alt="" style="height: 32px; width: auto">
+</a>
+<div style="font-size: 14px; line-height: 22px; color: var(--ink-muted)"><strong style="color: var(--ink); font-weight: 600">Terry Quiñonez</strong> · Diseño y desarrollo web<br>Quijorna, Madrid · Trabajo en remoto en toda España</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+<nav aria-label="Contacto y redes" style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; line-height: 22px; font-weight: 600">
+<a href="mailto:contacto@terryq.com" class="tq-lnk" style="padding: 11px 0">contacto@terryq.com</a>
+<a href="https://wa.me/34614312673" class="tq-lnk" style="padding: 11px 0">WhatsApp</a>
+<a href="https://www.linkedin.com/in/terry-qui%C3%B1onez-601337195/" class="tq-lnk" style="padding: 11px 0">LinkedIn</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 11px 0">GitHub</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; line-height: 22px; color: var(--ink-muted)">
+<a href="#inicio" class="tq-lnk" style="padding: 11px 0">Aviso legal</a>
+<a href="#inicio" class="tq-lnk" style="padding: 11px 0">Privacidad</a>
+<span>© 2026</span>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px 40px">
+<p style="margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Hecha con Next.js · Desplegada en Vercel · <a href="https://github.com/Terryqg10" class="tq-lnk" style="color: var(--ink)">Código en GitHub ↗</a></p>
+</div>
+</footer>
+
+<a href="https://wa.me/34614312673" class="tq-fab" aria-label="Escríbeme por WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 10; width: 56px; height: 56px; border-radius: 50%; background: var(--inverse-bg); color: var(--inverse-ink); display: grid; place-items: center; box-shadow: var(--shadow-float); text-decoration: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"tema":{"editor":"enum","options":["claro","oscuro"],"default":"claro"},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+renderVals() {
+const tema = this.props.tema ?? 'claro';
+return { temaClass: tema === 'oscuro' ? 'tq--oscuro' : '' };
+}
+}
+</script>
+</body>
+</html>

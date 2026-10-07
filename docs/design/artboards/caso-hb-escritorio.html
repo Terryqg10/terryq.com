@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>HB Construcciones · Caso de estudio · Terry Quiñonez</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Instrument+Sans:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f2f0eb}
+.tq{--paper:#f2f0eb;--surface:#fbfaf7;--surface-sunken:#e8e5de;--line:#dad6cd;--line-strong:#8c877c;--ink:#141414;--ink-muted:#57534b;--ink-subtle:#8a857a;--accent:#1f5b44;--accent-hover:#174636;--on-accent:#ffffff;--accent-soft:#dce9e1;--live:#2c8c5e;--inverse-bg:#141414;--inverse-ink:#f2f0eb;--shadow-sm:0 1px 2px rgba(20,20,20,.05);--shadow-md:0 1px 2px rgba(20,20,20,.04),0 12px 32px rgba(20,20,20,.07);--shadow-float:0 6px 20px rgba(20,20,20,.18)}
+a{color:inherit}a:hover{color:inherit}
+.tq :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tq-lnk{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1px no-repeat;transition:background-size 150ms cubic-bezier(.22,1,.36,1)}
+.tq-lnk:hover{background-size:100% 1px}
+.tq-btnp{transition:background-color 150ms}
+.tq-btnp:hover{background:var(--accent-hover)!important}
+.tq-btns{transition:border-color 150ms}
+.tq-btns:hover{border-color:var(--ink)!important}
+.tq-card{transition:box-shadow 250ms,border-color 250ms}
+.tq-card:hover{box-shadow:var(--shadow-md)!important;border-color:var(--line-strong)!important}
+.tq-card:hover .tq-go{background-size:100% 1px}
+.tq-dev summary{list-style:none;cursor:pointer}
+.tq-dev summary::-webkit-details-marker{display:none}
+.tq-dev[open] .tq-chev{transform:rotate(180deg)}
+.tq-chev{transition:transform 250ms cubic-bezier(.22,1,.36,1)}
+.tq-fab{transition:transform 150ms cubic-bezier(.22,1,.36,1)}
+.tq-fab:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.tq *{transition:none!important}}
+.tq-skip{position:absolute;left:16px;top:-120px;z-index:60;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--paper)!important;font:600 15px/20px 'Instrument Sans',system-ui,sans-serif;text-decoration:none}.tq-skip:focus{top:12px}
+</style>
+</helmet>
+<div class="tq" style="background: var(--paper); color: var(--ink); font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 26px; min-height: 100vh; -webkit-font-smoothing: antialiased">
+<a href="#contenido" class="tq-skip">Saltar al contenido</a>
+
+<header style="position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="inicio-escritorio-claro.html" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; align-items: center; height: 40px"><img src="assets/tq-logo-negro.svg" alt="" style="height: 36px; width: auto; display: block"></a>
+<nav aria-label="Principal" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; font-size: 15px; line-height: 20px; font-weight: 600">
+<a href="trabajos-escritorio.html" aria-current="page" style="padding: 12px 0; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px">Trabajos</a>
+<a href="servicios-escritorio.html" class="tq-lnk" style="padding: 12px 0">Servicios</a>
+<a href="sobre-mi-escritorio.html" class="tq-lnk" style="padding: 12px 0">Sobre mí</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 12px 0">GitHub ↗</a>
+<a href="contacto-escritorio.html" class="tq-btns" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 20px; border: 1px solid var(--line-strong); border-radius: 999px; text-decoration: none">Contacto</a>
+<a href="caso-hb-escritorio.html" aria-label="ES / EN: cambiar idioma a inglés" hreflang="en" style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted); text-decoration: none; padding: 12px 0"><span style="color: var(--ink)">ES</span> / EN</a>
+</nav>
+</div>
+</header>
+
+<main id="contenido" style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+
+<section aria-labelledby="case-t" style="padding: 56px 0 48px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<a href="trabajos-escritorio.html" class="tq-lnk" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 0; font-size: 15px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>Trabajos</a>
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">01 / 03</span>
+</div>
+<p style="margin: 24px 0 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)"><span style="color: var(--accent)">/</span>trabajos<span style="color: var(--accent)">/</span>hb-construcciones</p>
+<h1 id="case-t" style="margin: 0; max-width: 1040px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 64px; line-height: 1.02; font-weight: 700; letter-spacing: -0.035em; text-wrap: balance">Una web para que pedir presupuesto sea tan fácil como mandar un WhatsApp</h1>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">
+<span style="color: var(--ink)">HB Construcciones</span>
+<span>Reformas integrales y piscinas</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Online · 2026</span>
+</div>
+</section>
+
+<figure style="margin: 0 0 96px; position: relative; padding: 40px 40px 0; border-radius: 24px; background: var(--surface-sunken); overflow: hidden">
+<div style="background: var(--surface); border: 1px solid var(--line); border-bottom: 0; border-radius: 16px 16px 0 0; padding: 10px 10px 0; box-shadow: var(--shadow-md)">
+<div style="display: flex; align-items: center; gap: 12px; padding: 4px 6px 10px">
+<span style="display: flex; gap: 6px" aria-hidden="true"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--line)"></span></span>
+<span style="flex: 1; max-width: 420px; margin: 0 auto; text-align: center; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted); background: var(--paper); border-radius: 999px">hb-construcciones.vercel.app</span>
+<span style="width: 42px" aria-hidden="true"></span>
+</div>
+<img src="assets/hb-portada-escritorio.webp" alt="Portada de la web de HB Construcciones: titular, botón de WhatsApp y valoraciones de clientes" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: 8px 8px 0 0">
+</div>
+<div style="position: absolute; right: 72px; bottom: -40px; width: 200px; aspect-ratio: 9 / 19; box-sizing: border-box; padding: 8px; background: var(--inverse-bg); border-radius: 30px; box-shadow: var(--shadow-md)">
+<img src="assets/hb-movil.webp" alt="La web de HB en móvil, con la barra fija de Llamar y WhatsApp" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 22px">
+</div>
+</figure>
+
+<div style="display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start; padding-bottom: 96px">
+
+<aside aria-label="Ficha del proyecto" style="flex: 4 1 300px; min-width: 0; position: sticky; top: 96px">
+<div style="padding: 8px 24px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<dl style="margin: 0; font-size: 14px; line-height: 22px">
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Cliente</dt><dd style="grid-column: span 8; margin: 0">HB Construcciones · Reformas integrales y piscinas</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Ubicación</dt><dd style="grid-column: span 8; margin: 0">Villanueva de la Cañada (Madrid)</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Servicios</dt><dd style="grid-column: span 8; margin: 0">Diseño y desarrollo web · Propuesta de identidad</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Mi papel</dt><dd style="grid-column: span 8; margin: 0">Dirección del proyecto, especificación, diseño, revisión y despliegue. Implementación asistida por IA (Claude Code).</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--line)"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Año</dt><dd style="grid-column: span 8; margin: 0; font-variant-numeric: tabular-nums">2026</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; padding: 14px 0"><dt style="grid-column: span 4; font: 400 12px/22px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Estado</dt><dd style="grid-column: span 8; margin: 0; display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--live)"></span>Online</dd></div>
+</dl>
+<a href="https://hb-construcciones.vercel.app/" class="tq-btnp" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; margin-top: 8px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 15px; font-weight: 600; text-decoration: none">Abrir la web ↗</a>
+</div>
+</aside>
+
+<article style="flex: 8 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 72px">
+
+<section aria-labelledby="s1" style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">01</p>
+<h2 id="s1" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 36px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em">El reto</h2>
+<p style="margin: 0; max-width: 680px; font-size: 18px; line-height: 30px; color: var(--ink-muted)">HB Construcciones hace reformas integrales, piscinas, cocinas, baños y ampliaciones en la zona oeste de Madrid. <span style="color: var(--ink)">No tenía web:</span> todos sus clientes llegaban por contactos y recomendaciones. Necesitaban salir del boca a boca con una web que transmitiera confianza a alguien que va a gastar miles de euros en su casa, y que convirtiera esa confianza en una conversación.</p>
+</section>
+
+<section aria-labelledby="s2" style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">02</p>
+<h2 id="s2" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 36px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em">La solución</h2>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid var(--line)">
+<li style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line)"><strong style="grid-column: span 4; font-size: 16px; line-height: 26px; font-weight: 600">WhatsApp como canal principal</strong><span style="grid-column: span 8; font-size: 16px; line-height: 26px; color: var(--ink-muted)">Los clientes de reformas prefieren escribir a rellenar formularios, así que todos los botones llevan a WhatsApp, y el formulario abre la conversación con el mensaje ya preparado.</span></li>
+<li style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line)"><strong style="grid-column: span 4; font-size: 16px; line-height: 26px; font-weight: 600">Barra fija en el móvil</strong><span style="grid-column: span 8; font-size: 16px; line-height: 26px; color: var(--ink-muted)">"Llamar" y "WhatsApp", siempre a un toque.</span></li>
+<li style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line)"><strong style="grid-column: span 4; font-size: 16px; line-height: 26px; font-weight: 600">Respuestas antes de que pregunten</strong><span style="grid-column: span 8; font-size: 16px; line-height: 26px; color: var(--ink-muted)">Preguntas frecuentes sobre licencias de obra, plazos, presupuesto y garantía: las dudas que frenan a un cliente antes de escribir.</span></li>
+<li style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line)"><strong style="grid-column: span 4; font-size: 16px; line-height: 26px; font-weight: 600">Pruebas reales</strong><span style="grid-column: span 8; font-size: 16px; line-height: 26px; color: var(--ink-muted)">Galería de obras, vídeos grabados en la obra y reseñas de sus clientes.</span></li>
+<li style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line)"><strong style="grid-column: span 4; font-size: 16px; line-height: 26px; font-weight: 600">Pensada para buscar en local</strong><span style="grid-column: span 8; font-size: 16px; line-height: 26px; color: var(--ink-muted)">Contenido orientado a búsquedas de reformas y piscinas en su zona.</span></li>
+</ul>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; margin-top: 16px">
+<figure style="grid-column: span 8; margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img src="assets/hb-trabajos-escritorio.webp" alt="Galería de obras de la web de HB" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--line); box-sizing: border-box; background: var(--surface-sunken)">
+<figcaption style="font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Galería de obras · escritorio</figcaption>
+</figure>
+<figure style="grid-column: span 4; margin: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="flex: 1; min-height: 0; border-radius: 12px; background: var(--surface-sunken); display: flex; align-items: flex-end; justify-content: center; padding: 20px 20px 0; overflow: hidden">
+<img src="assets/hb-movil.webp" alt="Portada de HB en móvil con la barra fija de contacto" style="display: block; width: 78%; aspect-ratio: 9 / 15; object-fit: cover; object-position: top; border-radius: 16px 16px 0 0; box-shadow: var(--shadow-md)">
+</div>
+<figcaption style="font: 400 12px/18px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Barra fija · móvil</figcaption>
+</figure>
+</div>
+</section>
+
+<section aria-labelledby="s3" style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">03</p>
+<h2 id="s3" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 36px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em">Propuesta de identidad</h2>
+<p style="margin: 0; max-width: 680px; font-size: 18px; line-height: 30px; color: var(--ink-muted)">Diseñé una propuesta de logo con un kit completo: color, negativo, monocromo e icono en vectorial. <span style="color: var(--ink)">El cliente prefirió mantener su logo original,</span> así que la web usa su identidad actual.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 8px">
+<figure style="margin: 0; aspect-ratio: 16 / 10; border-radius: 12px; background: #ffffff; border: 1px solid var(--line); display: grid; place-items: center; position: relative"><img src="assets/hb-logo-color.svg" alt="Logo HB Construcciones a color" style="width: 62%; height: auto"><figcaption style="position: absolute; left: 14px; bottom: 10px; font: 400 11px/16px 'JetBrains Mono', ui-monospace, monospace; color: #57534b">Color</figcaption></figure>
+<figure style="margin: 0; aspect-ratio: 16 / 10; border-radius: 12px; background: #132a4f; display: grid; place-items: center; position: relative"><img src="assets/hb-logo-negativo.svg" alt="Logo HB Construcciones en negativo" style="width: 62%; height: auto"><figcaption style="position: absolute; left: 14px; bottom: 10px; font: 400 11px/16px 'JetBrains Mono', ui-monospace, monospace; color: #c9d2e0">Negativo</figcaption></figure>
+<figure style="margin: 0; aspect-ratio: 16 / 10; border-radius: 12px; background: #ffffff; border: 1px solid var(--line); display: grid; place-items: center; position: relative"><img src="assets/hb-logo-monocromo.svg" alt="Logo HB Construcciones en monocromo" style="width: 62%; height: auto"><figcaption style="position: absolute; left: 14px; bottom: 10px; font: 400 11px/16px 'JetBrains Mono', ui-monospace, monospace; color: #57534b">Monocromo</figcaption></figure>
+<figure style="margin: 0; aspect-ratio: 16 / 10; border-radius: 12px; background: #ffffff; border: 1px solid var(--line); display: grid; place-items: center; position: relative"><img src="assets/hb-logo-icono.svg" alt="Icono de HB Construcciones" style="width: 30%; height: auto"><figcaption style="position: absolute; left: 14px; bottom: 10px; font: 400 11px/16px 'JetBrains Mono', ui-monospace, monospace; color: #57534b">Icono</figcaption></figure>
+</div>
+</section>
+
+<section aria-labelledby="s4" style="display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">04</p>
+<h2 id="s4" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 36px; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em">Resultado</h2>
+<p style="margin: 0; max-width: 680px; font-size: 18px; line-height: 30px; color: var(--ink-muted)">HB pasa de depender solo del boca a boca a tener una web propia, online desde octubre de 2026. Es reciente, así que este caso se actualizará con resultados reales en cuanto haya datos.</p>
+<figure style="margin: 8px 0 0; padding: 28px; display: flex; flex-direction: column; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Testimonio del cliente</span><span style="font: 500 11px/16px 'JetBrains Mono', ui-monospace, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px">Pendiente</span></div>
+<blockquote style="margin: 0; font-size: 20px; line-height: 32px">“[Testimonio real del dueño de HB. Este bloque solo aparece cuando exista.]”</blockquote>
+<figcaption style="font-size: 14px; line-height: 20px; color: var(--ink-muted)"><strong style="color: var(--ink); font-weight: 600">[Nombre]</strong> · HB Construcciones</figcaption>
+</figure>
+</section>
+
+<section aria-labelledby="s5">
+<details class="tq-dev" open style="background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm)">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; min-height: 44px">
+<span style="display: flex; align-items: baseline; gap: 16px"><span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--accent)">05</span><span id="s5" style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 24px; line-height: 1.2; font-weight: 700; letter-spacing: -0.015em">Para desarrolladores</span></span>
+<svg class="tq-chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<dl style="margin: 0; padding: 0 28px 20px; font-size: 15px; line-height: 24px">
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Base</dt><dd style="grid-column: span 9; margin: 0">Next.js (App Router) · React 19 · TypeScript</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Interfaz</dt><dd style="grid-column: span 9; margin: 0">Tailwind CSS 4 · Framer Motion para animaciones moderadas · iconos Lucide · tipografías Geist con next/font</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Medios</dt><dd style="grid-column: span 9; margin: 0">Scripts propios en Node/TypeScript que extraen fotogramas de los vídeos de obra y procesan galería y vídeos a WebP con sharp</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">SEO local</dt><dd style="grid-column: span 9; margin: 0">Datos estructurados JSON-LD de LocalBusiness, metadatos y lang configurados</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Conversión</dt><dd style="grid-column: span 9; margin: 0">Botón flotante de WhatsApp, barra de contacto fija en móvil y formulario que construye el mensaje de WhatsApp</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Despliegue</dt><dd style="grid-column: span 9; margin: 0">Vercel con despliegue automático desde GitHub · Vercel Analytics · ESLint</dd></div>
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; padding: 12px 0; border-top: 1px solid var(--line)"><dt style="grid-column: span 3; font: 400 12px/24px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Método</dt><dd style="grid-column: span 9; margin: 0">Desarrollo guiado por especificación (spec.md + tasks.md)</dd></div>
+</dl>
+</details>
+</section>
+
+</article>
+</div>
+
+<nav aria-label="Siguiente proyecto" style="padding: 0 0 96px">
+<a href="trabajos-escritorio.html" class="tq-card" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding: 16px 16px 16px 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink)">
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 320px; min-width: 0">
+<span style="font: 400 13px/20px 'JetBrains Mono', ui-monospace, monospace; color: var(--ink-muted)">Siguiente proyecto · 02 / 03</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-size: 48px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em">Zona F</span>
+<span style="font-size: 16px; line-height: 26px; color: var(--ink-muted)">Prototipo de casa de apuestas deportivas con boleto, combinadas y cuotas en vivo.</span>
+<span class="tq-go tq-lnk" style="align-self: flex-start; font-size: 15px; font-weight: 600">Ver caso →</span>
+</span>
+<img src="assets/zonaf-escritorio.webp" alt="" style="flex: 0 1 460px; min-width: 0; width: 100%; max-width: 460px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 14px">
+</a>
+</nav>
+
+</main>
+
+<footer style="border-top: 1px solid var(--line)">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<a href="inicio-escritorio-claro.html" aria-label="Terry Quiñonez, ir al inicio" style="display: inline-flex; width: fit-content"><img src="assets/tq-logo-negro.svg" alt="" style="height: 32px; width: auto; display: block"></a>
+<div style="font-size: 14px; line-height: 22px; color: var(--ink-muted)"><strong style="color: var(--ink); font-weight: 600">Terry Quiñonez</strong> · Diseño y desarrollo web<br>Quijorna, Madrid · Trabajo en remoto en toda España</div>
+</div>
+<nav aria-label="Contacto y redes" style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; line-height: 22px; font-weight: 600; align-items: flex-start">
+<a href="mailto:contacto@terryq.com" class="tq-lnk" style="padding: 11px 0">contacto@terryq.com</a>
+<a href="https://wa.me/34614312673" class="tq-lnk" style="padding: 11px 0">WhatsApp</a>
+<a href="https://www.linkedin.com/in/terry-qui%C3%B1onez-601337195/" class="tq-lnk" style="padding: 11px 0">LinkedIn</a>
+<a href="https://github.com/Terryqg10" class="tq-lnk" style="padding: 11px 0">GitHub</a>
+</nav>
+</div>
+</footer>
+
+<a href="https://wa.me/34614312673" class="tq-fab" aria-label="Escríbeme por WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 10; width: 56px; height: 56px; border-radius: 50%; background: var(--inverse-bg); color: var(--inverse-ink); display: grid; place-items: center; box-shadow: var(--shadow-float); text-decoration: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
