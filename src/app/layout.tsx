@@ -1,6 +1,6 @@
-import "./globals.css";
+import './globals.css';
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="es">
       <body>{children}</body>
