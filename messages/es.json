@@ -111,7 +111,30 @@
     }
   },
   "work": {
-    "title": "Trabajos"
+    "title": "Trabajos",
+    "intro": "Webs para clientes, productos propios y propuestas de identidad. Cada proyecto explica el reto, cómo lo resolví y qué tecnología usé.",
+    "count": "{n} proyectos · {years}",
+    "filters": {
+      "label": "Filtrar por tipo",
+      "all": "Todo",
+      "web": "Web",
+      "brand": "Marca"
+    },
+    "listLabel": "Lista de proyectos",
+    "tableLabel": "Tabla de proyectos",
+    "columns": {
+      "year": "Año",
+      "project": "Proyecto",
+      "type": "Tipo",
+      "status": "Estado"
+    },
+    "live": "{n, plural, one {# proyecto} other {# proyectos}}",
+    "hint": "Pasa el ratón por una fila para ver la vista previa.",
+    "github": {
+      "title": "Más código y experimentos en GitHub",
+      "text": "Incluido el código de esta web, con su especificación y sus tareas.",
+      "cta": "Ver GitHub ↗"
+    }
   },
   "case": {
     "titles": {

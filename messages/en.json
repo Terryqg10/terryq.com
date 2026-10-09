@@ -111,7 +111,30 @@
     }
   },
   "work": {
-    "title": "Work"
+    "title": "Work",
+    "intro": "Client websites, my own products and brand identity proposals. Each project explains the challenge, how I solved it and the technology behind it.",
+    "count": "{n} projects · {years}",
+    "filters": {
+      "label": "Filter by type",
+      "all": "All",
+      "web": "Web",
+      "brand": "Brand"
+    },
+    "listLabel": "Project list",
+    "tableLabel": "Project table",
+    "columns": {
+      "year": "Year",
+      "project": "Project",
+      "type": "Type",
+      "status": "Status"
+    },
+    "live": "{n, plural, one {# project} other {# projects}}",
+    "hint": "Hover over a row to see a preview.",
+    "github": {
+      "title": "More code and experiments on GitHub",
+      "text": "Including the code for this website, with its specification and tasks.",
+      "cta": "See GitHub ↗"
+    }
   },
   "case": {
     "titles": {
