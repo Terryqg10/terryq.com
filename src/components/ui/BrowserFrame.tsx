@@ -9,20 +9,22 @@ export type BrowserFrameProps = {
   sizes: string;
 };
 
-/** Ventana de navegador: barra con tres puntos y la URL en mono, y la captura debajo. */
+/** Ventana de navegador: tres puntos, la URL en una pastilla y la captura debajo (artboards). */
 export async function BrowserFrame({ url, image, priority = false, sizes }: BrowserFrameProps) {
   const locale = await getLocale();
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-surface shadow-md">
-      <div className="flex items-center gap-2 border-b border-line px-3 py-2.5">
+    <div className="rounded-[20px] border border-line bg-surface p-2 shadow-md lg:rounded-3xl lg:p-2.5">
+      <div className="flex items-center gap-2 px-1 pt-0.5 pb-2 lg:gap-3 lg:px-1.5 lg:pt-1 lg:pb-3">
         <span aria-hidden="true" className="flex gap-1.5">
-          <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
+          <span className="size-2 rounded-full bg-line lg:size-2.5" />
+          <span className="size-2 rounded-full bg-line lg:size-2.5" />
+          <span className="size-2 rounded-full bg-line lg:size-2.5" />
         </span>
-        <span className="min-w-0 flex-1 truncate text-center text-meta text-ink-muted">{url}</span>
-        <span aria-hidden="true" className="w-10.5" />
+        <span className="min-w-0 flex-1 truncate rounded-full bg-paper text-center font-mono text-[11px]/[22px] text-ink-muted lg:text-xs/6">
+          {url}
+        </span>
+        <span aria-hidden="true" className="hidden w-10.5 lg:block" />
       </div>
       <Image
         src={image.src}
@@ -30,7 +32,7 @@ export async function BrowserFrame({ url, image, priority = false, sizes }: Brow
         sizes={sizes}
         priority={priority}
         fetchPriority={priority ? 'high' : undefined}
-        className="block aspect-[16/10] w-full bg-surface-sunken object-cover object-top"
+        className="block aspect-[16/10] w-full rounded-xl bg-surface-sunken object-cover object-top lg:rounded-[14px]"
       />
     </div>
   );

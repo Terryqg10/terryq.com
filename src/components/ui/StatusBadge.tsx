@@ -4,11 +4,18 @@ export type StatusBadgeProps = {
   status: 'live' | 'demo';
   /** Siempre acompañado de la palabra: el punto por sí solo no basta. */
   label: string;
+  /** Texto en `ink-muted` (filas de prueba y pies de captura) en vez de `ink`. */
+  muted?: boolean;
 };
 
-export function StatusBadge({ status, label }: StatusBadgeProps) {
+export function StatusBadge({ status, label, muted = false }: StatusBadgeProps) {
   return (
-    <span className="inline-flex items-center gap-2 text-meta text-ink">
+    <span
+      className={cn(
+        'inline-flex items-center gap-2 text-meta',
+        muted ? 'text-ink-muted' : 'text-ink',
+      )}
+    >
       <span
         aria-hidden="true"
         className={cn(

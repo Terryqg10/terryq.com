@@ -1,10 +1,12 @@
-import { getTranslations } from 'next-intl/server';
+import { Container } from '@/components/ui/Container';
+import { Hero } from '@/features/home/Hero';
 
-export default async function Page() {
-  const t = await getTranslations('home');
+export default function HomePage() {
   return (
     <main id="contenido">
-      <h1>{t('title')}</h1>
+      <Container>
+        <Hero />
+      </Container>
     </main>
   );
 }
