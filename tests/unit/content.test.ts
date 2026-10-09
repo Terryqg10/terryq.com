@@ -4,7 +4,7 @@ import { reviews } from '@/content/reviews';
 import { locales, type WorkImage } from '@/content/types';
 import { getNextWork, getPosition, getWork, works } from '@/content/work';
 import { workSlugs } from '@/content/work/slugs';
-import { caseSectionKinds, numberSections, type CaseSectionKind } from '@/features/work/sections';
+import { caseSectionKinds, numberSections, sectionKindsOf } from '@/features/work/sections';
 import en from '../../messages/en.json';
 import es from '../../messages/es.json';
 
@@ -12,8 +12,7 @@ const mdxPath = (slug: string, locale: string) =>
   new URL(`../../src/content/work/${slug}/${locale}.mdx`, import.meta.url);
 const readMdx = (slug: string, locale: string) => readFileSync(mdxPath(slug, locale), 'utf8');
 
-const sectionKinds = (source: string) =>
-  [...source.matchAll(/<CaseSection kind="(\w+)">/g)].map(([, kind]) => kind as CaseSectionKind);
+const sectionKinds = sectionKindsOf;
 
 const images = (work: (typeof works)[number]): WorkImage[] => [
   work.images.cover,

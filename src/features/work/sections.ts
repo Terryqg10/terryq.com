@@ -23,3 +23,10 @@ export const sectionIds: Readonly<Record<CaseSectionKind, Localized<string>>> = 
 export function numberSections(kinds: readonly CaseSectionKind[]) {
   return kinds.map((kind, index) => ({ kind, number: String(index + 1).padStart(2, '0') }));
 }
+
+/** Las secciones de un MDX, en el orden en que aparecen (para numerarlas en el build). */
+export function sectionKindsOf(source: string): CaseSectionKind[] {
+  return [...source.matchAll(/<CaseSection kind="([a-z]+)">/g)].map(
+    ([, kind]) => kind as CaseSectionKind,
+  );
+}

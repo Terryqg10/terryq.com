@@ -154,6 +154,31 @@
       "reversed": "Reversed",
       "monochrome": "Monochrome",
       "icon": "Icon"
+    },
+    "back": "Work",
+    "backLabel": "Back to Work",
+    "factsLabel": "Project facts",
+    "facts": {
+      "role": "My role",
+      "year": "Year",
+      "status": "Status"
+    },
+    "role": "Project lead, specification, design, review and deployment. AI-assisted implementation (Claude Code).",
+    "openSite": "Open the site ↗",
+    "tryDemo": "Try the demo ↗",
+    "next": "Next project · {pos}",
+    "nextLabel": "Next project",
+    "testimonial": "Client testimonial",
+    "translated": "(translated)",
+    "pieces": {
+      "hb0": "Work gallery · desktop",
+      "hb1": "Sticky bar · mobile"
+    },
+    "brandKitAlt": {
+      "color": "HB Construcciones logo in colour",
+      "reversed": "HB Construcciones logo reversed",
+      "monochrome": "HB Construcciones logo in monochrome",
+      "icon": "HB Construcciones icon"
     }
   },
   "services": {

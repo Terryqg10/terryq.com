@@ -154,6 +154,31 @@
       "reversed": "Negativo",
       "monochrome": "Monocromo",
       "icon": "Icono"
+    },
+    "back": "Trabajos",
+    "backLabel": "Volver a Trabajos",
+    "factsLabel": "Ficha del proyecto",
+    "facts": {
+      "role": "Mi papel",
+      "year": "Año",
+      "status": "Estado"
+    },
+    "role": "Dirección del proyecto, especificación, diseño, revisión y despliegue. Implementación asistida por IA (Claude Code).",
+    "openSite": "Abrir la web ↗",
+    "tryDemo": "Probar la demo ↗",
+    "next": "Siguiente proyecto · {pos}",
+    "nextLabel": "Siguiente proyecto",
+    "testimonial": "Testimonio del cliente",
+    "translated": "(traducido)",
+    "pieces": {
+      "hb0": "Galería de obras · escritorio",
+      "hb1": "Barra fija · móvil"
+    },
+    "brandKitAlt": {
+      "color": "Logo de HB Construcciones a color",
+      "reversed": "Logo de HB Construcciones en negativo",
+      "monochrome": "Logo de HB Construcciones en monocromo",
+      "icon": "Icono de HB Construcciones"
     }
   },
   "services": {
