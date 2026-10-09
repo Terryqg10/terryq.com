@@ -10,7 +10,8 @@
       "services": "Servicios",
       "about": "Sobre mí",
       "github": "GitHub ↗",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "linkedin": "LinkedIn ↗"
     },
     "language": {
       "switchLabel": "ES / EN: cambiar idioma a inglés"
@@ -28,7 +29,9 @@
       "builtWith": "Hecha con Next.js · Desplegada en Vercel · <repo>Código en GitHub ↗</repo>"
     },
     "menu": {
-      "dialogLabel": "Menú principal"
+      "dialogLabel": "Menú principal",
+      "open": "Abrir menú",
+      "close": "Cerrar menú"
     },
     "external": "(sitio externo)"
   },
