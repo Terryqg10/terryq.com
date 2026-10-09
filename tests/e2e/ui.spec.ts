@@ -14,7 +14,10 @@ test('un botón externo lleva ↗ decorativo y el texto oculto «(sitio externo)
   page,
 }) => {
   await page.goto('/ui');
-  const link = page.getByRole('link', { name: /GitHub/ }).first();
+  const link = page
+    .locator('main')
+    .getByRole('link', { name: /GitHub/ })
+    .first();
   await expect(link).toHaveAttribute('target', '_blank');
   await expect(link).toHaveAttribute('rel', /noopener/);
   await expect(link.locator('[aria-hidden="true"]')).toHaveText('↗');
@@ -23,7 +26,12 @@ test('un botón externo lleva ↗ decorativo y el texto oculto «(sitio externo)
 
 test('en inglés el texto oculto de los enlaces externos está en inglés', async ({ page }) => {
   await page.goto('/en/ui');
-  await expect(page.getByRole('link', { name: /GitHub/ }).first()).toContainText('(external site)');
+  await expect(
+    page
+      .locator('main')
+      .getByRole('link', { name: /GitHub/ })
+      .first(),
+  ).toContainText('(external site)');
 });
 
 test('un campo con error se marca como inválido y apunta a su mensaje', async ({ page }) => {

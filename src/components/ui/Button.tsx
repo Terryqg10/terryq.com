@@ -1,6 +1,6 @@
-import { cn } from '@/lib/cn';
 import type { ComponentProps, ReactNode } from 'react';
 import { ActionLink, type LinkTarget } from './action-link';
+import { buttonClasses } from './button-classes';
 
 type ButtonBase = {
   variant: 'primary' | 'secondary';
@@ -23,25 +23,10 @@ type ButtonAsButton = ButtonBase & {
 
 export type ButtonProps = ButtonAsLink | ButtonAsButton;
 
-const variants = {
-  primary: 'bg-accent text-on-accent hover:bg-accent-hover',
-  secondary: 'border border-line-strong text-ink hover:border-ink',
-} as const;
-
-const sizes = {
-  md: 'min-h-11 px-5',
-  lg: 'min-h-13 px-6',
-} as const;
-
 /** Máximo un `primary` por pantalla (DS · Color). */
 export function Button(props: ButtonProps) {
-  const { variant, size = 'md', className, children } = props;
-  const classes = cn(
-    'text-button inline-flex items-center justify-center gap-2.5 rounded-full transition-colors duration-150 disabled:opacity-60',
-    variants[variant],
-    sizes[size],
-    className,
-  );
+  const { children } = props;
+  const classes = buttonClasses(props);
 
   if (props.type === undefined) {
     return (
