@@ -1,5 +1,5 @@
 import { routing } from '@/i18n/routing';
-import { hasLocale } from 'next-intl';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import type { Viewport } from 'next';
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -50,7 +50,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       lang={locale}
       className={`${bricolage.variable} ${instrument.variable} ${jetbrains.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {/* `Link` de next-intl es un componente cliente y necesita el idioma. Los mensajes llegan
+            a cada isla cliente por separado (spec §4.2), no en bloque. */}
+        <NextIntlClientProvider messages={{}}>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }

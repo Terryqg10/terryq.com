@@ -3,7 +3,7 @@ import colorKit from '@/content/work/hb-construcciones/images/brand-kit/color.sv
 import iconKit from '@/content/work/hb-construcciones/images/brand-kit/icono.svg';
 import monochromeKit from '@/content/work/hb-construcciones/images/brand-kit/monocromo.svg';
 import reversedKit from '@/content/work/hb-construcciones/images/brand-kit/negativo.svg';
-import { useLocale, useTranslations } from 'next-intl';
+import { getLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { sectionIds, type CaseSectionKind } from './sections';
@@ -13,9 +13,15 @@ import { sectionIds, type CaseSectionKind } from './sections';
  * en la tarea de la página de caso.
  */
 
-export function CaseSection({ kind, children }: { kind: CaseSectionKind; children: ReactNode }) {
-  const locale = useLocale();
-  const t = useTranslations('case.sections');
+export async function CaseSection({
+  kind,
+  children,
+}: {
+  kind: CaseSectionKind;
+  children: ReactNode;
+}) {
+  const locale = await getLocale();
+  const t = await getTranslations('case.sections');
   const id = sectionIds[kind][locale];
   const headingId = `${id}-titulo`;
 
@@ -61,8 +67,8 @@ export function DevItem({ label, children }: { label: string; children: ReactNod
 }
 
 /** Los 4 tiles del kit de logo de HB (spec §9.5), con SVG sin optimizar. */
-export function BrandKit() {
-  const t = useTranslations('case.brandKit');
+export async function BrandKit() {
+  const t = await getTranslations('case.brandKit');
   const tiles = [
     { key: 'color', src: colorKit },
     { key: 'reversed', src: reversedKit },
@@ -89,8 +95,8 @@ export function BrandKit() {
  * así que se crea a partir del `meta` del caso.
  */
 export function createWorkMdxComponents(meta: WorkMeta) {
-  function SolutionMedia({ pieces }: { pieces: readonly number[] }) {
-    const locale = useLocale();
+  async function SolutionMedia({ pieces }: { pieces: readonly number[] }) {
+    const locale = await getLocale();
     return (
       <>
         {pieces.map((index) => {

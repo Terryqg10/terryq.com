@@ -212,6 +212,18 @@
   text-wrap: balance;
 }
 
+/* Subrayado de 1px que crece de izquierda a derecha en hover (spec §6.5). */
+@utility tq-link {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+  transition: background-size 150ms var(--ease-tq);
+
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
 @layer base {
   body {
     background-color: var(--color-paper);
