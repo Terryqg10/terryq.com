@@ -1,7 +1,10 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { SkipLink } from '@/components/layout/SkipLink';
+import { WhatsAppFab } from '@/components/layout/WhatsAppFab';
 import { routing } from '@/i18n/routing';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import type { Viewport } from 'next';
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
@@ -61,7 +64,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           <Header />
           {children}
           <Footer />
+          <WhatsAppFab />
         </NextIntlClientProvider>
+        {/* Solo en Vercel: fuera de ella el script `/_vercel/insights` no existe y daría un 404.
+            Sin cookies y sin eventos personalizados (spec §14). */}
+        {process.env.VERCEL_ENV ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );

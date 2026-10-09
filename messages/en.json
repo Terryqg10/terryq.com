@@ -33,7 +33,10 @@
       "open": "Open menu",
       "close": "Close menu"
     },
-    "external": "(external site)"
+    "external": "(external site)",
+    "whatsapp": {
+      "label": "Message me on WhatsApp"
+    }
   },
   "home": {
     "title": "<Web developer>"

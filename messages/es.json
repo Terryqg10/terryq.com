@@ -33,7 +33,10 @@
       "open": "Abrir menú",
       "close": "Cerrar menú"
     },
-    "external": "(sitio externo)"
+    "external": "(sitio externo)",
+    "whatsapp": {
+      "label": "Escríbeme por WhatsApp"
+    }
   },
   "home": {
     "title": "<Desarrollador web>"
