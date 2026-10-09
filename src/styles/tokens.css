@@ -1,0 +1,51 @@
+/* GENERADO por scripts/build-tokens.ts — no editar */
+:root {
+  color-scheme: light dark;
+  --tq-paper: #f2f0eb;
+  --tq-surface: #fbfaf7;
+  --tq-surface-sunken: #e8e5de;
+  --tq-line: #dad6cd;
+  --tq-line-strong: #8c877c;
+  --tq-ink: #141414;
+  --tq-ink-muted: #57534b;
+  --tq-ink-subtle: #8a857a;
+  --tq-accent: #1f5b44;
+  --tq-accent-hover: #174636;
+  --tq-on-accent: #ffffff;
+  --tq-accent-soft: #dce9e1;
+  --tq-live: #2c8c5e;
+  --tq-danger: #b3261e;
+  --tq-inverse-bg: #141414;
+  --tq-inverse-ink: #f2f0eb;
+  --tq-shadow-sm: 0 1px 2px rgba(20,20,20,0.05);
+  --tq-shadow-md: 0 1px 2px rgba(20,20,20,0.04), 0 12px 32px rgba(20,20,20,0.07);
+  --tq-shadow-float: 0 6px 20px rgba(20,20,20,0.18);
+  --tq-content-max: 1280px;
+  --tq-text-max: 640px;
+  --tq-grid-columns: 12;
+  --tq-tap-min: 44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tq-paper: #111110;
+    --tq-surface: #1a1918;
+    --tq-surface-sunken: #232220;
+    --tq-line: #2e2c29;
+    --tq-line-strong: #6e6a62;
+    --tq-ink: #f2f0eb;
+    --tq-ink-muted: #a8a398;
+    --tq-ink-subtle: #77736b;
+    --tq-accent: #7ccfa6;
+    --tq-accent-hover: #9adcbb;
+    --tq-on-accent: #0e2419;
+    --tq-accent-soft: #1c3328;
+    --tq-live: #4cc287;
+    --tq-danger: #f2b8b5;
+    --tq-inverse-bg: #f2f0eb;
+    --tq-inverse-ink: #141414;
+    --tq-shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+    --tq-shadow-md: 0 1px 2px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.45);
+    --tq-shadow-float: 0 6px 20px rgba(0,0,0,0.6);
+  }
+}

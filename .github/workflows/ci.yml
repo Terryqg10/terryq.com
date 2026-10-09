@@ -30,7 +30,7 @@ jobs:
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
 
-      # Los pasos `pnpm tokens`, el tamaño de JS y `pnpm lhci` se añaden en sus tareas.
+      # El tamaño de JS y `pnpm lhci` se añaden en sus tareas.
       - name: Formato
         run: pnpm format:check
 

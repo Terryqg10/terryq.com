@@ -13,3 +13,4 @@ CLAUDE.md
 test-results
 playwright-report
 blob-report
+src/styles/tokens.css
