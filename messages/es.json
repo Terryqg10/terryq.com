@@ -1,11 +1,31 @@
 {
   "common": {
+    "skipLink": "Saltar al contenido",
+    "logo": {
+      "homeLabel": "Terry Quiñonez, ir al inicio"
+    },
     "nav": {
-      "label": "Principal"
+      "label": "Principal",
+      "work": "Trabajos",
+      "services": "Servicios",
+      "about": "Sobre mí",
+      "github": "GitHub ↗",
+      "contact": "Contacto"
+    },
+    "language": {
+      "switchLabel": "ES / EN: cambiar idioma a inglés"
     },
     "footer": {
       "navLabel": "Contacto y redes",
-      "builtWith": "Hecha con Next.js · Desplegada en Vercel · Código en GitHub ↗"
+      "tagline": "Diseño y desarrollo web",
+      "location": "Quijorna, Madrid · Trabajo en remoto en toda España",
+      "whatsapp": "WhatsApp",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "legalNotice": "Aviso legal",
+      "privacy": "Privacidad",
+      "copyright": "© {year}",
+      "builtWith": "Hecha con Next.js · Desplegada en Vercel · <repo>Código en GitHub ↗</repo>"
     },
     "menu": {
       "dialogLabel": "Menú principal"

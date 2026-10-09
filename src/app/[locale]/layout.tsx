@@ -1,3 +1,6 @@
+import { Footer } from '@/components/layout/Footer';
+import { Header } from '@/components/layout/Header';
+import { SkipLink } from '@/components/layout/SkipLink';
 import { routing } from '@/i18n/routing';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import type { Viewport } from 'next';
@@ -53,7 +56,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       <body>
         {/* `Link` de next-intl es un componente cliente y necesita el idioma. Los mensajes llegan
             a cada isla cliente por separado (spec §4.2), no en bloque. */}
-        <NextIntlClientProvider messages={{}}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={{}}>
+          <SkipLink />
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
