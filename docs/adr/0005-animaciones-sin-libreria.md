@@ -18,5 +18,7 @@ El diseño incluye entradas escalonadas, una inclinación de la captura del hero
 - Las animaciones complejas no son posibles sin revisar este ADR.
 - Sin soporte de `animation-timeline`, la captura del hero se queda en su estado de reposo.
 
+- **Resultado de T21:** con Next 16.4.0 y React 19.3.0, `<ViewTransition>` funciona **sin** `experimental.viewTransition`: no hace falta ningún flag. Las imágenes `work-<slug>` (miniatura de la fila, tarjeta de Inicio e imagen del caso) usan `share="morph"` y `default="none"`; el CSS fija 450ms y, con movimiento reducido, anula las animaciones de las transiciones de vista.
+
 ## Estado
 Aceptado (2026-10-07)

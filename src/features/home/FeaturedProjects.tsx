@@ -7,6 +7,7 @@ import { Link } from '@/i18n/navigation';
 import { routeLabel } from '@/i18n/route-label';
 import { getLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { ViewTransition } from 'react';
 import { SectionHeader } from './section-header';
 
 /** Trabajos recientes (spec §8.1, fila 2). Toda la tarjeta es un único enlace al caso. */
@@ -39,12 +40,14 @@ export async function FeaturedProjects() {
                 className: 'group flex flex-col gap-6 p-4 lg:flex-row lg:items-center lg:gap-10',
               })}
             >
-              <Image
-                src={work.images.preview.src}
-                alt={work.images.preview.alt[locale]}
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="aspect-[16/10] w-full rounded-xl border border-line bg-surface-sunken object-cover object-top lg:flex-[7]"
-              />
+              <ViewTransition name={`work-${work.slug}`} share="morph" default="none">
+                <Image
+                  src={work.images.preview.src}
+                  alt={work.images.preview.alt[locale]}
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="aspect-[16/10] w-full rounded-xl border border-line bg-surface-sunken object-cover object-top lg:flex-[7]"
+                />
+              </ViewTransition>
               <div className="flex min-w-0 flex-col gap-4 lg:flex-[5] lg:py-4 lg:pr-6">
                 <span className="inline-flex items-center gap-2 text-meta text-ink-muted">
                   {work.year} ·{' '}
