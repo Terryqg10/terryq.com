@@ -1,10 +1,41 @@
 import { routing } from '@/i18n/routing';
 import { hasLocale } from 'next-intl';
+import type { Viewport } from 'next';
+import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
 
+// Autoalojadas en el build: el navegador no pide nada a Google (spec §6.3).
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: 'variable',
+  axes: ['opsz'],
+  display: 'swap',
+  variable: '--font-bricolage',
+});
+const instrument = Instrument_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  display: 'swap',
+  variable: '--font-instrument',
+});
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-jetbrains',
+});
+
 export const dynamic = 'error';
 export const dynamicParams = false;
+
+/** `paper` light y dark del DS (spec §6.4). */
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f2f0eb' },
+    { media: '(prefers-color-scheme: dark)', color: '#111110' },
+  ],
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -15,7 +46,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   if (!hasLocale(routing.locales, locale)) notFound();
 
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      className={`${bricolage.variable} ${instrument.variable} ${jetbrains.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
