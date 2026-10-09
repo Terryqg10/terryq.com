@@ -1,0 +1,127 @@
+<CaseSection kind="challenge">
+
+Betting sites have cluttered interfaces: hundreds of markets, banners everywhere and a bet slip that's hard to follow. I set out to design and build a prototype that keeps every feature of a real sportsbook, but organised so that placing a bet is clear and fast.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Always-visible bet slip">
+
+that instantly calculates potential winnings, with quick stakes (+10, +50, x2).
+
+</SolutionItem>
+
+<SolutionItem title="Accumulators">
+
+with multiple selections on the same slip.
+
+</SolutionItem>
+
+<SolutionItem title="Live matches">
+
+with the current minute, score and updated 1X2 odds.
+
+</SolutionItem>
+
+<SolutionItem title="Favourite leagues">
+
+per user and a league sidebar with match counts.
+
+</SolutionItem>
+
+<SolutionItem title="Promotions">
+
+(welcome bonus, cashback, free bet, accumulator boost, VIP) in a carousel.
+
+</SolutionItem>
+
+<SolutionItem title="Cash Out">
+
+settle a bet before the match ends.
+
+</SolutionItem>
+
+<SolutionItem title="Responsible gambling">
+
+with configurable limits, reachable from the menu.
+
+</SolutionItem>
+
+<SolutionItem title="Sign-in">
+
+with email and password or with Google.
+
+</SolutionItem>
+
+<SolutionItem title="Mobile first">
+
+on small screens the bet slip becomes a floating button.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+A complete, navigable product that shows how to solve the user experience of a complex application, with many states and data that changes in real time.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Stack">
+
+**Next.js (App Router) + React 19**, server-rendered with Server Components and mutations via Server Actions.
+
+</DevItem>
+
+<DevItem label="Language and styles">
+
+**Strict TypeScript**, no `any`. **Tailwind CSS v4** with brand colours as tokens.
+
+</DevItem>
+
+<DevItem label="State">
+
+**Zustand** for client state (bet slip, favourites, filters and live odds); slip and favourites persisted to `localStorage`.
+
+</DevItem>
+
+<DevItem label="Data and rules">
+
+**Supabase (Postgres)**: business rules live in **SQL functions** (placing bets, accumulators, match settlement, promotions, responsible-gambling limits and Cash Out). Anything that moves money runs server-side, and data is protected with **RLS**.
+
+</DevItem>
+
+<DevItem label="Authentication">
+
+**Supabase Auth** with `@supabase/ssr`: email and password plus Google OAuth; the session is refreshed on every request.
+
+</DevItem>
+
+<DevItem label="Simulation">
+
+**Live match simulation** with custom scripts: moving odds, settling matches and seeding demo data.
+
+</DevItem>
+
+<DevItem label="Images">
+
+**AI-generated images** (OpenAI) in a separate script; AI plays no part while the site is running.
+
+</DevItem>
+
+<DevItem label="Deployment">
+
+**Vercel** with automatic deploys on every push to `main` · ESLint · `sharp`.
+
+</DevItem>
+
+<DevItem label="Code">
+
+_Private repository: available to walk through in an interview._
+
+</DevItem>
+
+</CaseSection>

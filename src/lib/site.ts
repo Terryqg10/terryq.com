@@ -1,7 +1,5 @@
-import type { Locale } from 'next-intl';
+import type { Locale, Localized } from '@/content/types';
 import type { StaticImageData } from 'next/image';
-
-type Localized<T> = Readonly<Record<Locale, T>>;
 
 export interface SiteConfig {
   readonly url: string;

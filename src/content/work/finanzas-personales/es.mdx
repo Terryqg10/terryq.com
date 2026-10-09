@@ -1,0 +1,93 @@
+<CaseSection kind="challenge">
+
+Quería saber, sin esfuerzo, cuánto entra y cuánto sale cada mes, cuánto puedo gastar el fin de semana sin romper mi objetivo de ahorro y cuándo me estoy pasando. Las hojas de cálculo se abandonan; necesitaba algo rápido de usar a diario.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Registro mensual">
+
+de ingresos y gastos por categorías, con categorías marcadas como esenciales.
+
+</SolutionItem>
+
+<SolutionItem title="Objetivo de ahorro">
+
+y cálculo de **cuánto puedes gastar cada fin de semana**.
+
+</SolutionItem>
+
+<SolutionItem title="Presupuestos por categoría">
+
+con **alertas** al acercarte al límite.
+
+</SolutionItem>
+
+<SolutionItem title="Movimientos recurrentes">
+
+(nómina, alquiler, suscripciones) que se registran solos.
+
+</SolutionItem>
+
+<SolutionItem title="Varias monedas">
+
+cada movimiento guarda el importe original, el tipo de cambio usado y el importe en tu moneda base.
+
+</SolutionItem>
+
+<SolutionItem title="Tema claro y oscuro" />
+
+<SolutionItem title="Modo demo">
+
+cualquiera puede probarla en un clic con datos de ejemplo, sin registrarse.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+La uso a diario para mis propias finanzas. Es el proyecto donde más he trabajado la seguridad y el modelado de datos.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+Next.js (App Router) + TypeScript · Supabase (Postgres + Auth)
+
+</DevItem>
+
+<DevItem label="Seguridad">
+
+**Row Level Security** en todas las tablas: cada usuario solo accede a sus filas (`user_id = auth.uid()`)
+
+</DevItem>
+
+<DevItem label="Datos">
+
+Borrado en cascada de los datos del usuario
+
+</DevItem>
+
+<DevItem label="Moneda">
+
+Conversión de moneda con histórico de tipos de cambio (`exchange_rate_snapshots`) y el tipo aplicado guardado en cada movimiento
+
+</DevItem>
+
+<DevItem label="Modo demo">
+
+**Modo demo con usuarios anónimos de Supabase**: datos sembrados por un trigger, limpieza automática con `pg_cron` y registro con email bloqueado en el servidor con un _Before User Created Hook_
+
+</DevItem>
+
+<DevItem label="Despliegue">
+
+Desplegada en Vercel
+
+</DevItem>
+
+</CaseSection>

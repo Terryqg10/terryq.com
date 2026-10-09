@@ -1,0 +1,101 @@
+<CaseSection kind="challenge">
+
+HB Construcciones hace reformas integrales, piscinas, cocinas, baños y ampliaciones en la zona oeste de Madrid. **No tenía web:** todos sus clientes llegaban por contactos y recomendaciones. Necesitaban salir del boca a boca con una web que transmitiera confianza a alguien que va a gastar miles de euros en su casa y que convirtiera esa confianza en una conversación.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="WhatsApp como canal principal">
+
+Los clientes de reformas prefieren escribir a rellenar formularios, así que todos los botones llevan a WhatsApp, y el formulario abre la conversación con el mensaje ya preparado.
+
+</SolutionItem>
+
+<SolutionItem title="Barra fija en el móvil">
+
+con "Llamar" y "WhatsApp", siempre a un toque.
+
+</SolutionItem>
+
+<SolutionItem title="Respuestas antes de que pregunten">
+
+Preguntas frecuentes sobre licencias de obra, plazos, presupuesto y garantía: las dudas que frenan a un cliente antes de escribir.
+
+</SolutionItem>
+
+<SolutionItem title="Pruebas reales">
+
+Galería de obras, vídeos grabados en la obra y reseñas de sus clientes.
+
+</SolutionItem>
+
+<SolutionItem title="Pensada para buscar en local">
+
+Contenido orientado a búsquedas de reformas y piscinas en su zona.
+
+</SolutionItem>
+
+<SolutionMedia pieces={[0, 1]} />
+
+</CaseSection>
+
+<CaseSection kind="identity">
+
+Diseñé una propuesta de logo con un kit completo (color, negativo, monocromo e icono en vectorial). El cliente prefirió mantener su logo original, así que la web usa su identidad actual.
+
+<BrandKit />
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+HB pasa de depender solo del boca a boca a tener una web propia, online desde octubre de 2026. Es reciente, así que este caso se actualizará con resultados reales (consultas recibidas por WhatsApp) en cuanto haya datos.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js (App Router) + React 19 + TypeScript.**
+
+</DevItem>
+
+<DevItem label="Interfaz">
+
+**Tailwind CSS 4**, **Framer Motion** para animaciones moderadas, iconos **Lucide** y tipografías **Geist** cargadas con `next/font`.
+
+</DevItem>
+
+<DevItem label="Medios">
+
+**Pipeline de medios propio:** scripts en Node/TypeScript que extraen fotogramas de los vídeos de obra y procesan galería y vídeos a **WebP** con `sharp`.
+
+</DevItem>
+
+<DevItem label="SEO local">
+
+**SEO local:** datos estructurados **JSON-LD de LocalBusiness**, metadatos y `lang` configurados.
+
+</DevItem>
+
+<DevItem label="Conversión">
+
+**Conversión:** botón flotante de WhatsApp, barra de contacto fija en móvil y formulario que construye el mensaje de WhatsApp con los datos del usuario.
+
+</DevItem>
+
+<DevItem label="Despliegue">
+
+**Vercel** con despliegue automático desde GitHub · Vercel Analytics · ESLint.
+
+</DevItem>
+
+<DevItem label="Método">
+
+**Desarrollo guiado por especificación** (`spec.md` + `tasks.md`).
+
+</DevItem>
+
+</CaseSection>

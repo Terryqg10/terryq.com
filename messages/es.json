@@ -1,24 +1,54 @@
 {
   "common": {
-    "nav": { "label": "Principal" },
+    "nav": {
+      "label": "Principal"
+    },
     "footer": {
       "navLabel": "Contacto y redes",
       "builtWith": "Hecha con Next.js · Desplegada en Vercel · Código en GitHub ↗"
     },
-    "menu": { "dialogLabel": "Menú principal" },
+    "menu": {
+      "dialogLabel": "Menú principal"
+    },
     "external": "(sitio externo)"
   },
-  "home": { "title": "<Desarrollador web>" },
-  "work": { "title": "Trabajos" },
+  "home": {
+    "title": "<Desarrollador web>"
+  },
+  "work": {
+    "title": "Trabajos"
+  },
   "case": {
     "titles": {
       "hb-construcciones": "Una web para que pedir presupuesto sea tan fácil como mandar un WhatsApp",
       "zona-f": "Cómo sería una casa de apuestas pensada para el usuario",
       "finanzas-personales": "Mis finanzas, mes a mes, sin hojas de cálculo"
+    },
+    "sections": {
+      "challenge": "El reto",
+      "solution": "La solución",
+      "identity": "Propuesta de identidad",
+      "outcome": "Resultado",
+      "developers": "Para desarrolladores"
+    },
+    "brandKit": {
+      "color": "Color",
+      "reversed": "Negativo",
+      "monochrome": "Monocromo",
+      "icon": "Icono"
     }
   },
-  "services": { "title": "Servicios" },
-  "about": { "title": "Hola, soy Terry" },
-  "contact": { "title": "Hablemos de tu proyecto" },
-  "legal": { "noticeTitle": "Aviso legal", "privacyTitle": "Privacidad" }
+  "services": {
+    "title": "Servicios"
+  },
+  "about": {
+    "title": "Hola, soy Terry"
+  },
+  "contact": {
+    "title": "Hablemos de tu proyecto"
+  },
+  "legal": {
+    "noticeTitle": "Aviso legal",
+    "privacyTitle": "Privacidad"
+  }
 }
