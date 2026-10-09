@@ -224,6 +224,33 @@
   }
 }
 
+/* Apariciones al hacer scroll (spec §6.6): `<Reveal />` marca `pending` lo que está fuera de pantalla. */
+[data-reveal='pending'],
+[data-reveal='done'] {
+  transition:
+    opacity 450ms var(--ease-tq),
+    transform 450ms var(--ease-tq);
+}
+
+[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+@media (max-width: 767px) {
+  [data-reveal='pending'],
+  [data-reveal='done'] {
+    transition-duration: 300ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal='pending'] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Menú móvil abierto: el fondo no se desplaza (spec §7.2). */
 html:has(dialog[open]) {
   overflow: hidden;
