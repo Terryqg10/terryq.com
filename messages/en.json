@@ -36,6 +36,10 @@
     "external": "(external site)",
     "whatsapp": {
       "label": "Message me on WhatsApp"
+    },
+    "status": {
+      "live": "Live",
+      "demo": "Demo"
     }
   },
   "home": {
@@ -52,6 +56,58 @@
       "proofLocation": "Madrid · Remote",
       "caption": "Live · HB Construcciones · 2026",
       "openSite": "Open site ↗"
+    },
+    "work": {
+      "title": "Recent work",
+      "intro": "Real projects, live or as working demos. You can open them and try them out.",
+      "viewAll": "See all work →",
+      "cardCta": "View case study →"
+    },
+    "reviews": {
+      "label": "/reviews",
+      "title": "What my clients say",
+      "intro": "Real reviews you can check on Google.",
+      "viewAll": "See all on Google ↗",
+      "regionLabel": "Client reviews, swipe to see more",
+      "demoFeedback": "Feedback after reviewing the demo",
+      "viewProject": "View project",
+      "translated": "(translated)"
+    },
+    "services": {
+      "title": "What I can do for your business",
+      "viewAll": "See services →",
+      "core": "Core service",
+      "webTitle": "Websites",
+      "webText": "Your website, designed and built from scratch. Fast on mobile, easy to find on Google and ready for people to contact you.",
+      "landingTitle": "Landing page",
+      "landingText": "To win enquiries fast, via WhatsApp or a form.",
+      "corporateTitle": "Company website",
+      "corporateText": "Multiple pages and a structure built for Google.",
+      "appTitle": "Custom web app",
+      "appText": "User accounts, a database and features built for your business.",
+      "also": "I can also take care of…",
+      "brandTitle": "Your brand identity",
+      "brandText": "A logo and versions for web, social media and print.",
+      "maintenanceTitle": "Maintenance and hosting",
+      "maintenanceText": "Your site always online, up to date, and someone who answers if something breaks."
+    },
+    "about": {
+      "title": "About me",
+      "lead": "I'm Terry. I started out teaching myself, hooked on clean, well-made interfaces and eager to understand how they were built under the hood.",
+      "highlight": "I now study Software Engineering at the Technical University of Madrid (UPM) and live in Quijorna, in the hills west of Madrid.",
+      "locationLabel": "Location",
+      "locationValue": "Quijorna, Madrid · Remote across Spain",
+      "educationLabel": "Education",
+      "educationValue": "Software Engineering · UPM (in progress)",
+      "stackLabel": "Stack",
+      "stackValue": "Next.js · TypeScript · React · Supabase · Tailwind CSS · Vercel",
+      "cta": "More about me →"
+    },
+    "closing": {
+      "title": "Shall we talk?",
+      "text": "If you like what I do and have an idea in mind, drop me a line.",
+      "whatsapp": "WhatsApp ↗",
+      "reply": "I reply within 24 working hours"
     }
   },
   "work": {

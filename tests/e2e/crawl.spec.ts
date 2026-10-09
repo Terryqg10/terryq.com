@@ -1,5 +1,5 @@
 import { expect, test, type APIRequestContext } from '@playwright/test';
-import { allRoutes, routes } from './utils';
+import { allRoutes } from './utils';
 
 // No depende del navegador: solo hace peticiones HTTP, así que basta con un proyecto.
 test.beforeEach(({ browserName }, testInfo) => {
@@ -52,27 +52,12 @@ async function crawl(request: APIRequestContext) {
   return { pages, links };
 }
 
-/**
- * Casos de estudio que todavía no enlaza ninguna página (los enlazan Inicio y Trabajos en T18 y
- * T19). Cuando alguien los enlace, el test falla y hay que quitarlos de aquí: así el rastreo
- * acaba cubriendo todas las rutas.
- */
-const notLinkedYet = routes.es
-  .concat(routes.en)
-  .filter((route) => /[/](trabajos|work)[/][^/]+$/.test(route));
-
 test('todos los enlaces internos dan 200 y no hay Set-Cookie', async ({ request }) => {
   const { pages } = await crawl(request);
 
   // Cada página nueva queda cubierta automáticamente: el rastreo debe llegar a todas las rutas.
-  for (const route of allRoutes.filter((route) => !notLinkedYet.includes(route))) {
-    expect(pages.has(route), `el rastreo no llega a ${route}`).toBe(true);
-  }
-  for (const route of notLinkedYet) {
-    expect(pages.has(route), `${route} ya está enlazada: quítala de notLinkedYet`).toBe(false);
-    const response = await request.get(route, { maxRedirects: 0 });
-    expect(response.status(), route).toBe(200);
-    expect(response.headers()['set-cookie'], route).toBeUndefined();
+  for (const route of allRoutes) {
+    expect(pages.has(route)).toBe(true);
   }
 });
 
