@@ -251,6 +251,61 @@
   }
 }
 
+/* Titular del hero (spec §6.6): cada línea sube desde su máscara y los < > aparecen al final.
+   `--tq-delay` desfasa cada pieza. */
+@keyframes tq-rise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes tq-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility tq-rise {
+  animation: tq-rise 600ms var(--ease-tq) var(--tq-delay, 0ms) both;
+}
+
+@utility tq-fade-in {
+  animation: tq-fade 200ms ease-out var(--tq-delay, 0ms) both;
+}
+
+/* Captura del hero (spec §6.6): desde `lg` descansa inclinada y, con el scroll, se aplana hasta
+   `scale(1)` en los primeros ~40vh. Sin `animation-timeline` se queda en reposo. `HeroShowcase`
+   añade además el giro con el ratón en un elemento interior. */
+@keyframes tq-flatten {
+  from {
+    transform: perspective(1200px) rotateY(-5deg) rotateX(3deg) scale(0.96);
+  }
+  to {
+    transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tq-showcase {
+    transform: perspective(1200px) rotateY(-5deg) rotateX(3deg);
+    transform-origin: 60% 50%;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .tq-showcase {
+      animation: tq-flatten linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 40vh;
+    }
+  }
+}
+
 /* Menú móvil abierto: el fondo no se desplaza (spec §7.2). */
 html:has(dialog[open]) {
   overflow: hidden;

@@ -39,7 +39,20 @@
     }
   },
   "home": {
-    "title": "<Desarrollador web>"
+    "hero": {
+      "intro": "Hola, soy <name>Terry Quiñonez</name> · Madrid",
+      "line1": "Desarrollador",
+      "line2": "web",
+      "subtitle": "Diseño y construyo webs, PWAs y sistemas que da gusto usar. Me apasiona todo el recorrido, del primer boceto a la última línea de código, cuidando cada detalle para que se vean bien y funcionen todavía mejor.",
+      "ctaWork": "Ver trabajos",
+      "ctaGithub": "GitHub ↗",
+      "ctaLinkedin": "LinkedIn ↗",
+      "proofLive": "Proyectos en producción",
+      "proofStack": "Next.js · TypeScript · Supabase",
+      "proofLocation": "Madrid · Remoto",
+      "caption": "Online · HB Construcciones · 2026",
+      "openSite": "Abrir web ↗"
+    }
   },
   "work": {
     "title": "Trabajos"

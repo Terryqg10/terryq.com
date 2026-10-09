@@ -35,9 +35,12 @@ export const allRoutes: readonly string[] = [...routes.es, ...routes.en];
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 /** Falla si axe encuentra infracciones WCAG 2.2 AA en la página actual. */
-export async function axeCheck(page: Page): Promise<void> {
+export async function axeCheck(page: Page, options: { ignore?: string[] } = {}): Promise<void> {
   // Sin animaciones en curso: axe mide mal el contraste de lo que está a medio aparecer.
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  const results = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
+  const results = await new AxeBuilder({ page })
+    .withTags(wcagTags)
+    .disableRules(options.ignore ?? [])
+    .analyze();
   expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
 }

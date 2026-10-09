@@ -39,7 +39,20 @@
     }
   },
   "home": {
-    "title": "<Web developer>"
+    "hero": {
+      "intro": "Hi, I'm <name>Terry Quiñonez</name> · Madrid",
+      "line1": "Web",
+      "line2": "developer",
+      "subtitle": "I design and build websites, PWAs and systems that are a joy to use. I love the whole journey, from the first sketch to the last line of code, sweating every detail so they look good and work even better.",
+      "ctaWork": "See my work",
+      "ctaGithub": "GitHub ↗",
+      "ctaLinkedin": "LinkedIn ↗",
+      "proofLive": "Live projects",
+      "proofStack": "Next.js · TypeScript · Supabase",
+      "proofLocation": "Madrid · Remote",
+      "caption": "Live · HB Construcciones · 2026",
+      "openSite": "Open site ↗"
+    }
   },
   "work": {
     "title": "Work"

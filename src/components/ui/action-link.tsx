@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
-import type { ComponentProps, ReactNode } from 'react';
+import { Children, type ComponentProps, type ReactNode } from 'react';
 
 export type InternalHref = ComponentProps<typeof Link>['href'];
 
@@ -26,7 +26,10 @@ export async function ActionLink({
   const t = await getTranslations('common');
 
   if (target.external) {
-    const hasArrow = typeof children === 'string' && children.trimEnd().endsWith('↗');
+    // Si el texto ya trae la flecha («GitHub ↗» viene de `messages`), no se añade otra.
+    const hasArrow = Children.toArray(children).some(
+      (child) => typeof child === 'string' && child.trimEnd().endsWith('↗'),
+    );
     return (
       <a href={target.href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
