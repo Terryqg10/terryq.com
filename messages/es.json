@@ -376,7 +376,47 @@
     }
   },
   "about": {
-    "title": "Hola, soy Terry"
+    "title": "Hola, soy Terry",
+    "lead": "Soy Terry Quiñonez, desarrollador web. Empecé aprendiendo por mi cuenta con vídeos de YouTube: <hl>me atrapaban las interfaces bien hechas, limpias y minimalistas, y quería entender cómo se construían por dentro.</hl>",
+    "intro": {
+      "location": "Quijorna, Madrid",
+      "education": "Ingeniería del Software · UPM",
+      "stack": "Next.js · TypeScript · Supabase"
+    },
+    "photoCaption": "Retrato ilustrado a partir de una foto real.",
+    "storyLabel": "Mi historia",
+    "fromLabel": "De Perú a Madrid",
+    "from": "Empecé la carrera en Perú y, con buena parte hecha, vine a España para terminarla: <hl>hoy estudio Ingeniería del Software en la Universidad Politécnica de Madrid</hl>, con parte de mis estudios convalidados. Vivo en Quijorna, en la sierra oeste de Madrid.",
+    "aimLabel": "Lo que busco",
+    "aim": "Webs que cualquiera entiende a la primera",
+    "values": "Muchas webs se lo ponen difícil a la gente: menús confusos, formularios eternos, información que no se encuentra. Yo busco lo contrario. <hl>Me tomo cada proyecto como propio y no lo doy por terminado hasta que todo funciona bien.</hl>",
+    "persistent": "Soy constante: cuando me propongo algo, lo saco adelante.",
+    "factsTitle": "Datos rápidos",
+    "facts": {
+      "location": {
+        "label": "Ubicación",
+        "value": "Quijorna, Madrid · Remoto en toda España"
+      },
+      "education": {
+        "label": "Formación",
+        "value": "Ingeniería del Software · UPM (en curso)"
+      },
+      "languages": {
+        "label": "Idiomas",
+        "value": "Español (nativo) · Inglés (básico, en aprendizaje)"
+      },
+      "tech": {
+        "label": "Tecnologías"
+      }
+    },
+    "companies": {
+      "anchor": "para-empresas",
+      "title": "Para empresas",
+      "text": "Tengo las cualidades y las habilidades para aportar desde el primer día y ser un gran colaborador en vuestro equipo. <hl>Os invito a conocer <work>mis proyectos</work>.</hl>",
+      "cv": "Descargar CV",
+      "linkedin": "LinkedIn ↗",
+      "github": "GitHub ↗"
+    }
   },
   "contact": {
     "title": "Hablemos de tu proyecto",

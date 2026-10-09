@@ -376,7 +376,47 @@
     }
   },
   "about": {
-    "title": "Hi, I'm Terry"
+    "title": "Hi, I'm Terry",
+    "lead": "I'm Terry Quiñonez, a web developer. I started out teaching myself with YouTube videos: <hl>I was hooked on well-made interfaces, clean and minimal, and I wanted to understand how they were built under the hood.</hl>",
+    "intro": {
+      "location": "Quijorna, Madrid",
+      "education": "Software Engineering · UPM",
+      "stack": "Next.js · TypeScript · Supabase"
+    },
+    "photoCaption": "Illustrated portrait based on a real photo.",
+    "storyLabel": "My story",
+    "fromLabel": "From Peru to Madrid",
+    "from": "I began my degree in Peru and, with a good part of it done, moved to Spain to finish it: <hl>I now study Software Engineering at the Technical University of Madrid (UPM)</hl>, with part of my previous studies recognised. I live in Quijorna, in the hills west of Madrid.",
+    "aimLabel": "What I aim for",
+    "aim": "Websites anyone understands at first glance",
+    "values": "Many websites make things hard for people: confusing menus, endless forms, information you can't find. I aim for the opposite. <hl>I treat every project as my own and I don't call it finished until everything works properly.</hl>",
+    "persistent": "I'm persistent: when I set my mind on something, I get it done.",
+    "factsTitle": "Quick facts",
+    "facts": {
+      "location": {
+        "label": "Location",
+        "value": "Quijorna, Madrid · Remote across Spain"
+      },
+      "education": {
+        "label": "Education",
+        "value": "Software Engineering · UPM (in progress)"
+      },
+      "languages": {
+        "label": "Languages",
+        "value": "Spanish (native) · English (basic, actively improving)"
+      },
+      "tech": {
+        "label": "Tech"
+      }
+    },
+    "companies": {
+      "anchor": "for-companies",
+      "title": "For companies",
+      "text": "I have the qualities and the skills to contribute from day one and be a great addition to your team. <hl>I invite you to explore <work>my projects</work>.</hl>",
+      "cv": "Download CV",
+      "linkedin": "LinkedIn ↗",
+      "github": "GitHub ↗"
+    }
   },
   "contact": {
     "title": "Let's talk about your project",
