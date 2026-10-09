@@ -79,7 +79,7 @@ export async function Footer() {
         </div>
       </Container>
 
-      <Container className="pb-10">
+      <Container className="pb-26 md:pb-10">
         <p className="border-t border-line pt-5 text-label font-normal tracking-normal text-ink-muted">
           {t.rich('footer.builtWith', {
             repo: (chunks) => (
