@@ -420,7 +420,28 @@
   },
   "contact": {
     "title": "Hablemos de tu proyecto",
-    "optional": "Opcional"
+    "optional": "Opcional",
+    "errors": {
+      "name": {
+        "required": "Escribe tu nombre."
+      },
+      "contact": {
+        "required": "Necesito un email o un teléfono para responderte.",
+        "format": "Revisa el formato: un email (tu@email.com) o un teléfono."
+      },
+      "need": {
+        "required": "Elige una opción."
+      },
+      "website": {
+        "format": "Revisa la dirección de tu web."
+      },
+      "message": {
+        "required": "Cuéntame un poco de tu proyecto."
+      },
+      "privacy": {
+        "required": "Acepta la política de privacidad para poder enviarlo."
+      }
+    }
   },
   "legal": {
     "noticeTitle": "Aviso legal",
