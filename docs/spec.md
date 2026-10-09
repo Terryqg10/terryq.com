@@ -936,7 +936,7 @@ Lo comprueba un test de e2e: ninguna respuesta lleva `Set-Cookie` y `document.co
 
 ### 16.3 Repositorio público
 - `.env*` en `.gitignore`, salvo `.env.example`. Ningún secreto en el código ni en los tests.
-- Dependabot semanal (npm y GitHub Actions). `pnpm audit --audit-level=high` en CI.
+- Dependabot semanal (npm y GitHub Actions). `pnpm audit --prod --audit-level=high` en CI (solo dependencias de producción: `braces`, vía ESLint, tiene un aviso high sin parche y es solo de desarrollo; revisar al actualizar ESLint).
 - **En `docs/planning/` solo van F1, 01b, F3 y F4.** F0 no se publica: tiene notas internas sobre clientes, precios y otros proyectos (P4). En la copia de F1 del repo, la dirección de Gmail personal de Terry se sustituye por «el buzón personal de Terry».
 - El CV, cuando exista, es público (se descarga desde la web y está en el repo). Debe llevar solo los datos que Terry quiera hacer públicos.
 
