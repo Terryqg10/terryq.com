@@ -16,6 +16,10 @@ pnpm dev      # http://localhost:3000
 pnpm build    # build de producción
 ```
 
+## Despliegue
+
+Vercel (plan Hobby) despliega `main` en producción y crea un preview por cada PR. Por ahora la producción está en <https://terryq-com.vercel.app> (sin dominio propio hasta T40). Las variables de entorno son las de [`.env.example`](.env.example); `CONTACT_TRANSPORT=mock` hasta T39.
+
 ## Documentación
 
 - Especificación técnica: [`docs/spec.md`](docs/spec.md)
