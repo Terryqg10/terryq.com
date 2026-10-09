@@ -1,0 +1,24 @@
+{
+  "common": {
+    "nav": { "label": "Main" },
+    "footer": {
+      "navLabel": "Contact and social",
+      "builtWith": "Built with Next.js · Deployed on Vercel · Code on GitHub ↗"
+    },
+    "menu": { "dialogLabel": "Main menu" },
+    "external": "(external site)"
+  },
+  "home": { "title": "<Web developer>" },
+  "work": { "title": "Work" },
+  "case": {
+    "titles": {
+      "hb-construcciones": "A website that makes asking for a quote as easy as sending a WhatsApp",
+      "zona-f": "What a betting site designed around the user could look like",
+      "finanzas-personales": "My finances, month by month, without spreadsheets"
+    }
+  },
+  "services": { "title": "Services" },
+  "about": { "title": "Hi, I'm Terry" },
+  "contact": { "title": "Let's talk about your project" },
+  "legal": { "noticeTitle": "Legal notice", "privacyTitle": "Privacy" }
+}

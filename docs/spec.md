@@ -197,7 +197,7 @@ terryq.com/
 - `localeDetection: false`: no se redirige según `Accept-Language`. Cada URL siempre sirve el mismo idioma, lo que es mejor para el SEO y no necesita cookie.
 - `localeCookie: false`: next-intl no pone ninguna cookie.
 - `pathnames` traducidos (tabla 5.2). Las carpetas usan la ruta interna.
-- Las peticiones a `/es/...` redirigen con 308 a la ruta sin prefijo (comportamiento por defecto de `as-needed`).
+- Las peticiones a `/es/...` redirigen con 308 a la ruta sin prefijo. next-intl responde con 307, así que `src/proxy.ts` convierte esa redirección en 308.
 - Para el render estático se sigue la guía oficial de next-intl para **Next ≥16.3** (`next/root-params`). Solo se usa `setRequestLocale` si esa guía lo pide para nuestro caso.
 
 ### 5.2 Mapa de rutas
