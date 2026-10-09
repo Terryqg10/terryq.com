@@ -10,7 +10,8 @@
       "services": "Services",
       "about": "About",
       "github": "GitHub ↗",
-      "contact": "Contact"
+      "contact": "Contact",
+      "linkedin": "LinkedIn ↗"
     },
     "language": {
       "switchLabel": "ES / EN: switch language to Spanish"
@@ -28,7 +29,9 @@
       "builtWith": "Built with Next.js · Deployed on Vercel · <repo>Code on GitHub ↗</repo>"
     },
     "menu": {
-      "dialogLabel": "Main menu"
+      "dialogLabel": "Main menu",
+      "open": "Open menu",
+      "close": "Close menu"
     },
     "external": "(external site)"
   },

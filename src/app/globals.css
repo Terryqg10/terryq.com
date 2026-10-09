@@ -224,6 +224,11 @@
   }
 }
 
+/* Menú móvil abierto: el fondo no se desplaza (spec §7.2). */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 @layer base {
   body {
     background-color: var(--color-paper);
