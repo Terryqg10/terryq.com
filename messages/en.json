@@ -420,7 +420,28 @@
   },
   "contact": {
     "title": "Let's talk about your project",
-    "optional": "Optional"
+    "optional": "Optional",
+    "errors": {
+      "name": {
+        "required": "Please enter your name."
+      },
+      "contact": {
+        "required": "I need an email or a phone number to reply to you.",
+        "format": "Check the format: an email (you@email.com) or a phone number."
+      },
+      "need": {
+        "required": "Please choose an option."
+      },
+      "website": {
+        "format": "Check your website address."
+      },
+      "message": {
+        "required": "Tell me a little about your project."
+      },
+      "privacy": {
+        "required": "Please accept the privacy policy to send your message."
+      }
+    }
   },
   "legal": {
     "noticeTitle": "Legal notice",

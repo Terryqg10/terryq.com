@@ -759,6 +759,7 @@ Un solo esquema zod que se usa en el cliente (validación al enviar) y en el ser
 
 - `<form noValidate>` (UI34: sin validación nativa). La validación se hace **al enviar** y, después del primer intento, cada campo se revalida al salir de él (`blur`) para que el error desaparezca al corregirlo.
 - Las etiquetas visibles y los placeholders salen de F1 §9 / 01b §9.
+- El servidor recorta (no rechaza) lo que pase de `maxLength` y no admite URLs con usuario o contraseña. Los códigos de error son los de la tabla; el texto sale de `messages` (`contact.errors.<campo>.<regla>`).
 
 ### 10.2 Server Action (`features/contact/action.ts`)
 ```ts
