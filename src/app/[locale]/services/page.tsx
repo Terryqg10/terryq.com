@@ -1,10 +1,24 @@
-import { getTranslations } from 'next-intl/server';
+import { Container } from '@/components/ui/Container';
+import { AiPanel } from '@/features/services/AiPanel';
+import { AlsoBlock } from '@/features/services/AlsoBlock';
+import { ExploreMore } from '@/features/services/ExploreMore';
+import { Faq } from '@/features/services/Faq';
+import { Process } from '@/features/services/Process';
+import { ServicesHeader } from '@/features/services/ServicesHeader';
+import { WebOffer } from '@/features/services/WebOffer';
 
-export default async function Page() {
-  const t = await getTranslations('services');
+export default function ServicesPage() {
   return (
     <main id="contenido">
-      <h1>{t('title')}</h1>
+      <Container>
+        <ServicesHeader />
+        <WebOffer />
+        <AlsoBlock />
+        <Faq />
+        <Process />
+        <AiPanel />
+        <ExploreMore />
+      </Container>
     </main>
   );
 }

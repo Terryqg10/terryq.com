@@ -11,7 +11,7 @@ test.beforeEach(({ browserName }, testInfo) => {
 
 /** Textos que no pueden publicarse (spec §9.6). */
 const forbidden = [
-  /\bEjemplo\b/,
+  />\s*Ejemplo\s*</, // el marcador suelto, no «Ejemplo: HB Construcciones» (F1 §6)
   /\bPendiente\b/,
   /\[Nombre/,
   /\[Name/,

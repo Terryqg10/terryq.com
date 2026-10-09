@@ -182,7 +182,198 @@
     }
   },
   "services": {
-    "title": "Services"
+    "title": "Services",
+    "intro": "I focus on what makes the biggest difference to a business: a website that works. If you also need a brand identity or someone to look after your site, I've got that covered too.",
+    "toc": "On this page",
+    "anchors": {
+      "web": "websites",
+      "brand": "brand",
+      "faq": "faq",
+      "process": "process",
+      "ai": "ai"
+    },
+    "tocLabels": {
+      "web": "Websites",
+      "brand": "Brand and maintenance",
+      "faq": "FAQs",
+      "process": "How I work",
+      "ai": "How I use AI"
+    },
+    "web": {
+      "core": "Core service",
+      "title": "Websites",
+      "lead": "Your website, designed and built from scratch: a landing page to win customers, a full company website, or a web app with its own features.",
+      "highlight": "Fast on mobile, easy to find on Google and ready for people to contact you.",
+      "typesLabel": "Website types",
+      "columns": {
+        "type": "Type",
+        "audience": "Who it's for",
+        "includes": "What's included"
+      },
+      "landing": {
+        "title": "Landing page",
+        "audience": "Freelancers and businesses who want enquiries fast",
+        "includes": "One complete page: services, work, reviews, FAQs and contact via WhatsApp or form.",
+        "example": "Example: <hb>HB Construcciones</hb> →"
+      },
+      "corporate": {
+        "title": "Company website",
+        "audience": "Businesses that need several sections",
+        "includes": "Multiple pages, optional blog and a structure built for Google."
+      },
+      "app": {
+        "title": "Custom web app",
+        "audience": "Businesses with their own process (bookings, dashboards, management)",
+        "includes": "User accounts, a database and bespoke features.",
+        "example": "Examples: <fp>Finanzas Personales</fp> · <zf>Zona F</zf> →"
+      },
+      "always": "Always included",
+      "alwaysItems": {
+        "custom": "Custom design (no templates)",
+        "mobile": "Mobile-friendly",
+        "speed": "Fast loading",
+        "seo": "Basic SEO",
+        "form": "Contact form or WhatsApp",
+        "legal": "Standard legal pages",
+        "session": "A session to show you how to use it"
+      }
+    },
+    "also": {
+      "label": "I can also take care of",
+      "ariaLabel": "Brand, maintenance and hosting",
+      "brandTitle": "Brand",
+      "brandText": "A logo and a kit of versions (colour, reversed, monochrome, icon) in vector format, ready for web, social media and print. Banners and social media graphics too.",
+      "brandLink": "Brand identity proposal for HB Construcciones →",
+      "afterDelivery": "After delivery",
+      "maintenanceTitle": "Maintenance and hosting",
+      "maintenanceText": "Your site hosted, with domain, backups, small changes and someone who answers if something breaks.",
+      "maintenanceItems": {
+        "hosting": "Hosting and domain",
+        "backups": "Backups",
+        "changes": "Small changes",
+        "support": "Help if something breaks"
+      },
+      "maintenanceNote": "Monthly or yearly plan, separate from the project."
+    },
+    "faq": {
+      "title": "FAQs",
+      "help": "Got another question? <contact>Drop me a line</contact>.",
+      "items": {
+        "cost": {
+          "q": "How much does a website cost?",
+          "a": "Every project is different, so I don't use fixed price lists. Tell me about your idea and I'll send you a tailored quote."
+        },
+        "time": {
+          "q": "How long does it take?",
+          "a": "A landing page is usually ready in 1–2 weeks once I have your text and photos. Larger sites depend on scope; I'll give you a timeline in the quote."
+        },
+        "need": {
+          "q": "What do I need to give you?",
+          "a": "The basics: what you do, who for, and photos of your work. If you don't have text, I'll help you write it."
+        },
+        "mine": {
+          "q": "Will the website be mine?",
+          "a": "Yes. The domain and the content are yours."
+        },
+        "changes": {
+          "q": "Can I make changes later?",
+          "a": "Yes: you can ask me, or go for a maintenance plan."
+        },
+        "location": {
+          "q": "Do you only work in Madrid?",
+          "a": "I work remotely with businesses all over Spain. If you're nearby, we can also meet in person."
+        },
+        "ai": {
+          "q": "Do you use AI?",
+          "a": "Yes, as a tool to work faster. The design, the decisions and the review of every detail are mine (<ai>how I use AI ↓</ai>)."
+        }
+      }
+    },
+    "process": {
+      "title": "How I work",
+      "intro": "A clear process, so you always know where your website stands and what comes next.",
+      "columns": {
+        "step": "Step",
+        "what": "What happens",
+        "get": "What you get"
+      },
+      "youGet": "You get ·",
+      "steps": {
+        "talk": {
+          "name": "We talk",
+          "what": "You tell me about your business, your customers and your goals.",
+          "get": "Focused questions, not an endless form."
+        },
+        "quote": {
+          "name": "Fixed quote",
+          "what": "I define scope, price and timeline.",
+          "get": "A quote within 24 hours, no small print."
+        },
+        "design": {
+          "name": "Design",
+          "what": "I prepare the visual proposal for the pages.",
+          "get": "You see how it will look before any code is written."
+        },
+        "build": {
+          "name": "Build",
+          "what": "I build the site and share progress.",
+          "get": "A preview link to review it."
+        },
+        "launch": {
+          "name": "Launch",
+          "what": "We publish it on your domain and check everything works.",
+          "get": "Your site live, fast and ready for enquiries."
+        },
+        "support": {
+          "name": "Support",
+          "what": "Adjustments after delivery, and maintenance if you need it.",
+          "get": "Someone who answers."
+        }
+      }
+    },
+    "ai": {
+      "title": "How I use AI",
+      "lead": "I work with a method called <strong>spec-driven development</strong>: before writing a single line of code, I write down what the site must do, how, and to what quality standards. Then I use AI tools such as Claude Code to build faster, and I review, test and fix every part before it goes live.",
+      "forYouLabel": "For you, that means",
+      "forYou": "Faster delivery without cutting corners on quality.",
+      "companyLabel": "If you're a company",
+      "company": "The code for this website is public. You can see the specification, the tasks and the technical decisions in the repository.",
+      "repo": "See the repository ↗",
+      "panel": "From paper to production",
+      "me": "Me",
+      "ai": "AI",
+      "steps": {
+        "spec": {
+          "name": "Specification",
+          "piece": "spec.md",
+          "text": "What the site must do, how, and to what quality standards.",
+          "who": "me"
+        },
+        "tasks": {
+          "name": "Tasks",
+          "piece": "tasks.md",
+          "text": "The work split into tasks, in order and reviewable.",
+          "who": "me"
+        },
+        "impl": {
+          "name": "Implementation",
+          "piece": "Claude Code",
+          "text": "AI writes each task's code, following the specification.",
+          "who": "ai"
+        },
+        "review": {
+          "name": "Review",
+          "text": "I review, test and fix every part before it goes live.",
+          "who": "me"
+        }
+      },
+      "footer": "Decisions and the final review are always mine."
+    },
+    "explore": {
+      "label": "Keep exploring",
+      "work": "See my work",
+      "contact": "Tell me your idea"
+    }
   },
   "about": {
     "title": "Hi, I'm Terry"
