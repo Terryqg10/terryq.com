@@ -45,7 +45,8 @@
     "title": "Hola, soy Terry"
   },
   "contact": {
-    "title": "Hablemos de tu proyecto"
+    "title": "Hablemos de tu proyecto",
+    "optional": "Opcional"
   },
   "legal": {
     "noticeTitle": "Aviso legal",
