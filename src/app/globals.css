@@ -306,6 +306,13 @@
   }
 }
 
+/* Filtros de /trabajos (spec §8.2): `WorkTableClient` pone `data-filter` y estas reglas ocultan
+   las filas que no encajan. Sin JavaScript no hay filtro y se ven todas. */
+[data-filter='web'] [data-row]:not([data-categories~='web']),
+[data-filter='brand'] [data-row]:not([data-categories~='brand']) {
+  display: none;
+}
+
 /* Menú móvil abierto: el fondo no se desplaza (spec §7.2). */
 html:has(dialog[open]) {
   overflow: hidden;
