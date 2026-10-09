@@ -36,6 +36,10 @@
     "external": "(sitio externo)",
     "whatsapp": {
       "label": "Escríbeme por WhatsApp"
+    },
+    "status": {
+      "live": "Online",
+      "demo": "Demo"
     }
   },
   "home": {
@@ -52,6 +56,58 @@
       "proofLocation": "Madrid · Remoto",
       "caption": "Online · HB Construcciones · 2026",
       "openSite": "Abrir web ↗"
+    },
+    "work": {
+      "title": "Trabajos recientes",
+      "intro": "Proyectos reales, en producción o como demo funcional. Puedes abrirlos y probarlos.",
+      "viewAll": "Ver todos los trabajos →",
+      "cardCta": "Ver caso →"
+    },
+    "reviews": {
+      "label": "/opiniones",
+      "title": "Lo que dicen mis clientes",
+      "intro": "Opiniones reales, verificables en Google.",
+      "viewAll": "Ver todas en Google ↗",
+      "regionLabel": "Opiniones de clientes, desliza para ver más",
+      "demoFeedback": "Opinión tras revisar la demo",
+      "viewProject": "Ver proyecto",
+      "translated": "(traducido)"
+    },
+    "services": {
+      "title": "Qué puedo hacer por tu negocio",
+      "viewAll": "Ver servicios →",
+      "core": "Lo principal",
+      "webTitle": "Web",
+      "webText": "Tu web diseñada y programada a medida. Rápida en el móvil, fácil de encontrar en Google y preparada para que te contacten.",
+      "landingTitle": "Landing page",
+      "landingText": "Para captar contactos rápido, con WhatsApp o formulario.",
+      "corporateTitle": "Web corporativa",
+      "corporateText": "Varias páginas y una estructura pensada para Google.",
+      "appTitle": "Aplicación a medida",
+      "appText": "Usuarios, base de datos y funciones propias de tu negocio.",
+      "also": "También me encargo de…",
+      "brandTitle": "Tu imagen de marca",
+      "brandText": "Logo y versiones para web, redes e impresión.",
+      "maintenanceTitle": "Mantenimiento y hosting",
+      "maintenanceText": "Tu web siempre online, actualizada y con alguien que responde si algo falla."
+    },
+    "about": {
+      "title": "Sobre mí",
+      "lead": "Soy Terry. Empecé aprendiendo por mi cuenta, atrapado por las interfaces limpias y bien hechas, con ganas de entender cómo se construían por dentro.",
+      "highlight": "Hoy estudio Ingeniería del Software en la Universidad Politécnica de Madrid y vivo en Quijorna, en la sierra oeste de Madrid.",
+      "locationLabel": "Ubicación",
+      "locationValue": "Quijorna, Madrid · Remoto en toda España",
+      "educationLabel": "Formación",
+      "educationValue": "Ingeniería del Software · UPM (en curso)",
+      "stackLabel": "Stack",
+      "stackValue": "Next.js · TypeScript · React · Supabase · Tailwind CSS · Vercel",
+      "cta": "Conóceme →"
+    },
+    "closing": {
+      "title": "¿Hablamos?",
+      "text": "Si te gusta lo que hago y tienes una idea en mente, escríbeme.",
+      "whatsapp": "WhatsApp ↗",
+      "reply": "Respondo en 24 h laborables"
     }
   },
   "work": {

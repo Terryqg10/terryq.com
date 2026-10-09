@@ -13,6 +13,8 @@ import { TextArea } from '@/components/ui/TextArea';
 import { TextField } from '@/components/ui/TextField';
 import { TextLink } from '@/components/ui/TextLink';
 import { getWork } from '@/content/work';
+import { Reviews } from '@/features/home/Reviews';
+import { reviewFixtures } from './review-fixtures';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
@@ -206,6 +208,7 @@ export default function UiReviewPage() {
             />
           </div>
         </Block>
+        <Reviews reviews={reviewFixtures} />
       </Container>
     </main>
   );

@@ -1,5 +1,5 @@
-import { cn } from '@/lib/cn';
 import type { ReactNode } from 'react';
+import { cardClasses } from './card-classes';
 
 type CardProps = {
   as?: 'div' | 'article' | 'section' | 'li' | 'aside';
@@ -18,15 +18,7 @@ export function Card({
   'aria-label': ariaLabel,
 }: CardProps) {
   return (
-    <Tag
-      aria-label={ariaLabel}
-      className={cn(
-        'rounded-2xl border border-line bg-surface shadow-sm',
-        interactive &&
-          'transition-[box-shadow,border-color] duration-250 hover:border-line-strong hover:shadow-md',
-        className,
-      )}
-    >
+    <Tag aria-label={ariaLabel} className={cardClasses({ interactive, className })}>
       {children}
     </Tag>
   );

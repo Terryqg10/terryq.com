@@ -11,6 +11,14 @@ const coverImage = {
   },
 };
 
+const galleryImage = {
+  src: gallery,
+  alt: {
+    es: 'Galería de obras de HB Construcciones en escritorio: una cocina montada, una escalera de piedra y una fachada de ladrillo en obra',
+    en: 'HB Construcciones work gallery on desktop: a fitted kitchen, a stone staircase and a brick facade under construction',
+  },
+};
+
 export const meta = {
   slug: 'hb-construcciones',
   name: 'HB Construcciones',
@@ -79,15 +87,10 @@ export const meta = {
       },
     },
     thumb: coverImage,
-    preview: coverImage,
+    // La tarjeta de Inicio usa la galería de obras, como en los artboards (F4 · UI11).
+    preview: galleryImage,
     pieces: [
-      {
-        src: gallery,
-        alt: {
-          es: 'Galería de obras de HB Construcciones en escritorio: una cocina montada, una escalera de piedra y una fachada de ladrillo en obra',
-          en: 'HB Construcciones work gallery on desktop: a fitted kitchen, a stone staircase and a brick facade under construction',
-        },
-      },
+      galleryImage,
       {
         src: mobile,
         alt: {
