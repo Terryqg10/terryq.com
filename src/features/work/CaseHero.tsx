@@ -13,6 +13,7 @@ export function CaseHero({ meta }: { meta: WorkMeta }) {
         url={new URL(meta.siteUrl).hostname}
         image={meta.images.cover}
         priority
+        transitionName={`work-${meta.slug}`}
         sizes="(min-width: 1280px) 1200px, 100vw"
       />
       <div className="absolute right-[72px] -bottom-10 hidden w-50 md:block">

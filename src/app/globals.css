@@ -313,6 +313,22 @@
   display: none;
 }
 
+/* Abrir un caso (spec §6.6): la miniatura o la imagen de la tarjeta se transforma en la imagen
+   principal del caso (450ms). React 19.3 aplica los nombres `work-<slug>`; el CSS fija la duración. */
+::view-transition-group(.morph) {
+  animation-duration: 450ms;
+  animation-timing-function: var(--ease-tq);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 /* Menú móvil abierto: el fondo no se desplaza (spec §7.2). */
 html:has(dialog[open]) {
   overflow: hidden;

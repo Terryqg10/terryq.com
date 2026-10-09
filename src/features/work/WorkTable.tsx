@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { ViewTransition } from 'react';
 import { WorkTableClient, type WorkFilter } from './WorkTableClient';
 
 const countOf = (category: WorkCategory) =>
@@ -76,12 +77,14 @@ export async function WorkTable() {
                 </span>
 
                 <span className="flex min-w-0 flex-1 items-center gap-4 md:col-span-6 md:flex-none">
-                  <Image
-                    src={work.images.thumb.src}
-                    alt=""
-                    sizes="96px"
-                    className="h-15 w-24 shrink-0 rounded-lg border border-line bg-surface-sunken object-cover object-top"
-                  />
+                  <ViewTransition name={`work-${work.slug}`} share="morph" default="none">
+                    <Image
+                      src={work.images.thumb.src}
+                      alt=""
+                      sizes="96px"
+                      className="h-15 w-24 shrink-0 rounded-lg border border-line bg-surface-sunken object-cover object-top"
+                    />
+                  </ViewTransition>
                   <span className="flex min-w-0 flex-col gap-0.5">
                     <span className="text-[17px] leading-6 font-semibold">{work.name}</span>
                     <span className="text-small text-ink-muted">{work.rowSummary[locale]}</span>
