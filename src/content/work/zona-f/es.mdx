@@ -1,0 +1,127 @@
+<CaseSection kind="challenge">
+
+Las casas de apuestas tienen interfaces saturadas: cientos de mercados, banners por todas partes y un boleto que cuesta entender. Me propuse diseñar y construir un prototipo que mantuviera todas las funciones de una casa real, pero ordenadas para que apostar sea claro y rápido.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Boleto siempre visible">
+
+que calcula al instante la ganancia potencial, con importes rápidos (+10, +50, x2).
+
+</SolutionItem>
+
+<SolutionItem title="Combinadas">
+
+con varias selecciones en el mismo boleto.
+
+</SolutionItem>
+
+<SolutionItem title="Partidos en vivo">
+
+con minuto, marcador y cuotas 1X2 actualizadas.
+
+</SolutionItem>
+
+<SolutionItem title="Ligas favoritas">
+
+por usuario y barra lateral de ligas con contador de partidos.
+
+</SolutionItem>
+
+<SolutionItem title="Promociones">
+
+(bono de bienvenida, cashback, apuesta gratis, combinadas, VIP) en un carrusel.
+
+</SolutionItem>
+
+<SolutionItem title="Cash Out">
+
+cerrar una apuesta antes de que termine el partido.
+
+</SolutionItem>
+
+<SolutionItem title="Juego responsable">
+
+con límites configurables, accesible desde el menú.
+
+</SolutionItem>
+
+<SolutionItem title="Login">
+
+con correo y contraseña o con Google.
+
+</SolutionItem>
+
+<SolutionItem title="Móvil primero">
+
+en pantallas pequeñas el boleto pasa a un botón flotante.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+Un producto completo y navegable que demuestra cómo resolver la experiencia de usuario de una aplicación compleja, con muchos estados y datos que cambian en tiempo real.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js (App Router) + React 19**, renderizado en servidor con Server Components y operaciones con Server Actions.
+
+</DevItem>
+
+<DevItem label="Lenguaje y estilos">
+
+**TypeScript estricto**, sin `any`. **Tailwind CSS v4** con los colores de marca como tokens.
+
+</DevItem>
+
+<DevItem label="Estado">
+
+**Zustand** para el estado del cliente (boleto, favoritos, filtros y cuotas en vivo); boleto y favoritos persisten en `localStorage`.
+
+</DevItem>
+
+<DevItem label="Datos y reglas">
+
+**Supabase (Postgres)**: las reglas de negocio viven en **funciones SQL** (apostar, combinadas, liquidar partidos, promociones, límites de juego responsable y Cash Out). Todo lo que mueve dinero se ejecuta en el servidor y los datos están protegidos con **RLS**.
+
+</DevItem>
+
+<DevItem label="Autenticación">
+
+**Supabase Auth** con `@supabase/ssr`: correo y contraseña, y Google OAuth; la sesión se refresca en cada petición.
+
+</DevItem>
+
+<DevItem label="Simulación">
+
+**Simulación de partidos en vivo** con scripts propios: mover cuotas, liquidar partidos y cargar datos de demostración.
+
+</DevItem>
+
+<DevItem label="Imágenes">
+
+**Imágenes generadas con IA** (OpenAI) en un script aparte; la IA no interviene mientras la web funciona.
+
+</DevItem>
+
+<DevItem label="Despliegue">
+
+**Vercel** con despliegue automático en cada push a `main` · ESLint · `sharp`.
+
+</DevItem>
+
+<DevItem label="Código">
+
+_Repositorio privado: se puede enseñar en una entrevista._
+
+</DevItem>
+
+</CaseSection>

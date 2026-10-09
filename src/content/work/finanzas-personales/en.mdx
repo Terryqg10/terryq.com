@@ -1,0 +1,93 @@
+<CaseSection kind="challenge">
+
+I wanted to know, effortlessly, how much comes in and goes out each month, how much I can spend at the weekend without breaking my savings goal, and when I'm overspending. Spreadsheets get abandoned; I needed something quick to use every day.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Monthly tracking">
+
+of income and expenses by category, with essential categories flagged.
+
+</SolutionItem>
+
+<SolutionItem title="Savings goal">
+
+and a calculation of **how much you can spend each weekend**.
+
+</SolutionItem>
+
+<SolutionItem title="Budgets per category">
+
+with **alerts** as you approach the limit.
+
+</SolutionItem>
+
+<SolutionItem title="Recurring transactions">
+
+(salary, rent, subscriptions) that log themselves.
+
+</SolutionItem>
+
+<SolutionItem title="Multiple currencies">
+
+each transaction stores the original amount, the exchange rate used and the amount in your base currency.
+
+</SolutionItem>
+
+<SolutionItem title="Light and dark themes" />
+
+<SolutionItem title="Demo mode">
+
+anyone can try it in one click with sample data, no sign-up needed.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+I use it every day for my own finances. It's the project where I've gone deepest into security and data modelling.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Stack">
+
+Next.js (App Router) + TypeScript · Supabase (Postgres + Auth)
+
+</DevItem>
+
+<DevItem label="Security">
+
+**Row Level Security** on every table: each user can only access their own rows (`user_id = auth.uid()`)
+
+</DevItem>
+
+<DevItem label="Data">
+
+Cascading deletion of user data
+
+</DevItem>
+
+<DevItem label="Currency">
+
+Currency conversion with an exchange-rate history (`exchange_rate_snapshots`) and the applied rate stored on each transaction
+
+</DevItem>
+
+<DevItem label="Demo mode">
+
+**Demo mode with Supabase anonymous users**: data seeded by a trigger, automatic clean-up with `pg_cron`, and email sign-up blocked server-side with a _Before User Created Hook_
+
+</DevItem>
+
+<DevItem label="Deployment">
+
+Deployed on Vercel
+
+</DevItem>
+
+</CaseSection>
