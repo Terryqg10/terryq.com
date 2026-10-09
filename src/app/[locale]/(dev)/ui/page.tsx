@@ -13,6 +13,8 @@ import { TextArea } from '@/components/ui/TextArea';
 import { TextField } from '@/components/ui/TextField';
 import { TextLink } from '@/components/ui/TextLink';
 import { getWork } from '@/content/work';
+import { AboutHero } from '@/features/about/AboutHero';
+import { ForCompanies } from '@/features/about/ForCompanies';
 import { Reviews } from '@/features/home/Reviews';
 import { reviewFixtures } from './review-fixtures';
 import type { Metadata } from 'next';
@@ -209,6 +211,12 @@ export default function UiReviewPage() {
           </div>
         </Block>
         <Reviews reviews={reviewFixtures} />
+
+        {/* Fixtures de Sobre mí: un retrato y un CV de prueba (no existen todavía, spec §9.6). */}
+        <div data-fixture="about">
+          <AboutHero portrait={hb.images.cover.src} />
+          <ForCompanies cv="/cv/prueba.pdf" />
+        </div>
       </Container>
     </main>
   );
