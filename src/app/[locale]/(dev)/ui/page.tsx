@@ -146,7 +146,7 @@ export default function UiReviewPage() {
               id="demo-web"
               name="web"
               label="Tu web"
-              optional
+              optional="Opcional"
               placeholder="tuweb.com"
               describedById="demo-web-help"
             />

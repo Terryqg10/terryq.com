@@ -373,7 +373,7 @@ Todas son Server Components. Las props se tipan con uniones discriminadas: no ha
 | `Card` | `as?`, `interactive?: boolean` | `bg-surface border border-line rounded-2xl shadow-sm`. Si es interactiva: hover `shadow-md` + `border-line-strong` |
 | `BrowserFrame` | `url: string`, `image: WorkImage`, `priority?: boolean`, `sizes: string` | Barra superior con tres puntos y la URL en mono. La imagen usa `next/image` |
 | `PhoneFrame` | `image: WorkImage`, `sizes: string` | Marco de teléfono (radio y bisel según el artboard) |
-| `TextField` / `TextArea` | `id`, `label`, `name`, `optional?: boolean`, `error?: string`, `describedById?`, y los atributos nativos tipados | `<label for>` visible. Si `optional`, la etiqueta «Opcional» / «Optional». Con error: `aria-invalid="true"`, `aria-describedby` apuntando al mensaje, borde `danger` e icono `AlertCircle` junto al texto |
+| `TextField` / `TextArea` | `id`, `label`, `name`, `optional?: string`, `error?: string`, `describedById?`, y los atributos nativos tipados | `<label for>` visible. Si `optional` (el texto «Opcional» / «Optional» ya traducido, para poder usarlo también en islas cliente), lo muestra junto a la etiqueta. Con error: `aria-invalid="true"`, `aria-describedby` apuntando al mensaje, borde `danger` e icono `AlertCircle` junto al texto |
 | `RadioPills` | `name`, `legend`, `options: {value,label}[]`, `error?` | `<fieldset>` + `<legend>`. Cada pastilla es un `<input type="radio">` real con su `<label>`, con el input oculto visualmente pero accesible. Foco visible en la pastilla |
 | `Checkbox` | `id`, `name`, `label: ReactNode`, `error?` | 20px, `accent-color: var(--tq-accent)` |
 
@@ -760,6 +760,8 @@ Un solo esquema zod que se usa en el cliente (validación al enviar) y en el ser
 - `<form noValidate>` (UI34: sin validación nativa). La validación se hace **al enviar** y, después del primer intento, cada campo se revalida al salir de él (`blur`) para que el error desaparezca al corregirlo.
 - Las etiquetas visibles y los placeholders salen de F1 §9 / 01b §9.
 - El servidor recorta (no rechaza) lo que pase de `maxLength` y no admite URLs con usuario o contraseña. Los códigos de error son los de la tabla; el texto sale de `messages` (`contact.errors.<campo>.<regla>`).
+- La URL no admite espacios (Chromium los acepta en el host y Node no; así cliente y servidor deciden lo mismo).
+- La isla recibe sus mensajes con un `NextIntlClientProvider` propio desde la página (§4.2). El botón de envío usa `aria-disabled` mientras envía, para conservar el foco. Sin JavaScript, «Enviar otro mensaje» es un enlace a la página. El campo `startedAt` solo cuenta si viene con un número: sin JS no existe y no se aplica el mínimo de 3 s.
 
 ### 10.2 Server Action (`features/contact/action.ts`)
 ```ts

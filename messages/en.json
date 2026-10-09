@@ -420,6 +420,61 @@
   },
   "contact": {
     "title": "Let's talk about your project",
+    "lead": "Tell me what you have in mind and I'll reply within 24 working hours. Or message me directly on WhatsApp if you prefer.",
+    "channels": "Other channels",
+    "channelNames": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    },
+    "reply": "I reply within 24 working hours",
+    "location": "Quijorna, Madrid · Remote across Spain",
+    "formLabel": "Contact form",
+    "formTitle": "Write to me",
+    "formTitleMobile": "Or write to me here",
+    "note": "All fields are required except the optional one.",
+    "destination": "Goes to {email}",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "contact": {
+        "label": "Email or phone",
+        "placeholder": "you@email.com or +34 600 000 000"
+      },
+      "need": {
+        "legend": "What do you need?",
+        "options": {
+          "new-website": "New website",
+          "redesign": "Redesign my website",
+          "brand": "Logo and identity",
+          "job": "Job opportunity",
+          "other": "Something else"
+        }
+      },
+      "website": {
+        "label": "Current website, if any",
+        "placeholder": "https://"
+      },
+      "message": {
+        "label": "Tell me about your project",
+        "placeholder": "What you do, what you need and roughly when."
+      },
+      "privacy": "I have read the <link>privacy policy</link>."
+    },
+    "submit": "Send message",
+    "sending": "Sending…",
+    "summary": "<b>Some details are missing.</b> {n, plural, one {Check the field marked below.} other {Check the # fields marked below.}}",
+    "failure": "<b>Your message couldn't be sent.</b> Please try again or email me at <mail>{email}</mail>.",
+    "success": {
+      "label": "Message sent",
+      "title": "Got it!",
+      "text": "I'll get back to you within 24 hours. If it's urgent, message me on WhatsApp.",
+      "whatsapp": "Message me on WhatsApp ↗",
+      "again": "Send another message",
+      "works": "In the meantime, have a look at my work →"
+    },
     "optional": "Optional",
     "errors": {
       "name": {
