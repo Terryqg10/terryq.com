@@ -1,8 +1,5 @@
 import type { WorkMeta, WorkSlug } from '@/content/types';
-import colorKit from '@/content/work/hb-construcciones/images/brand-kit/color.svg';
-import iconKit from '@/content/work/hb-construcciones/images/brand-kit/icono.svg';
-import monochromeKit from '@/content/work/hb-construcciones/images/brand-kit/monocromo.svg';
-import reversedKit from '@/content/work/hb-construcciones/images/brand-kit/negativo.svg';
+import { brandKitTiles } from '@/content/work/hb-construcciones/brand-kit';
 import { cn } from '@/lib/cn';
 import { ChevronDown } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -17,35 +14,6 @@ import { sectionIds, type CaseSectionKind } from './sections';
 const pieceCaptions = {
   'hb-construcciones': ['hb0', 'hb1'],
 } as const satisfies Partial<Record<WorkSlug, readonly string[]>>;
-
-/** Colores del kit de logo del cliente (spec §9.5): no son del DS, por eso van en línea. */
-const kitTiles = [
-  {
-    key: 'color',
-    src: colorKit,
-    bg: '#ffffff',
-    caption: '#57534b',
-    logoWidth: '62%',
-    border: true,
-  },
-  {
-    key: 'reversed',
-    src: reversedKit,
-    bg: '#132a4f',
-    caption: '#c9d2e0',
-    logoWidth: '62%',
-    border: false,
-  },
-  {
-    key: 'monochrome',
-    src: monochromeKit,
-    bg: '#ffffff',
-    caption: '#57534b',
-    logoWidth: '62%',
-    border: true,
-  },
-  { key: 'icon', src: iconKit, bg: '#ffffff', caption: '#57534b', logoWidth: '30%', border: true },
-] as const;
 
 export async function CaseSection({
   kind,
@@ -139,13 +107,13 @@ export async function BrandKit() {
 
   return (
     <ul className="mt-2 grid grid-cols-2 gap-3">
-      {kitTiles.map(({ key, src, bg, caption, logoWidth, border }) => (
+      {brandKitTiles.map(({ key, src, background, caption, logoWidth, bordered }) => (
         <li key={key}>
           <figure
-            style={{ backgroundColor: bg }}
+            style={{ backgroundColor: background }}
             className={cn(
               'relative m-0 grid aspect-[16/10] place-items-center rounded-xl',
-              border && 'border border-line',
+              bordered && 'border border-line',
             )}
           >
             <Image

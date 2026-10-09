@@ -182,7 +182,198 @@
     }
   },
   "services": {
-    "title": "Servicios"
+    "title": "Servicios",
+    "intro": "Me centro en lo que más impacto tiene en un negocio: una web que funcione. Si además necesitas imagen de marca o que alguien la mantenga, también me encargo.",
+    "toc": "En esta página",
+    "anchors": {
+      "web": "web",
+      "brand": "marca",
+      "faq": "preguntas",
+      "process": "proceso",
+      "ai": "ia"
+    },
+    "tocLabels": {
+      "web": "Web",
+      "brand": "Marca y mantenimiento",
+      "faq": "Preguntas frecuentes",
+      "process": "Cómo trabajo",
+      "ai": "Cómo uso la IA"
+    },
+    "web": {
+      "core": "Lo principal",
+      "title": "Web",
+      "lead": "Tu web diseñada y programada a medida: una landing para captar clientes, una web completa para tu empresa o una aplicación con funciones propias.",
+      "highlight": "Rápida en el móvil, fácil de encontrar en Google y preparada para que te contacten.",
+      "typesLabel": "Tipos de web",
+      "columns": {
+        "type": "Tipo",
+        "audience": "Para quién",
+        "includes": "Incluye"
+      },
+      "landing": {
+        "title": "Landing page",
+        "audience": "Autónomos y negocios que quieren captar contactos rápido",
+        "includes": "Una página completa: servicios, trabajos, opiniones, preguntas frecuentes y contacto por WhatsApp o formulario.",
+        "example": "Ejemplo: <hb>HB Construcciones</hb> →"
+      },
+      "corporate": {
+        "title": "Web corporativa",
+        "audience": "Empresas que necesitan varias secciones",
+        "includes": "Varias páginas, blog opcional y estructura pensada para Google."
+      },
+      "app": {
+        "title": "Aplicación a medida",
+        "audience": "Negocios con un proceso propio (reservas, paneles, gestión)",
+        "includes": "Usuarios, base de datos y funciones específicas.",
+        "example": "Ejemplos: <fp>Finanzas Personales</fp> · <zf>Zona F</zf> →"
+      },
+      "always": "Siempre incluido",
+      "alwaysItems": {
+        "custom": "Diseño a medida, nada de plantillas",
+        "mobile": "Adaptación a móvil",
+        "speed": "Velocidad de carga",
+        "seo": "SEO básico",
+        "form": "Formulario o WhatsApp",
+        "legal": "Textos legales base",
+        "session": "Una sesión para enseñarte a usarla"
+      }
+    },
+    "also": {
+      "label": "También me encargo de",
+      "ariaLabel": "Marca, mantenimiento y hosting",
+      "brandTitle": "Marca",
+      "brandText": "Logo y kit de versiones (color, negativo, monocromo, icono) en vectorial, listo para web, redes e impresión. También banners y piezas para redes.",
+      "brandLink": "Propuesta de identidad para HB Construcciones →",
+      "afterDelivery": "Después de entregarla",
+      "maintenanceTitle": "Mantenimiento y hosting",
+      "maintenanceText": "Tu web alojada, con dominio, copias de seguridad, pequeños cambios y alguien que responde si algo falla.",
+      "maintenanceItems": {
+        "hosting": "Alojamiento y dominio",
+        "backups": "Copias de seguridad",
+        "changes": "Pequeños cambios",
+        "support": "Respuesta si algo falla"
+      },
+      "maintenanceNote": "Plan mensual o anual, aparte del proyecto."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "help": "¿Tienes otra duda? <contact>Escríbeme</contact>.",
+      "items": {
+        "cost": {
+          "q": "¿Cuánto cuesta una web?",
+          "a": "Cada proyecto es distinto, así que no trabajo con tarifas cerradas. Cuéntame tu idea y te paso un presupuesto a medida."
+        },
+        "time": {
+          "q": "¿Cuánto se tarda en tener la web?",
+          "a": "Una landing suele estar lista en 1–2 semanas desde que tengo tus textos y fotos. Una web más grande, según el alcance; te lo indico en el presupuesto."
+        },
+        "need": {
+          "q": "¿Qué necesito darte?",
+          "a": "Lo básico: qué haces, a quién y fotos de tu trabajo. Si no tienes textos, te ayudo a escribirlos."
+        },
+        "mine": {
+          "q": "¿La web será mía?",
+          "a": "Sí. El dominio y el contenido son tuyos."
+        },
+        "changes": {
+          "q": "¿Puedo hacer cambios después?",
+          "a": "Sí: puedes pedírmelos o tener un plan de mantenimiento."
+        },
+        "location": {
+          "q": "¿Trabajas solo en Madrid?",
+          "a": "Trabajo en remoto con negocios de toda España. Si estás cerca, también podemos vernos."
+        },
+        "ai": {
+          "q": "¿Usas inteligencia artificial?",
+          "a": "Sí, como herramienta para trabajar más rápido. El diseño, las decisiones y la revisión de cada detalle son míos (<ai>cómo uso la IA ↓</ai>)."
+        }
+      }
+    },
+    "process": {
+      "title": "Cómo trabajo",
+      "intro": "Un proceso claro para que sepas en todo momento en qué punto está tu web y qué viene después.",
+      "columns": {
+        "step": "Paso",
+        "what": "Qué pasa",
+        "get": "Qué recibes"
+      },
+      "youGet": "Recibes ·",
+      "steps": {
+        "talk": {
+          "name": "Hablamos",
+          "what": "Me cuentas tu negocio, tus clientes y qué quieres conseguir.",
+          "get": "Preguntas concretas, no un formulario eterno."
+        },
+        "quote": {
+          "name": "Presupuesto cerrado",
+          "what": "Defino el alcance, el precio y los plazos.",
+          "get": "Un presupuesto en 24 h, sin letra pequeña."
+        },
+        "design": {
+          "name": "Diseño",
+          "what": "Preparo la propuesta visual de las páginas.",
+          "get": "Ves cómo quedará antes de programar nada."
+        },
+        "build": {
+          "name": "Desarrollo",
+          "what": "Construyo la web y te enseño avances.",
+          "get": "Un enlace de prueba para revisarla."
+        },
+        "launch": {
+          "name": "Lanzamiento",
+          "what": "La publicamos con tu dominio y revisamos que todo funcione.",
+          "get": "Tu web online, rápida y lista para recibir contactos."
+        },
+        "support": {
+          "name": "Soporte",
+          "what": "Ajustes tras la entrega y mantenimiento si lo necesitas.",
+          "get": "Alguien que responde."
+        }
+      }
+    },
+    "ai": {
+      "title": "Cómo uso la IA",
+      "lead": "Trabajo con un método llamado <strong>desarrollo guiado por especificaciones</strong>: antes de escribir una línea de código, dejo por escrito qué debe hacer la web, cómo y con qué criterios de calidad. Después uso herramientas de IA como Claude Code para programar más rápido, y reviso, pruebo y corrijo cada parte antes de publicarla.",
+      "forYouLabel": "Para ti significa",
+      "forYou": "Entregas más rápidas sin renunciar al control de calidad.",
+      "companyLabel": "Si eres una empresa",
+      "company": "El código de esta web es público. Puedes ver la especificación, las tareas y las decisiones técnicas en el repositorio.",
+      "repo": "Ver el repositorio ↗",
+      "panel": "Del papel a producción",
+      "me": "Yo",
+      "ai": "IA",
+      "steps": {
+        "spec": {
+          "name": "Especificación",
+          "piece": "spec.md",
+          "text": "Qué debe hacer la web, cómo y con qué criterios de calidad.",
+          "who": "me"
+        },
+        "tasks": {
+          "name": "Tareas",
+          "piece": "tasks.md",
+          "text": "El trabajo dividido en tareas, en orden y revisables.",
+          "who": "me"
+        },
+        "impl": {
+          "name": "Implementación",
+          "piece": "Claude Code",
+          "text": "La IA programa cada tarea siguiendo la especificación.",
+          "who": "ai"
+        },
+        "review": {
+          "name": "Revisión",
+          "text": "Reviso, pruebo y corrijo cada parte antes de publicarla.",
+          "who": "me"
+        }
+      },
+      "footer": "Las decisiones y la revisión final son siempre mías."
+    },
+    "explore": {
+      "label": "Sigue explorando",
+      "work": "Ver los trabajos",
+      "contact": "Cuéntame tu idea"
+    }
   },
   "about": {
     "title": "Hola, soy Terry"
