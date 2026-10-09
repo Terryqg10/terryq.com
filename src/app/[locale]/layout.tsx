@@ -1,5 +1,6 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { Reveal } from '@/components/layout/Reveal';
 import { SkipLink } from '@/components/layout/SkipLink';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab';
 import { routing } from '@/i18n/routing';
@@ -65,6 +66,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           {children}
           <Footer />
           <WhatsAppFab />
+          <Reveal />
         </NextIntlClientProvider>
         {/* Solo en Vercel: fuera de ella el script `/_vercel/insights` no existe y daría un 404.
             Sin cookies y sin eventos personalizados (spec §14). */}

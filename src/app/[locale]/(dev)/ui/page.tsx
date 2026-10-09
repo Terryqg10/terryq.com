@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 function Block({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section aria-label={title} className="border-t border-line py-10">
+    <section data-reveal aria-label={title} className="border-t border-line py-10">
       <h2 className="mb-6 type-section-sm">{title}</h2>
       <div className="flex flex-col gap-6">{children}</div>
     </section>
