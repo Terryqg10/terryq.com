@@ -1,17 +1,18 @@
 'use client';
 
-import { Link, usePathname } from '@/i18n/navigation';
+import { getPathname, usePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
 import { useLocale } from 'next-intl';
 import { useParams } from 'next/navigation';
-import type { ComponentProps } from 'react';
 
-type Href = ComponentProps<typeof Link>['href'];
+type Href = Parameters<typeof getPathname>[0]['href'];
 
 /**
  * Enlace a la ruta equivalente en el otro idioma, conservando el `slug` pero no el ancla
- * (spec §5.4). Es una isla cliente porque necesita la ruta actual.
+ * (spec §5.4). Es una isla cliente porque necesita la ruta actual. Usa `getPathname` y un `<a>`:
+ * el `Link` de next-intl antepone siempre el prefijo cuando se le da `locale`, y `/es/...`
+ * redirige (308) a la ruta sin prefijo.
  */
 export function LanguageSwitch({ ariaLabel }: { ariaLabel: string }) {
   const locale = useLocale();
@@ -25,9 +26,8 @@ export function LanguageSwitch({ ariaLabel }: { ariaLabel: string }) {
   ) as Href;
 
   return (
-    <Link
-      href={href}
-      locale={target}
+    <a
+      href={getPathname({ href, locale: target })}
       hrefLang={target}
       lang={target}
       aria-label={ariaLabel}
@@ -39,6 +39,6 @@ export function LanguageSwitch({ ariaLabel }: { ariaLabel: string }) {
           <span className={cn(code === locale && 'text-ink')}>{code.toUpperCase()}</span>
         </span>
       ))}
-    </Link>
+    </a>
   );
 }
