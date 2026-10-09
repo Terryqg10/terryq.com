@@ -18,6 +18,11 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 300_000,
-    env: { CONTACT_TRANSPORT: 'mock' },
+    env: {
+      CONTACT_TRANSPORT: 'mock',
+      CONTACT_TO_EMAIL: 'contacto@terryq.com',
+      CONTACT_FROM_EMAIL: 'Web terryq.com <formulario@envios.terryq.com>',
+      NEXT_PUBLIC_SITE_URL: baseURL,
+    },
   },
 });

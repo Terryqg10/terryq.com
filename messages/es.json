@@ -420,6 +420,61 @@
   },
   "contact": {
     "title": "Hablemos de tu proyecto",
+    "lead": "Cuéntame qué tienes en mente y te respondo en 24 h laborables. Si lo prefieres, escríbeme directamente por WhatsApp.",
+    "channels": "Otros canales",
+    "channelNames": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    },
+    "reply": "Respondo en 24 h laborables",
+    "location": "Quijorna, Madrid · Remoto en toda España",
+    "formLabel": "Formulario de contacto",
+    "formTitle": "Escríbeme",
+    "formTitleMobile": "O escríbeme aquí",
+    "note": "Todos los campos son obligatorios salvo el opcional.",
+    "destination": "Llega a {email}",
+    "fields": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+      "contact": {
+        "label": "Email o teléfono",
+        "placeholder": "tu@email.com o 600 000 000"
+      },
+      "need": {
+        "legend": "¿Qué necesitas?",
+        "options": {
+          "new-website": "Web nueva",
+          "redesign": "Rediseñar mi web",
+          "brand": "Logo e identidad",
+          "job": "Propuesta de trabajo",
+          "other": "Otra cosa"
+        }
+      },
+      "website": {
+        "label": "Web actual, si tienes",
+        "placeholder": "https://"
+      },
+      "message": {
+        "label": "Cuéntame tu proyecto",
+        "placeholder": "Qué haces, qué necesitas y para cuándo, más o menos."
+      },
+      "privacy": "He leído la <link>política de privacidad</link>."
+    },
+    "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "summary": "<b>Faltan datos para poder enviarlo.</b> {n, plural, one {Revisa el campo marcado abajo.} other {Revisa los # campos marcados abajo.}}",
+    "failure": "<b>No se ha podido enviar.</b> Inténtalo de nuevo o escríbeme a <mail>{email}</mail>.",
+    "success": {
+      "label": "Mensaje enviado",
+      "title": "¡Recibido!",
+      "text": "Te escribo en menos de 24 h. Si es urgente, escríbeme por WhatsApp.",
+      "whatsapp": "Escribir por WhatsApp ↗",
+      "again": "Enviar otro mensaje",
+      "works": "Mientras tanto, puedes ver mis trabajos →"
+    },
     "optional": "Opcional",
     "errors": {
       "name": {

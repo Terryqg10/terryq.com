@@ -57,6 +57,9 @@ export function normalizePhone(input: string): string | undefined {
 /** URL http(s): añade `https://` si falta el protocolo. Devuelve `undefined` si no es válida. */
 export function normalizeUrl(input: string): string | undefined {
   const text = input.trim();
+  // Chromium acepta espacios en el host (los codifica como %20) y Node no: se rechazan aquí para
+  // que el cliente y el servidor decidan lo mismo.
+  if (/\s/.test(text)) return undefined;
   const withProtocol = /^[a-z][a-z\d+.-]*:\/\//i.test(text) ? text : `https://${text}`;
   const parsed = z.url({ protocol: /^https?$/ }).safeParse(withProtocol);
   if (!parsed.success) return undefined;
