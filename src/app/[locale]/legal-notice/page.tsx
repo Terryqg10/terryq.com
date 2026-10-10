@@ -1,10 +1,5 @@
-import { getTranslations } from 'next-intl/server';
+import { LegalPage } from '@/features/legal/LegalPage';
 
-export default async function Page() {
-  const t = await getTranslations('legal');
-  return (
-    <main id="contenido">
-      <h1>{t('noticeTitle')}</h1>
-    </main>
-  );
+export default function Page() {
+  return <LegalPage kind="notice" />;
 }

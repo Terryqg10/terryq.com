@@ -507,6 +507,8 @@
   },
   "legal": {
     "noticeTitle": "Aviso legal",
-    "privacyTitle": "Privacidad"
+    "privacyTitle": "Privacidad",
+    "updated": "Última actualización: {date}",
+    "courtesy": "Traducción de cortesía: prevalece la versión en español."
   }
 }
