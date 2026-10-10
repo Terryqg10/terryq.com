@@ -507,6 +507,8 @@
   },
   "legal": {
     "noticeTitle": "Legal notice",
-    "privacyTitle": "Privacy"
+    "privacyTitle": "Privacy",
+    "updated": "Last updated: {date}",
+    "courtesy": "This is a courtesy translation. The Spanish version prevails."
   }
 }
