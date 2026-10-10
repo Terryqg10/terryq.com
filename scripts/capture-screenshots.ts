@@ -27,6 +27,17 @@ type Shot = {
 
 const settle = (page: Page) => page.waitForTimeout(1500);
 
+/** Zona F: salta el hero y las promociones (jugadores, escudos) hasta «En vivo ahora». */
+async function scrollLiveMatchesIntoView(page: Page, offset: number) {
+  await page.getByRole('heading', { name: 'En vivo ahora' }).first().waitFor();
+  await page.evaluate((offset) => {
+    const heading = [...document.querySelectorAll('h3')].find((h) =>
+      /en vivo ahora/i.test(h.textContent ?? ''),
+    );
+    window.scrollBy(0, (heading?.getBoundingClientRect().top ?? 0) - offset);
+  }, offset);
+}
+
 const shots: Shot[] = [
   {
     name: 'hb-portada-escritorio',
@@ -54,6 +65,28 @@ const shots: Shot[] = [
         window.scrollBy(0, top - 112);
       });
     },
+  },
+  {
+    name: 'zonaf-escritorio',
+    slug: 'zona-f',
+    url: 'https://zona-f.vercel.app/',
+    viewport: desktop,
+    prepare: async (page) => {
+      await scrollLiveMatchesIntoView(page, 90);
+      // Una selección en el boleto: el primer «Local» de la tarjeta de Alianza Lima.
+      await page
+        .getByRole('button', { name: /Local\s*2\.35/ })
+        .last()
+        .click();
+      await page.getByText('Ganancia potencial').first().waitFor();
+    },
+  },
+  {
+    name: 'zonaf-movil',
+    slug: 'zona-f',
+    url: 'https://zona-f.vercel.app/',
+    viewport: phone,
+    prepare: (page) => scrollLiveMatchesIntoView(page, 130),
   },
   {
     name: 'finanzas-escritorio',
