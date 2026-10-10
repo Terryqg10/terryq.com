@@ -30,7 +30,6 @@ jobs:
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
 
-      # El tamaño de JS y `pnpm lhci` se añaden en sus tareas.
       - name: Formato
         run: pnpm format:check
 
@@ -49,11 +48,27 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Tamaño de JS por ruta
+        run: pnpm size
+
       - name: Instalar navegadores de Playwright
         run: pnpm exec playwright install --with-deps chromium webkit
 
       - name: E2E
         run: pnpm e2e
+
+      - name: Lighthouse
+        if: ${{ !cancelled() }}
+        run: pnpm lhci
+
+      - name: Subir informes de Lighthouse
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse
+          path: .lighthouseci/
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Subir informe de Playwright
         if: ${{ !cancelled() }}

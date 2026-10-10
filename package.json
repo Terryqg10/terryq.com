@@ -15,6 +15,8 @@
     "capture:pages": "playwright test -c playwright.visual.config.ts",
     "icons": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-icons.ts",
     "tokens": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-tokens.ts",
+    "lhci": "lhci autorun",
+    "size": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-js-size.ts",
     "screenshots": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/capture-screenshots.ts"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/mdx": "^2.0.14",

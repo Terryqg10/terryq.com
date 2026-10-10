@@ -49,3 +49,4 @@ next-env.d.ts
 
 # Capturas de la revisión visual (T24)
 /screenshots
+.lighthouseci
