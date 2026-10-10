@@ -79,6 +79,6 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Todo menos `/api`, `/trpc`, `/_next`, `/_vercel` y los archivos con extensión.
-  matcher: '/((?!api|trpc|_next|_vercel|.*[.].*).*)',
+  // Todo menos `/api`, `/trpc`, `/_next`, `/_vercel`, las imágenes Open Graph y los archivos con extensión.
+  matcher: '/((?!api|trpc|_next|_vercel|.*opengraph-image|.*[.].*).*)',
 };
