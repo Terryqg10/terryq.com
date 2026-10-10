@@ -17,7 +17,7 @@ export async function AboutHero({ portrait }: { portrait: StaticImageData | null
       <div className="col-span-12 flex flex-col gap-6 pb-2 lg:col-span-7">
         <SectionLabel kind="route">{routeLabel('/about', locale)}</SectionLabel>
         <h1 className="type-about">{t('title')}</h1>
-        <p className="max-w-150 text-[21px]/[33px] text-ink-muted">
+        <p className="max-w-150 text-[18px]/[29px] text-ink-muted md:text-[21px]/[33px]">
           {t.rich('lead', { hl: (chunks) => <span className="text-ink">{chunks}</span> })}
         </p>
         <ul className="mt-2 flex flex-wrap gap-x-7 gap-y-2 border-t border-line pt-5 text-meta text-ink-muted">

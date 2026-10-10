@@ -21,7 +21,9 @@ export async function Story() {
       <div className="col-span-12 flex flex-col gap-14 lg:col-span-7 lg:col-start-6">
         <div className="flex flex-col gap-4">
           <p className="text-meta text-accent">{t('fromLabel')}</p>
-          <p className="max-w-160 text-[18px]/[30px] text-ink-muted">{t.rich('from', { hl })}</p>
+          <p className="max-w-160 text-[16px]/[27px] text-ink-muted md:text-[18px]/[30px]">
+            {t.rich('from', { hl })}
+          </p>
         </div>
 
         <figure className="m-0 flex flex-col gap-4 border-y border-line py-10">
@@ -30,8 +32,12 @@ export async function Story() {
         </figure>
 
         <div className="flex flex-col gap-4">
-          <p className="max-w-160 text-[18px]/[30px] text-ink-muted">{t.rich('values', { hl })}</p>
-          <p className="max-w-160 text-[18px]/[30px] text-ink-muted">{t('persistent')}</p>
+          <p className="max-w-160 text-[16px]/[27px] text-ink-muted md:text-[18px]/[30px]">
+            {t.rich('values', { hl })}
+          </p>
+          <p className="max-w-160 text-[16px]/[27px] text-ink-muted md:text-[18px]/[30px]">
+            {t('persistent')}
+          </p>
         </div>
       </div>
     </section>

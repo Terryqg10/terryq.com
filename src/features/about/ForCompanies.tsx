@@ -26,7 +26,7 @@ export async function ForCompanies({ cv }: { cv: string | null }) {
           <h2 id="emp-t" className="type-section-md">
             {t('title')}
           </h2>
-          <p className="max-w-150 text-[17px]/7 text-ink-muted">
+          <p className="max-w-150 text-[15px]/[25px] text-ink-muted md:text-[17px]/7">
             {t.rich('text', {
               hl: (chunks) => <span className="text-ink">{chunks}</span>,
               work: (chunks) => (
