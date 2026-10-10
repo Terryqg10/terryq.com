@@ -91,7 +91,7 @@ Comprobado el 2026-10-07. En la tarea T0 se instalan las **últimas versiones de
 - **Todo estático.** Cada página se genera en el build para `es` y `en` (`generateStaticParams`), con `dynamicParams = false` y `export const dynamic = 'error'` en el layout de `[locale]`. Si algo intenta leer cookies o cabeceras en una página, **el build falla**, y es justo lo que queremos.
 - **Lo único dinámico** es la Server Action del formulario (`features/contact/action.ts`), que se ejecuta con un POST sobre la página de contacto.
 - **Cache Components:** desactivado (ADR-008). Hay que borrar el ajuste que añade `create-next-app` 16.4.
-- **404 traducida:** Next no aplica `not-found.tsx` ni un `[...rest]` cuando el layout raíz está en un segmento dinámico (`[locale]`, con root params): sirve su 404 genérica sin cabecera. Por eso `proxy.ts` conoce las rutas públicas (`pathnames` + los slugs de los casos) y reescribe todo lo demás a `[locale]/not-found-page` con estado 404 (`NextResponse.rewrite(..., { status: 404 })`), también las rutas con `%` mal formado. La página lleva `robots: { index: false }`. Las URLs con un punto (`/algo.php`) quedan fuera del `matcher` y reciben la 404 genérica de Next. Lo que manda es el CA-7.1 y su test (§17.3).
+- **404 traducida:** Next no aplica `not-found.tsx` ni un `[...rest]` cuando el layout raíz está en un segmento dinámico (`[locale]`, con root params): sirve su 404 genérica sin cabecera. Por eso `proxy.ts` conoce las rutas públicas (`pathnames` + los slugs de los casos) y reescribe todo lo demás a `[locale]/not-found-page` con estado 404 (`NextResponse.rewrite(..., { status: 404 })`), también las rutas con `%` mal formado. La página lleva `robots: { index: false }`. Las imágenes Open Graph (`…/opengraph-image`, que Next sirve con el prefijo de idioma también en ES) y las URLs con un punto (`/algo.php`) quedan fuera del `matcher` y reciben la 404 genérica de Next. Lo que manda es el CA-7.1 y su test (§17.3).
 
 ### 4.2 Islas cliente (lista cerrada)
 Solo estos componentes llevan `'use client'`. Para añadir otro hace falta justificarlo en la tarea.
@@ -834,6 +834,7 @@ Se inyectan con un `<script type="application/ld+json">` generado en el servidor
 ### 11.3 Imágenes Open Graph
 - `opengraph-image.tsx` (1200×630, `next/og`) para Inicio, Trabajos, Servicios, Sobre mí, Contacto y cada caso. Fondo `paper` claro, el monograma TQ, la etiqueta de ruta en mono (`/trabajos`) y el título en Bricolage Grotesque 700. En los casos, además, la captura `cover` a la derecha.
 - Las fuentes para `next/og` son archivos `.ttf` en `src/assets/og-fonts/` (Bricolage Grotesque Bold, JetBrains Mono Regular; licencia OFL incluida).
+- Son las instancias estáticas de los repos de los autores (`ateliertriay/bricolage`, `JetBrains/JetBrainsMono`), no las variables de `google/fonts`: satori solo usa la instancia por defecto de una fuente variable. Las capturas `cover` (WebP) se pasan a PNG con `sharp` al generar. Los PNG de muestra están en `docs/design/og-muestras/`.
 - Se generan de forma estática en el build.
 
 ### 11.4 Sitemap y robots
