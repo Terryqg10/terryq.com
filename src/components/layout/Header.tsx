@@ -16,7 +16,11 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-paper py-3.5">
       <Container className="flex items-center justify-between gap-6">
-        <Link href="/" aria-label={t('logo.homeLabel')} className="inline-flex h-10 items-center">
+        <Link
+          href="/"
+          aria-label={t('logo.homeLabel')}
+          className="inline-flex min-h-11 min-w-11 items-center"
+        >
           <Logo height={40} />
         </Link>
 

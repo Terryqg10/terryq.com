@@ -216,6 +216,9 @@
 @utility tq-link {
   text-decoration: none;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+  /* El subrayado sigue al texto aunque el enlace tenga relleno (ver `tq-hit`). */
+  background-origin: content-box;
+  background-clip: content-box;
   transition: background-size 150ms var(--ease-tq);
 
   &:hover,
@@ -356,4 +359,11 @@ html:has(dialog[open]) {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Enlace suelto (no dentro de una frase) con zona táctil de 44px sin mover el subrayado (spec §13 A6). */
+@utility tq-hit {
+  display: inline-flex;
+  align-items: center;
+  padding-block: max(0px, calc((44px - 1lh) / 2));
 }

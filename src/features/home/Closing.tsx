@@ -26,7 +26,7 @@ export async function Closing() {
       </div>
 
       <div className="flex flex-col items-start gap-3">
-        <a href={`mailto:${site.email}`} className="tq-link py-1 type-card font-semibold">
+        <a href={`mailto:${site.email}`} className="tq-hit tq-link type-card font-semibold">
           {site.email}
         </a>
         <div className="flex flex-wrap items-center gap-5">

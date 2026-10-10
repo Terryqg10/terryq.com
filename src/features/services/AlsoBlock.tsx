@@ -52,7 +52,7 @@ export async function AlsoBlock() {
               params: { slug: 'hb-construcciones' },
               hash: sectionIds.identity[locale],
             }}
-            className="self-start text-meta text-accent"
+            className="tq-hit self-start text-meta text-accent"
           >
             {t('also.brandLink')}
           </TextLink>

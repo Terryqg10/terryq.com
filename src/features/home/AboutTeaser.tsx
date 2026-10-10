@@ -61,7 +61,7 @@ export async function AboutTeaser() {
             </div>
           ))}
         </dl>
-        <TextLink href="/about" className="self-start py-1 text-button">
+        <TextLink href="/about" className="tq-hit self-start text-button">
           {t('cta')}
         </TextLink>
       </div>
