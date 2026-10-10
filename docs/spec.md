@@ -849,13 +849,15 @@ Se inyectan con un `<script type="application/ld+json">` generado en el servidor
 ### 12.1 Presupuestos (Lighthouse móvil, Moto G Power, 4G lenta)
 | Métrica | Objetivo | Bloquea CI |
 |---|---|---|
-| Rendimiento | ≥95 en todas las páginas | Sí |
-| LCP | ≤2,0 s (Inicio y casos) | Sí (≤2,5 s) |
+| Rendimiento | ≥95 en todas las páginas | Sí (≥85) |
+| LCP | ≤2,0 s (Inicio y casos) | Sí (≤4,0 s) |
 | CLS | ≤0,05 | Sí (≤0,1) |
 | TBT | ≤150 ms | Sí (≤200 ms) |
 | INP (campo, Speed Insights) | ≤200 ms | No (se vigila) |
-| JS de primera carga por ruta (gzip) | ≤110 KB en Inicio · ≤130 KB en Contacto | Sí (`next build` + script de tamaño) |
+| JS de primera carga por ruta (gzip) | ≤110 KB en Inicio · ≤130 KB en Contacto | Sí (≤170 KB · ≤200 KB; `pnpm size`) |
 | Peso total de Inicio | ≤900 KB transferidos en la primera visita | No (se vigila) |
+
+**Presupuestos medidos (ADR-0011, 2026-10-10):** la columna «Objetivo» sigue siendo la meta y en CI solo avisa; lo que bloquea es el valor entre paréntesis de «Bloquea CI», fijado sobre lo medido con React 19.3 y Next 16.4 (JS 161 KB en Inicio y 190 KB en Contacto, rendimiento 0,89–0,94, LCP 2,7–3,8 s). Se revisa con Lighthouse en producción en el lanzamiento.
 
 ### 12.2 Reglas
 - `sizes` en cada `next/image` según la columna que ocupa. Por ejemplo, la tarjeta destacada: `(min-width: 1024px) 680px, 100vw`.

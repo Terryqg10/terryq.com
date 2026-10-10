@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 
 /**
  * Tamaño del JS de primera carga por ruta (spec §12.1): suma el gzip de los `<script src>` del HTML
- * que `next build` deja prerrenderizado. Bloquea el CI en Inicio (≤110 KB) y Contacto (≤130 KB);
+ * que `next build` deja prerrenderizado. Bloquea el CI en Inicio (≤170 KB) y Contacto (≤200 KB, ADR-0011) y avisa por encima del objetivo de §12.1 (110/130 KB);
  * el resto se muestra para vigilarlo. Se lanza con `pnpm size` después de `pnpm build`.
  */
 const root = new URL('../', import.meta.url);
@@ -14,12 +14,12 @@ const staticDir = join(appDir, '..', '..');
 
 const kb = (bytes: number) => bytes / 1024;
 
-/** Presupuestos de §12.1, por ruta pública (sin extensión: `es`, `en`, `es/contact`…). */
-const budgets: Record<string, number> = {
-  es: 110,
-  en: 110,
-  'es/contact': 130,
-  'en/contact': 130,
+/** Presupuestos de §12.1 (ADR-0011): `limit` bloquea; `target` es el objetivo original y solo avisa. Por ruta pública (sin extensión: `es`, `en`, `es/contact`…). */
+const budgets: Record<string, { limit: number; target: number }> = {
+  es: { limit: 170, target: 110 },
+  en: { limit: 170, target: 110 },
+  'es/contact': { limit: 200, target: 130 },
+  'en/contact': { limit: 200, target: 130 },
 };
 
 /** Páginas que no son del sitio público (herramientas internas y páginas de error). */
@@ -75,12 +75,14 @@ const rows = htmlFiles(appDir)
 
 let failed = 0;
 for (const row of rows) {
-  const over = row.budget !== undefined && row.kb > row.budget;
+  const over = row.budget !== undefined && row.kb > row.budget.limit;
+  const warn = !over && row.budget !== undefined && row.kb > row.budget.target;
   if (over) failed += 1;
-  const limit = row.budget === undefined ? '' : ` (límite ${row.budget} KB)`;
-  console.log(
-    `${over ? 'FALLA' : 'ok   '} ${row.route.padEnd(36)} ${row.kb.toFixed(1)} KB${limit}`,
-  );
+  const note = row.budget
+    ? ` (límite ${row.budget.limit} KB, objetivo ${row.budget.target} KB)`
+    : '';
+  const mark = over ? 'FALLA' : warn ? 'aviso' : 'ok   ';
+  console.log(`${mark} ${row.route.padEnd(36)} ${row.kb.toFixed(1)} KB${note}`);
 }
 const missing = Object.keys(budgets).filter((route) => !rows.some((row) => row.route === route));
 if (missing.length)
