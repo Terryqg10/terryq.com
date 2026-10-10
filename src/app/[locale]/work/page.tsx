@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { works } from '@/content/work';
@@ -42,4 +44,9 @@ export default async function WorkPage() {
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: PageProps<'/[locale]/work'>): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({ locale: asLocale(locale), page: 'work' });
 }

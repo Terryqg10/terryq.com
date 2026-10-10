@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { cardClasses } from '@/components/ui/card-classes';
@@ -5,10 +7,7 @@ import { RequestedPath } from '@/features/not-found/RequestedPath';
 import { Link } from '@/i18n/navigation';
 import { routeLabel } from '@/i18n/route-label';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
-
-export const metadata: Metadata = { robots: { index: false } };
 
 /**
  * 404 traducida (spec §8.7). Next no usa `not-found.tsx` cuando el layout raíz está en un segmento
@@ -103,4 +102,11 @@ export default async function NotFoundPage() {
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]/not-found-page'>): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({ locale: asLocale(locale), page: 'not-found' });
 }

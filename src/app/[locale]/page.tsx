@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { reviews } from '@/content/reviews';
 import { AboutTeaser } from '@/features/home/AboutTeaser';
@@ -20,4 +22,9 @@ export default function HomePage() {
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({ params }: PageProps<'/[locale]'>): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({ locale: asLocale(locale), page: 'home' });
 }

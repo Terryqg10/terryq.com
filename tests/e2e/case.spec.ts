@@ -91,7 +91,7 @@ for (const work of cases) {
         await page.emulateMedia({ colorScheme: scheme });
         for (const path of [`/trabajos/${work.slug}`, `/en/work/${work.slug}`]) {
           await page.goto(path);
-          await axeCheck(page, { ignore: ['document-title'] }); // sin <title> hasta T30
+          await axeCheck(page);
         }
       });
     }

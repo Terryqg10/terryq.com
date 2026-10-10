@@ -1,9 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { axeCheck } from './utils';
 
-// El <title> llega con T30 (metadata); hasta entonces axe lo señala en todas las páginas.
-const noTitleYet = ['document-title'];
-
 test.describe('CA-7.1: estado, idioma y noindex', () => {
   const cases = [
     {
@@ -54,7 +51,7 @@ test.describe('CA-7.1: estado, idioma y noindex', () => {
       // La cabecera y el pie siguen ahí.
       await expect(page.getByRole('banner')).toBeVisible();
       await expect(page.getByRole('contentinfo')).toBeVisible();
-      await axeCheck(page, { ignore: noTitleYet });
+      await axeCheck(page);
     });
   }
 
