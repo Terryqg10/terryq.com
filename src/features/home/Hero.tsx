@@ -78,7 +78,7 @@ export async function Hero() {
         </HeroShowcase>
         <figcaption className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-meta text-ink-muted lg:pl-9">
           <StatusBadge status="live" label={t('caption')} muted />
-          <TextLink href={hb.siteUrl} external className="font-medium text-ink">
+          <TextLink href={hb.siteUrl} external className="tq-hit font-medium text-ink">
             {t('openSite')}
           </TextLink>
         </figcaption>

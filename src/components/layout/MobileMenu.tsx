@@ -102,7 +102,7 @@ export function MobileMenu({ items, labels, languageSwitch, logo }: MobileMenuPr
               href="/"
               aria-label={labels.home}
               onClick={close}
-              className="inline-flex h-10 items-center"
+              className="inline-flex min-h-11 min-w-11 items-center"
             >
               {logo}
             </Link>
