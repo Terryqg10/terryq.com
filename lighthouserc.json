@@ -1,0 +1,46 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "pnpm start -p 3102",
+      "startServerReadyPattern": "Ready",
+      "startServerReadyTimeout": 60000,
+      "numberOfRuns": 3,
+      "url": [
+        "http://localhost:3102/",
+        "http://localhost:3102/trabajos",
+        "http://localhost:3102/trabajos/hb-construcciones",
+        "http://localhost:3102/servicios",
+        "http://localhost:3102/sobre-mi",
+        "http://localhost:3102/contacto",
+        "http://localhost:3102/en",
+        "http://localhost:3102/en/work",
+        "http://localhost:3102/en/work/hb-construcciones",
+        "http://localhost:3102/en/services",
+        "http://localhost:3102/en/about",
+        "http://localhost:3102/en/contact"
+      ],
+      "settings": { "chromeFlags": "--no-sandbox" }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": [
+          "error",
+          { "minScore": 0.95, "aggregationMethod": "median-run" }
+        ],
+        "largest-contentful-paint": [
+          "error",
+          { "maxNumericValue": 2500, "aggregationMethod": "median" }
+        ],
+        "cumulative-layout-shift": [
+          "error",
+          { "maxNumericValue": 0.1, "aggregationMethod": "median" }
+        ],
+        "total-blocking-time": ["error", { "maxNumericValue": 200, "aggregationMethod": "median" }],
+        "categories:accessibility": ["warn", { "minScore": 1, "aggregationMethod": "median-run" }],
+        "categories:best-practices": ["warn", { "minScore": 1, "aggregationMethod": "median-run" }],
+        "categories:seo": ["warn", { "minScore": 1, "aggregationMethod": "median-run" }]
+      }
+    },
+    "upload": { "target": "filesystem", "outputDir": ".lighthouseci" }
+  }
+}
