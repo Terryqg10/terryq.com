@@ -91,7 +91,7 @@ Comprobado el 2026-10-07. En la tarea T0 se instalan las **últimas versiones de
 - **Todo estático.** Cada página se genera en el build para `es` y `en` (`generateStaticParams`), con `dynamicParams = false` y `export const dynamic = 'error'` en el layout de `[locale]`. Si algo intenta leer cookies o cabeceras en una página, **el build falla**, y es justo lo que queremos.
 - **Lo único dinámico** es la Server Action del formulario (`features/contact/action.ts`), que se ejecuta con un POST sobre la página de contacto.
 - **Cache Components:** desactivado (ADR-008). Hay que borrar el ajuste que añade `create-next-app` 16.4.
-- **404 traducida:** se implementa siguiendo la guía de next-intl para `not-found` con `[locale]` (segmento `[...rest]` o la variante que recomiende la versión instalada), de forma compatible con `dynamicParams = false`. Lo que manda es el CA-7.1 y su test (§17.3): estado 404, idioma de la URL y `noindex`.
+- **404 traducida:** Next no aplica `not-found.tsx` ni un `[...rest]` cuando el layout raíz está en un segmento dinámico (`[locale]`, con root params): sirve su 404 genérica sin cabecera. Por eso `proxy.ts` conoce las rutas públicas (`pathnames` + los slugs de los casos) y reescribe todo lo demás a `[locale]/not-found-page` con estado 404 (`NextResponse.rewrite(..., { status: 404 })`), también las rutas con `%` mal formado. La página lleva `robots: { index: false }`. Las URLs con un punto (`/algo.php`) quedan fuera del `matcher` y reciben la 404 genérica de Next. Lo que manda es el CA-7.1 y su test (§17.3).
 
 ### 4.2 Islas cliente (lista cerrada)
 Solo estos componentes llevan `'use client'`. Para añadir otro hace falta justificarlo en la tarea.

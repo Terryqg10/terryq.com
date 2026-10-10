@@ -1,7 +1,7 @@
 'use client';
 
 import { getPathname, usePathname } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
+import { pathnames, routing } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
 import { useLocale } from 'next-intl';
 import { useParams } from 'next/navigation';
@@ -21,8 +21,13 @@ export function LanguageSwitch({ ariaLabel }: { ariaLabel: string }) {
   const target = routing.locales.find((candidate) => candidate !== locale) ?? routing.defaultLocale;
 
   // `usePathname` devuelve la ruta interna (p. ej. `/work/[slug]`); el slug viene de `useParams`.
+  // En una ruta que no existe (la 404) no hay equivalente: se lleva a la portada del otro idioma.
   const href = (
-    typeof params.slug === 'string' ? { pathname, params: { slug: params.slug } } : pathname
+    typeof params.slug === 'string'
+      ? { pathname, params: { slug: params.slug } }
+      : pathname in pathnames
+        ? pathname
+        : '/'
   ) as Href;
 
   return (
