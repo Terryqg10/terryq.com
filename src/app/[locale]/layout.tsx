@@ -7,6 +7,9 @@ import { routing } from '@/i18n/routing';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { siteJsonLd } from '@/lib/json-ld';
 import { siteOrigin } from '@/lib/seo';
 import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
@@ -55,6 +58,10 @@ export function generateStaticParams() {
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
+  const [seo, footer] = await Promise.all([
+    getTranslations({ locale, namespace: 'seo' }),
+    getTranslations({ locale, namespace: 'common.footer' }),
+  ]);
 
   return (
     <html
@@ -62,6 +69,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       className={`${bricolage.variable} ${instrument.variable} ${jetbrains.variable}`}
     >
       <body>
+        <JsonLd
+          data={siteJsonLd(siteOrigin().origin, locale, {
+            jobTitle: seo('jobTitle'),
+            tagline: footer('tagline'),
+            country: seo('country'),
+          })}
+        />
         {/* `Link` de next-intl es un componente cliente y necesita el idioma. Los mensajes llegan
             a cada isla cliente por separado (spec §4.2), no en bloque. */}
         <NextIntlClientProvider messages={{}}>

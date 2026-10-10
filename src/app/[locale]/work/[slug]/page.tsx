@@ -1,4 +1,6 @@
-import { asLocale, buildMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { caseJsonLd } from '@/lib/json-ld';
+import { asLocale, buildMetadata, siteOrigin } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { getWork } from '@/content/work';
@@ -10,6 +12,7 @@ import { NextProject } from '@/features/work/NextProject';
 import { createWorkMdxComponents } from '@/features/work/mdx-components';
 import { numberSections, sectionKindsOf } from '@/features/work/sections';
 import { routing } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -27,6 +30,10 @@ export default async function CasePage({ params }: PageProps<'/[locale]/work/[sl
   if (!isWorkSlug(slug)) notFound();
 
   const meta = getWork(slug);
+  const [seo, nav] = await Promise.all([
+    getTranslations({ locale: asLocale(locale), namespace: 'seo' }),
+    getTranslations({ locale: asLocale(locale), namespace: 'common.nav' }),
+  ]);
   // La narrativa de cada idioma es un MDX compilado en el build (spec §9.2).
   const { default: Narrative } = await import(`@/content/work/${slug}/${locale}.mdx`);
   // La numeración (01, 02…) sigue las secciones presentes; se calcula en el build desde el MDX.
@@ -40,6 +47,12 @@ export default async function CasePage({ params }: PageProps<'/[locale]/work/[sl
 
   return (
     <main id="contenido">
+      <JsonLd
+        data={caseJsonLd(siteOrigin().origin, asLocale(locale), meta, {
+          breadcrumbHome: seo('breadcrumbHome'),
+          breadcrumbWork: nav('work'),
+        })}
+      />
       <Container>
         <CaseHeader meta={meta} />
         <CaseHero meta={meta} />
