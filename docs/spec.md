@@ -927,7 +927,7 @@ Lo comprueba un test de e2e: ninguna respuesta lleva `Set-Cookie` y `document.co
 ## 16. Seguridad
 
 ### 16.1 Cabeceras (`next.config.ts` → `headers()`, solo en producción)
-- `Content-Security-Policy`: `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests`.
+- `Content-Security-Policy`: `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests` (esta última solo en Vercel: WebKit no exime a `localhost` y pediría los recursos por https en `next start`).
   *`'unsafe-inline'` en scripts es una concesión del render estático, porque los nonces exigen render dinámico. El riesgo es bajo: no hay contenido de usuarios ni scripts de terceros. Si Next estabiliza la integridad de subrecursos (`experimental.sri`), se revisa (ADR-008).*
 - `Strict-Transport-Security: max-age=63072000; includeSubDomains` · `X-Content-Type-Options: nosniff` · `Referrer-Policy: strict-origin-when-cross-origin` · `Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()` · `X-Frame-Options: DENY` · `Cross-Origin-Opener-Policy: same-origin`.
 - Comprobación: securityheaders.com con nota A o superior (en la tarea de lanzamiento).
