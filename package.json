@@ -14,7 +14,8 @@
     "e2e": "playwright test",
     "capture:pages": "playwright test -c playwright.visual.config.ts",
     "icons": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-icons.ts",
-    "tokens": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-tokens.ts"
+    "tokens": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-tokens.ts",
+    "screenshots": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/capture-screenshots.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
