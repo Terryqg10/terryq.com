@@ -21,7 +21,7 @@ export async function QuickFacts() {
       <h2 id="facts-t" className="py-4 text-label text-ink-muted uppercase">
         {t('factsTitle')}
       </h2>
-      <dl className="text-[15px]/[23px]">
+      <dl className="text-[14px]/[22px] md:text-[15px]/[23px]">
         {rows.map((row) => (
           <div key={row.label} className="border-t border-line py-3.5">
             <dt className="font-mono text-xs/4.5 text-ink-muted">{row.label}</dt>
