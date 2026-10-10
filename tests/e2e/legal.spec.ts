@@ -1,9 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { axeCheck } from './utils';
 
-// El <title> llega con T30 (metadata); hasta entonces axe lo señala en todas las páginas.
-const noTitleYet = ['document-title'];
-
 const pages = [
   {
     path: '/aviso-legal',
@@ -69,7 +66,7 @@ for (const p of pages) {
     // Nada de marcas de contenido pendiente (spec §9.6).
     const text = await page.locator('main').innerText();
     expect(text).not.toMatch(/\[prop|pendiente|\[Nombre|TODO/i);
-    await axeCheck(page, { ignore: noTitleYet });
+    await axeCheck(page);
   });
 }
 

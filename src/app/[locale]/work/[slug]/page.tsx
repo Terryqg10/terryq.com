@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { getWork } from '@/content/work';
 import { workSlugs, type WorkSlug } from '@/content/work/slugs';
@@ -56,4 +58,12 @@ export default async function CasePage({ params }: PageProps<'/[locale]/work/[sl
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]/work/[slug]'>): Promise<Metadata> {
+  const { locale, slug } = await params;
+  if (!isWorkSlug(slug)) notFound();
+  return buildMetadata({ locale: asLocale(locale), page: 'case', slug });
 }

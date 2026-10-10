@@ -7,7 +7,8 @@ import { routing } from '@/i18n/routing';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import type { Viewport } from 'next';
+import { siteOrigin } from '@/lib/seo';
+import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import '../globals.css';
@@ -35,6 +36,9 @@ const jetbrains = JetBrains_Mono({
 
 export const dynamic = 'error';
 export const dynamicParams = false;
+
+/** Las URLs relativas de canonical, alternates y Open Graph se resuelven contra este origen (§11.1). */
+export const generateMetadata = (): Metadata => ({ metadataBase: siteOrigin() });
 
 /** `paper` light y dark del DS (spec §6.4). */
 export const viewport: Viewport = {

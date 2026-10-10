@@ -172,7 +172,7 @@ for (const [path, scheme] of [
     await page.emulateMedia({ colorScheme: scheme });
     await page.goto(path);
     // Sin <title> hasta T30 (metadata): es lo único que se ignora.
-    await axeCheck(page, { ignore: ['document-title'] });
+    await axeCheck(page);
   });
 }
 

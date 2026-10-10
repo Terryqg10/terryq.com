@@ -510,5 +510,32 @@
     "privacyTitle": "Privacidad",
     "updated": "Última actualización: {date}",
     "courtesy": "Traducción de cortesía: prevalece la versión en español."
+  },
+  "seo": {
+    "siteName": "Terry Quiñonez",
+    "caseFallback": "Caso de estudio",
+    "home": {
+      "title": "Terry Quiñonez · Diseño y desarrollo web en Madrid",
+      "description": "Webs rápidas y claras para autónomos y pequeñas empresas, pensadas para conseguir contactos. Presupuesto cerrado en 24 h."
+    },
+    "work": {
+      "title": "Trabajos · Terry Quiñonez",
+      "description": "Webs para clientes y productos propios: HB Construcciones, Zona F y Finanzas Personales."
+    },
+    "services": {
+      "title": "Servicios de diseño web · Terry Quiñonez",
+      "description": "Landing pages, webs corporativas, aplicaciones a medida, logos y mantenimiento web. Cómo trabajo y cómo uso la IA."
+    },
+    "about": {
+      "title": "Sobre mí · Terry Quiñonez",
+      "description": "Desarrollador web y estudiante de Ingeniería del Software en la UPM. Quijorna, Madrid."
+    },
+    "contact": {
+      "title": "Contacto · Terry Quiñonez",
+      "description": "Cuéntame tu proyecto o tu propuesta y te respondo en 24 h laborables."
+    },
+    "notFound": {
+      "title": "Página no encontrada · Terry Quiñonez"
+    }
   }
 }

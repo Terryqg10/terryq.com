@@ -1,9 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { axeCheck } from './utils';
 
-// El <title> llega con T30 (metadata); hasta entonces axe lo señala en todas las páginas.
-const noTitleYet = ['document-title'];
-
 const summary = (page: Page) => page.getByRole('alert').filter({ hasText: 'Faltan datos' });
 const failure = (page: Page) =>
   page.getByRole('alert').filter({ hasText: 'No se ha podido enviar' });
@@ -131,7 +128,7 @@ test.describe('página', () => {
   for (const path of ['/contacto', '/en/contact']) {
     test(`sin infracciones de accesibilidad en ${path}`, async ({ page }) => {
       await page.goto(path);
-      await axeCheck(page, { ignore: noTitleYet });
+      await axeCheck(page);
     });
   }
 });
@@ -162,7 +159,7 @@ test.describe('validación', () => {
       'Elige una opción.',
     );
     await expect(page.getByLabel(/Web actual/)).not.toHaveAttribute('aria-invalid', 'true');
-    await axeCheck(page, { ignore: noTitleYet });
+    await axeCheck(page);
   });
 
   test('tras el primer intento, cada campo se revalida al salir de él', async ({ page }) => {
@@ -235,7 +232,7 @@ test.describe('envío', () => {
       'href',
       '/trabajos',
     );
-    await axeCheck(page, { ignore: noTitleYet });
+    await axeCheck(page);
 
     await status.getByRole('link', { name: 'Enviar otro mensaje' }).click();
     await expect(page.getByLabel('Nombre', { exact: true })).toBeFocused();

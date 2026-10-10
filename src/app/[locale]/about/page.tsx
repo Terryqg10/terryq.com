@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { AboutHero } from '@/features/about/AboutHero';
 import { ForCompanies } from '@/features/about/ForCompanies';
@@ -19,4 +21,11 @@ export default async function AboutPage() {
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]/about'>): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({ locale: asLocale(locale), page: 'about' });
 }

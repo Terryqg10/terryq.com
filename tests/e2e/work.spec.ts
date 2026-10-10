@@ -243,7 +243,7 @@ for (const path of ['/trabajos', '/en/work']) {
     test(`axe: ${path} en modo ${scheme}`, async ({ page }) => {
       await page.emulateMedia({ colorScheme: scheme });
       await page.goto(path);
-      await axeCheck(page, { ignore: ['document-title'] }); // sin <title> hasta T30
+      await axeCheck(page);
     });
   }
 }

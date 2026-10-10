@@ -1,3 +1,5 @@
+import { asLocale, buildMetadata } from '@/lib/seo';
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { ContactForm } from '@/features/contact/ContactForm';
@@ -50,4 +52,11 @@ export default async function ContactPage() {
       </Container>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]/contact'>): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({ locale: asLocale(locale), page: 'contact' });
 }
