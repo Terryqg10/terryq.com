@@ -107,11 +107,9 @@ export async function WebOffer() {
           ))}
         </div>
 
-        <div className="grid grid-cols-12 gap-x-6 gap-y-4 rounded-xl bg-surface-sunken px-6 py-6 md:px-7">
-          <p className="col-span-12 text-label text-ink-muted uppercase md:col-span-3">
-            {t('web.always')}
-          </p>
-          <ul className="col-span-12 grid gap-x-6 gap-y-3 text-[15px]/6 sm:grid-cols-2 md:col-span-9">
+        <div className="grid gap-x-6 gap-y-4 rounded-xl bg-surface-sunken px-6 py-6 md:grid-cols-12 md:px-7">
+          <p className="text-label text-ink-muted uppercase md:col-span-3">{t('web.always')}</p>
+          <ul className="grid gap-x-6 gap-y-3 text-[15px]/6 sm:grid-cols-2 md:col-span-9">
             {always.map((key) => (
               <li key={key} className="flex items-start gap-2.5">
                 <Check
