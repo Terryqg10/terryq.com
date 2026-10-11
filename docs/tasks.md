@@ -265,7 +265,7 @@
 
 ### T39 · Email real con Resend
 - **Spec:** §10.4, §18.4 · **Depende de:** T27
-- **Hacer:** verificar `envios.terryq.com` en Resend (Terry añade los registros en Cloudflare, guiado paso a paso) · `_dmarc` con `p=none` si no existe · `RESEND_API_KEY` y `CONTACT_TRANSPORT=resend` en preview y producción · envío de prueba desde el preview en ES y EN.
+- **Hacer:** verificar `terryq.com` en Resend (Irlanda; remitente `formulario@terryq.com`) (Terry añade los registros en Cloudflare, guiado paso a paso) · `_dmarc` con `p=none` si no existe · `RESEND_API_KEY` y `CONTACT_TRANSPORT=resend` en preview y producción · envío de prueba desde el preview en ES y EN.
 - **CA:** los dos emails llegan a la bandeja de entrada de Terry (no a spam), con `Reply-To` correcto · los registros de Email Routing no se han tocado.
 
 ### T40 · Dominio

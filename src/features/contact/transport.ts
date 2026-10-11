@@ -27,7 +27,12 @@ export function createResendTransport(apiKey: string): ContactTransport {
         text: message.text,
         html: message.html,
       });
-      if (error) throw new ContactTransportError(error.name);
+      // Solo el nombre y el estado HTTP: el mensaje de Resend puede citar datos del envío.
+      if (error) {
+        throw new ContactTransportError(
+          `${error.name ?? 'sin-nombre'}/${error.statusCode ?? 'sin-estado'}`,
+        );
+      }
     },
   };
 }
