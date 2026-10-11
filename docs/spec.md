@@ -793,7 +793,7 @@ export async function sendContact(prev: ContactState, formData: FormData): Promi
 
 ### 10.4 Envío (`features/contact/transport.ts` + `email.ts`)
 - `transport` es una interfaz `{ send(msg: ContactEmail): Promise<void> }` con dos implementaciones:
-  - `resend`: SDK de Resend. **From:** `CONTACT_FROM_EMAIL` (p. ej. `Web terryq.com <formulario@envios.terryq.com>`). **To:** `CONTACT_TO_EMAIL` (`contacto@terryq.com`). **Reply-To:** el email del visitante, si lo que escribió es un email.
+  - `resend`: SDK de Resend. **From:** `CONTACT_FROM_EMAIL` (p. ej. `Web terryq.com <formulario@terryq.com>`). **To:** `CONTACT_TO_EMAIL` (`contacto@terryq.com`). **Reply-To:** el email del visitante, si lo que escribió es un email.
   - `mock`: no envía nada y guarda el mensaje en memoria para los tests. Falla a propósito si el mensaje contiene `[[fail]]`. **`lib/env.ts` lanza un error al arrancar si `CONTACT_TRANSPORT=mock` en producción** (`VERCEL_ENV=production`).
 - **Email (texto plano + HTML mínimo, sin plantillas externas):** asunto `[terryq.com] {need} · {name}`. En el cuerpo: nombre, contacto, qué necesita (con la etiqueta en español), web, mensaje, idioma de la página y fecha (Europe/Madrid). Todo lo que viene del usuario se escapa en el HTML.
 - **No se envía confirmación al remitente** (ADR-006).
@@ -808,7 +808,7 @@ export async function sendContact(prev: ContactState, formData: FormData): Promi
 |---|---|---|
 | `RESEND_API_KEY` | `re_…` | Producción y preview (secreta) |
 | `CONTACT_TO_EMAIL` | `contacto@terryq.com` | Todas |
-| `CONTACT_FROM_EMAIL` | `Web terryq.com <formulario@envios.terryq.com>` | Todas |
+| `CONTACT_FROM_EMAIL` | `Web terryq.com <formulario@terryq.com>` | Todas |
 | `CONTACT_TRANSPORT` | `resend` · `mock` | `mock` en local y CI; `resend` en preview y producción |
 | `NEXT_PUBLIC_SITE_URL` | `https://terryq.com` | Todas (canonical, OG, sitemap) |
 
@@ -1005,7 +1005,7 @@ En cada PR y en cada push a `main`: pnpm + Node 24 con caché → `pnpm install 
 1. **Repo:** Claude Code lo crea con `gh repo create Terryqg10/terryq.com --public` y protege `main` (CI obligatoria y sin push directo).
 2. **Vercel:** se importa el repo en la cuenta de Vercel (plan Hobby, framework Next.js, Node 24), se añaden las variables de §10.6 y `main` queda como rama de producción. Se activan Web Analytics y Speed Insights.
 3. **Dominio:** `terryq.com` (apex) en producción y `www.terryq.com` con redirección 308 al apex. En Cloudflare, los registros que pide Vercel en modo **DNS only** (sin proxy). **No se tocan** los registros MX/TXT de Email Routing.
-4. **Resend:** se verifica el subdominio `envios.terryq.com` (DKIM, SPF y MX de rebotes en Cloudflare, en ese subdominio). Si `_dmarc.terryq.com` no existe, se crea con `p=none` (con informes) y se endurece más adelante. Prueba: un envío real que llega a Gmail sin ir a spam.
+4. **Resend:** se verifica el dominio `terryq.com` (región Irlanda, eu-west-1) y se envía desde `formulario@terryq.com`. Resend deja DKIM en `resend._domainkey` y SPF y MX de rebotes en `send`; los registros de Email Routing del dominio raíz no se tocan. (Se descartó el subdominio `envios.terryq.com` de la versión anterior del spec, ADR-0006.) Si `_dmarc.terryq.com` no existe, se crea con `p=none` (con informes) y se endurece más adelante. Prueba: un envío real que llega a Gmail sin ir a spam.
 5. **Firewall:** la regla de §10.5, primero en Log.
 6. **Lanzamiento (F7):** Search Console (propiedad de dominio por TXT) y envío del sitemap · prueba de resultados enriquecidos · inspector de publicaciones de LinkedIn para la tarjeta OG · Lighthouse en producción · securityheaders.com · un envío del formulario desde producción en ES y en EN.
 
