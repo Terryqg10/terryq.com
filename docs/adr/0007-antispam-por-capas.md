@@ -23,6 +23,12 @@ No es código: se configura en el panel de Vercel (proyecto `terryq-com` → Fir
 
 Despliegue en dos pasos: primero en modo **Log** durante una semana, para comprobar que no bloquea a nadie legítimo, y después en **Deny** (429). Al cambiar de modo, anotar aquí la fecha.
 
+### Registro de cambios de la regla
+| Fecha | Cambio |
+|---|---|
+| 2026-10-11 | Creada y activa en modo **Log**: nombre «Límite formulario de contacto», `Request Path` es cualquiera de `/contacto` y `/en/contact`, y `Method` igual a `POST`; Rate Limit en ventana fija de 600 s, 5 peticiones, clave «IP Address»; acción al superarlo: Log. Los cambios del panel se aplican sin redespliegue |
+| 2026-10-18 (pendiente, T41b) | Pasarla a **Deny** (429) si en Firewall → Traffic no aparece ningún visitante legítimo marcado como excedido |
+
 ## Alternativas
 - Turnstile o reCAPTCHA desde el principio: descartadas. Meten un tercero en la página de contacto, con efecto en la política de privacidad, antes de saber si hace falta.
 
