@@ -278,6 +278,11 @@
 - **Hacer:** la regla de límite en modo **Log** · recordatorio en el PR para pasarla a **Deny/429** al cabo de una semana (tarea T41b).
 - **CA:** la regla aparece en el panel del Firewall con la ruta y el método correctos.
 
+### T41b · Firewall en Deny
+- **Spec:** §10.5, ADR-0007 · **Depende de:** T41 + una semana en Log (a partir del 2026-10-18)
+- **Hacer:** mirar Firewall → Traffic; si no hay visitantes legítimos excedidos, pasar la regla «Límite formulario de contacto» de Log a Deny (429) y anotarlo en el ADR-0007.
+- **CA:** la regla está en Deny y el ADR-0007 lleva la fecha.
+
 ### T42 · Lanzamiento (F7)
 - **Spec:** §18.6, §22 · **Depende de:** T39–T41
 - **Hacer:** la lista de §18.6: Search Console y sitemap, resultados enriquecidos, inspector de LinkedIn, Lighthouse en producción, securityheaders.com y envío real del formulario en ES y EN · README final (qué es, cómo está hecho, enlaces al spec, tareas y ADRs) · actualizar el estado de este archivo y del spec a «v1 publicada».
