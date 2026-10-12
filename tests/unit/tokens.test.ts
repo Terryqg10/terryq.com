@@ -17,6 +17,12 @@ describe('build-tokens', () => {
     expect(css.startsWith('/* GENERADO por scripts/build-tokens.ts — no editar */')).toBe(true);
   });
 
+  it('permite elegir el tema a mano con data-theme (ADR-0012)', () => {
+    expect(css).toContain(":root:not([data-theme='light'])");
+    expect(css).toMatch(/:root\[data-theme='dark'\] \{\s+color-scheme: dark;/);
+    expect(css).toMatch(/:root\[data-theme='light'\] \{\s+color-scheme: light;/);
+  });
+
   it('declara color-scheme: light dark en :root', () => {
     expect(lightBlock).toContain('color-scheme: light dark;');
   });

@@ -367,3 +367,23 @@ html:has(dialog[open]) {
   align-items: center;
   padding-block: max(0px, calc((44px - 1lh) / 2));
 }
+
+/* Icono del botón de tema (ADR-0012): la luna se ve en claro y el sol en oscuro. Lo decide el CSS
+   para que sea correcto antes de la hidratación. */
+.tq-theme-sun {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .tq-theme-moon {
+    display: none;
+  }
+  :root:not([data-theme='light']) .tq-theme-sun {
+    display: block;
+  }
+}
+:root[data-theme='dark'] .tq-theme-moon {
+  display: none;
+}
+:root[data-theme='dark'] .tq-theme-sun {
+  display: block;
+}

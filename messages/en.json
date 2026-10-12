@@ -16,6 +16,9 @@
     "language": {
       "switchLabel": "ES / EN: switch language to Spanish"
     },
+    "theme": {
+      "label": "Dark mode"
+    },
     "footer": {
       "navLabel": "Contact and social",
       "tagline": "Web design and development",

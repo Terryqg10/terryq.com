@@ -16,6 +16,9 @@
     "language": {
       "switchLabel": "ES / EN: cambiar idioma a inglés"
     },
+    "theme": {
+      "label": "Modo oscuro"
+    },
     "footer": {
       "navLabel": "Contacto y redes",
       "tagline": "Diseño y desarrollo web",

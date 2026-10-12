@@ -17,4 +17,4 @@ El DS tiene variantes light y dark. Hay que decidir cómo se elige el tema (spec
 - Las capturas de los proyectos son iguales en los dos temas y van sobre `surface-sunken` con borde `line`.
 
 ## Estado
-Aceptado (2026-10-07)
+Aceptado (2026-10-07) · sustituido parcialmente por ADR-0012 (botón manual y script en el `<head>`)

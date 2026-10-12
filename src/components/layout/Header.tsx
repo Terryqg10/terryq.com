@@ -6,6 +6,7 @@ import { LanguageSwitch } from './LanguageSwitch';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
 import { NavLinks } from './NavLinks';
+import { ThemeToggle } from './ThemeToggle';
 
 /** Cabecera fija. Desde `lg` lleva el menú completo; por debajo, logo y selector de idioma. */
 export async function Header() {
@@ -36,10 +37,12 @@ export async function Header() {
             }}
           />
           <LanguageSwitch ariaLabel={t('language.switchLabel')} />
+          <ThemeToggle label={t('theme.label')} />
         </nav>
 
         <div className="flex items-center gap-3 lg:hidden">
           <LanguageSwitch ariaLabel={switchLabel} />
+          <ThemeToggle label={t('theme.label')} />
           <MobileMenu
             items={[
               { route: '/work', label: t('nav.work'), path: pathnames['/work'][locale] },

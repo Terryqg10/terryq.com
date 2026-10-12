@@ -53,10 +53,10 @@ Portfolio bilingüe (ES principal, EN secundario) de un desarrollador web. **Pú
 ## 2. Alcance
 
 ### 2.1 Dentro de v1
-Páginas (ES y EN): Inicio, Trabajos, 3 casos (HB Construcciones, Zona F, Finanzas Personales), Servicios (con proceso e IA), Sobre mí, Contacto, Aviso legal, Privacidad y 404. Tema claro y oscuro según el sistema. Formulario con envío por email. Botón flotante de WhatsApp. SEO completo (metadata, OG, sitemap, robots, JSON-LD, hreflang). Analítica sin cookies. CI con tests, accesibilidad y Lighthouse. Despliegue en Vercel con terryq.com.
+Páginas (ES y EN): Inicio, Trabajos, 3 casos (HB Construcciones, Zona F, Finanzas Personales), Servicios (con proceso e IA), Sobre mí, Contacto, Aviso legal, Privacidad y 404. Tema claro y oscuro según el sistema, con un botón para cambiarlo (ADR-0012). Formulario con envío por email. Botón flotante de WhatsApp. SEO completo (metadata, OG, sitemap, robots, JSON-LD, hreflang). Analítica sin cookies. CI con tests, accesibilidad y Lighthouse. Despliegue en Vercel con terryq.com.
 
 ### 2.2 Fuera de v1
-Blog (D9), línea Contenido/vídeo, selector manual de tema, CMS o base de datos, email de confirmación al remitente (ADR-006), página /cookies (no hay cookies, §15.3), avatar animado con ojos que siguen al cursor (espera la ilustración), redirección desde terryquinonez.com (dominio no registrado).
+Blog (D9), línea Contenido/vídeo, CMS o base de datos, email de confirmación al remitente (ADR-006), página /cookies (no hay cookies, §15.3), avatar animado con ojos que siguen al cursor (espera la ilustración), redirección desde terryquinonez.com (dominio no registrado).
 
 ---
 
@@ -105,6 +105,7 @@ Solo estos componentes llevan `'use client'`. Para añadir otro hace falta justi
 | `Reveal` | Un único IntersectionObserver para las apariciones (§6.6) | <1 KB |
 | `ContactForm` | `useActionState`, validación en cliente y gestión del foco | <6 KB + zod |
 | `RequestedPath` | Muestra la ruta pedida en la 404 | <0,5 KB |
+| `ThemeToggle` | Botón de modo claro/oscuro: `data-theme` en `<html>` y `localStorage` (ADR-0012) | <1 KB |
 
 ### 4.3 Carpetas
 
@@ -320,7 +321,7 @@ terryq.com/
 - Si un artboard tiene un tamaño de texto corrido que no está en esta tabla (p. ej. la entradilla de Sobre mí a 21/33), se usa el valor del artboard con una clase arbitraria (`text-[21px]/[33px]`). Ese es el **único** uso permitido de valores arbitrarios de tipo; los colores arbitrarios están prohibidos.
 
 ### 6.4 Tema (ADR-004)
-- Solo `prefers-color-scheme`, sin selector, sin `next-themes` y sin script en el `<head>`. No hay parpadeo porque es CSS puro.
+- Sin elección del visitante, manda `prefers-color-scheme` (CSS puro). **Desde el ADR-0012** hay un botón en la cabecera (luna en claro, sol en oscuro; interruptor con `aria-pressed`, 44×44) que guarda `light` o `dark` en `localStorage` (`tq-theme`, sin cookies) y lo aplica en `<html data-theme>`. `tokens.css` lleva los valores dark también bajo `:root[data-theme='dark']`, y los de `prefers-color-scheme` solo si no hay `data-theme='light'`. Un script en línea en el `<head>` aplica la elección antes del primer pintado, sin parpadeo. Sin `next-themes`.
 - `<meta name="theme-color">` con dos valores: `#f2f0eb` (light) y `#111110` (dark), mediante `viewport.themeColor` y `media`.
 - Las capturas de los proyectos son iguales en los dos temas. Van sobre `surface-sunken` y con borde `line`.
 - El logo usa `currentColor` (§7.2), así que se adapta solo.
@@ -1019,13 +1020,15 @@ Cada fila es un archivo `docs/adr/00NN-<titulo>.md` con Contexto · Decisión ·
 | 0001 | Rutas: ES sin prefijo y EN con `/en`, rutas traducidas, sin detección de idioma y sin cookie | `/es` y `/en` para todo; detección por `Accept-Language` |
 | 0002 | Contenido: `meta.ts` tipado + MDX por idioma con `@next/mdx`; el copy de páginas en `messages` | Velite o Content Collections; `next-mdx-remote`; CMS |
 | 0003 | Tokens generados desde `tokens.json`, paleta de Tailwind borrada y radios y espaciados por defecto de Tailwind | Tokens escritos a mano; copiar `bundle.css` |
-| 0004 | Tema solo por `prefers-color-scheme` | Selector de tema con `next-themes` |
+| 0004 | Tema por `prefers-color-scheme` (sustituido en parte por 0012) | Selector de tema con `next-themes` |
 | 0005 | Animaciones sin librería: CSS, 3 islas pequeñas y View Transitions | Motion (Framer) |
 | 0006 | Formulario: Server Action + Resend desde un subdominio, sin confirmación al remitente | Servicio de formularios externo; autorrespuesta |
 | 0007 | Antispam por capas: trampa + tiempo + límite del Firewall de Vercel; Turnstile solo si hace falta | Turnstile o reCAPTCHA desde el principio |
 | 0008 | Render estático clásico (`dynamic = 'error'`, `dynamicParams = false`), **sin Cache Components**. Se revisa con Next 17, cuando sea el modelo por defecto | Cache Components + `ensureStatic`: no aporta nada en un sitio sin datos dinámicos, y la integración con next-intl aún tiene problemas abiertos (issue amannn/next-intl#1493) |
 | 0009 | Contenido condicional con flags: nunca enlaces muertos ni marcadores publicados | Publicar con «Próximamente» o marcadores |
 | 0010 | Logo en línea con `currentColor`, a 40px como mínimo | Dos archivos (negro/blanco) que cambian por tema |
+| 0011 | Presupuestos de rendimiento medidos; los objetivos originales pasan a aviso | Medir contra el preview de Vercel; recortar fuentes y diseño |
+| 0012 | Botón de modo claro/oscuro con `data-theme` y `localStorage`, sin cookies ni `next-themes` | `next-themes`; cookie; selector de tres estados |
 
 ---
 

@@ -11,6 +11,7 @@ import { getTranslations } from 'next-intl/server';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { siteJsonLd } from '@/lib/json-ld';
 import { siteOrigin } from '@/lib/seo';
+import { themeInitScript } from '@/lib/theme';
 import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
@@ -66,8 +67,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   return (
     <html
       lang={locale}
+      // El script del `<head>` puede poner `data-theme` antes de que React hidrate (ADR-0012).
+      suppressHydrationWarning
       className={`${bricolage.variable} ${instrument.variable} ${jetbrains.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <JsonLd
           data={siteJsonLd(siteOrigin().origin, locale, {
