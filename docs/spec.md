@@ -1,6 +1,6 @@
 # spec.md — terryq.com (portfolio de Terry Quiñonez)
 
-> **Estado:** v1.2 — **APROBADO por Terry** (2026-10-07). Preguntas P1–P5 resueltas (§21). v1.2: Vercel en plan Hobby y analítica sin eventos personalizados (§14, §18).
+> **Estado:** **v1 publicada** en https://terryq.com (2026-10-12), con la prueba manual con lector de pantalla pendiente (T43, `docs/qa/lanzamiento.md`). Especificación v1.2 — **APROBADO por Terry** (2026-10-07). Preguntas P1–P5 resueltas (§21). v1.2: Vercel en plan Hobby y analítica sin eventos personalizados (§14, §18).
 > **Fase:** F5 — Paquete de implementación. Las tareas están en `docs/tasks.md`.
 > **Destino:** `docs/spec.md` en el repositorio `Terryqg10/terryq.com` (público).
 > **Método:** desarrollo guiado por especificación. Claude Code implementa **tarea a tarea** desde `tasks.md`, y cada tarea cita las secciones de este documento que aplica (§).
