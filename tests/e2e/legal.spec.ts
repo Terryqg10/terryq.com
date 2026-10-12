@@ -7,7 +7,7 @@ const pages = [
     lang: 'es',
     label: /^\/aviso-legal$/,
     h1: 'Aviso legal',
-    updated: /^Última actualización: 10 de octubre de 2026$/,
+    updated: /^Última actualización: 12 de octubre de 2026$/,
     h2: [
       'Titular',
       'Objeto',
@@ -22,15 +22,20 @@ const pages = [
     lang: 'es',
     label: /^\/privacidad$/,
     h1: 'Privacidad',
-    updated: /^Última actualización: 10 de octubre de 2026$/,
-    h2: ['1. Responsable', '2. Qué datos trato', '6. Con quién los comparto', '8. Cookies'],
+    updated: /^Última actualización: 12 de octubre de 2026$/,
+    h2: [
+      '1. Responsable',
+      '2. Qué datos trato',
+      '6. Con quién los comparto',
+      '8. Cookies y almacenamiento local',
+    ],
   },
   {
     path: '/en/legal-notice',
     lang: 'en',
     label: /^\/legal-notice$/,
     h1: 'Legal notice',
-    updated: /^Last updated: October 10, 2026$/,
+    updated: /^Last updated: October 12, 2026$/,
     h2: [
       'Owner',
       'Purpose',
@@ -45,8 +50,13 @@ const pages = [
     lang: 'en',
     label: /^\/privacy$/,
     h1: 'Privacy',
-    updated: /^Last updated: October 10, 2026$/,
-    h2: ['1. Controller', '2. What data I process', '6. Who I share it with', '8. Cookies'],
+    updated: /^Last updated: October 12, 2026$/,
+    h2: [
+      '1. Controller',
+      '2. What data I process',
+      '6. Who I share it with',
+      '8. Cookies and local storage',
+    ],
   },
 ] as const;
 
@@ -116,4 +126,17 @@ test('el pie enlaza a las dos páginas legales', async ({ page }) => {
     'href',
     '/privacidad',
   );
+});
+
+test('la política cuenta que la preferencia de tema se guarda en el navegador', async ({
+  page,
+}) => {
+  await page.goto('/privacidad');
+  await expect(
+    page.getByText(/botón de modo claro u oscuro, tu navegador guarda esa preferencia/),
+  ).toBeVisible();
+  await page.goto('/en/privacy');
+  await expect(
+    page.getByText(/light or dark mode button, your browser saves that preference/),
+  ).toBeVisible();
 });
