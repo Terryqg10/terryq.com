@@ -924,7 +924,7 @@ Se implementa **toda** la revisión de accesibilidad de F4 (tabla «Revisión de
 9. **WhatsApp:** si escribes por WhatsApp, también se aplica la política de privacidad de WhatsApp.
 
 ### 15.3 Sin cookies
-Lo comprueba un test de e2e: ninguna respuesta lleva `Set-Cookie` y `document.cookie` está vacío en todas las páginas. Por eso no hay banner ni página de cookies. Si una dependencia añade una cookie en el futuro, el test falla.
+Lo comprueba un test de e2e: ninguna respuesta lleva `Set-Cookie` y `document.cookie` está vacío en todas las páginas. Por eso no hay banner ni página de cookies. Si una dependencia añade una cookie en el futuro, el test falla. Desde el ADR-0012 el botón de tema guarda la preferencia en `localStorage` (no es una cookie, no sale del dispositivo), y la política de privacidad lo explica en su apartado 8 «Cookies y almacenamiento local».
 
 ---
 
