@@ -1,6 +1,6 @@
 # Lanzamiento de v1 (T42 · spec §18.6 y §22)
 
-Resultados medidos el 2026-10-11 sobre <https://terryq.com>. Lo marcado con ⏳ lo hace Terry en sus cuentas.
+Resultados medidos el 2026-10-11 y 2026-10-12 sobre <https://terryq.com>. Lo marcado con ⏳ lo hace Terry en sus cuentas.
 
 ## Comprobaciones en producción
 
@@ -14,8 +14,8 @@ Resultados medidos el 2026-10-11 sobre <https://terryq.com>. Lo marcado con ⏳ 
 | Open Graph | `og:url`, `og:title` y `og:image` con `https://terryq.com`; imagen PNG 1200×630 | ✅ |
 | Formulario en producción | Probado en ES y EN; los correos llegan a Recibidos de `contacto@terryq.com`, con `Reply-To` del visitante | ✅ |
 | Firewall | Regla de límite en modo Log (T41); pasar a Deny el 2026-10-18 (T41b) | ✅ |
-| Search Console y envío del sitemap | | ⏳ |
-| Inspector de publicaciones de LinkedIn | | ⏳ |
+| Search Console y envío del sitemap | Propiedad de dominio `terryq.com` verificada con el TXT `google-site-verification` (autorizado desde Cloudflare); sitemap `https://terryq.com/sitemap.xml` enviado el 2026-10-12 | ✅ |
+| Inspector de publicaciones de LinkedIn | `https://terryq.com`: tarjeta con la imagen Open Graph y el título «Terry Quiñonez · Diseño y desarrollo web en Madrid»; URL canónica `https://terryq.com` | ✅ |
 | Prueba de resultados enriquecidos de Google | | ⏳ (opcional) |
 | Prueba manual con lector de pantalla y zoom (T38) | | ⏳ |
 
@@ -28,6 +28,6 @@ Resultados medidos el 2026-10-11 sobre <https://terryq.com>. Lo marcado con ⏳ 
 2. CI en verde en `main` con los presupuestos (ADR-0011) y 0 infracciones de axe: ✅
 3. Revisión manual (lector de pantalla, zoom al 200 %) y capturas aprobadas: ⏳ capturas aprobadas; falta la prueba con lector de pantalla
 4. Formulario probado en producción en ES y EN: ✅
-5. Dominio, `www`, HTTPS, cabeceras A, sitemap enviado y OG correctos en LinkedIn: ⏳ sitemap enviado y LinkedIn
+5. Dominio, `www`, HTTPS, cabeceras A, sitemap enviado y OG correctos en LinkedIn: ✅
 6. Ningún marcador ni dato inventado; textos legales revisados por Terry: ✅
 7. Repositorio con README, spec, tasks y ADRs al día: ✅ (este PR)
