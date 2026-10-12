@@ -53,6 +53,9 @@ test('el primer Tab enfoca el enlace de saltar al contenido y lo lleva al main',
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/#contenido$/);
   await expect(page.locator('main#contenido')).toBeAttached();
+  // El salto deja el foco dentro de `main` (enfocable por programa, no por Tab).
+  await expect(page.locator('main#contenido')).toBeFocused();
+  await expect(page.locator('main#contenido')).toHaveAttribute('tabindex', '-1');
 });
 
 test('el enlace de saltar al contenido está en inglés en /en', async ({ page, browserName }) => {

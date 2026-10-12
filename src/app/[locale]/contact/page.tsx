@@ -22,7 +22,7 @@ export default async function ContactPage() {
   ]);
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <div className="grid grid-cols-12 items-start gap-x-6 gap-y-8 py-16 lg:grid-rows-[auto_auto_auto_1fr] lg:gap-y-0 lg:py-24">
           <header className="col-span-12 flex flex-col gap-6 lg:col-span-5 lg:row-start-1 lg:pr-6">

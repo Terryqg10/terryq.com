@@ -11,7 +11,7 @@ import { ServicesSummary } from '@/features/home/ServicesSummary';
 
 export default function HomePage() {
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <Hero />
         <FeaturedProjects />

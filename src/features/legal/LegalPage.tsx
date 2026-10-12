@@ -21,7 +21,7 @@ export async function LegalPage({ kind }: { kind: LegalKind }) {
   );
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <article className="flex flex-col gap-6 py-16 lg:py-24">
           <header className="flex flex-col gap-6">

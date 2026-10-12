@@ -20,7 +20,7 @@ export default async function WorkPage() {
   const locale = await getLocale();
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container className="py-16 lg:py-24">
         <header className="mb-10 flex flex-wrap items-end justify-between gap-6 lg:mb-12">
           <div className="flex max-w-160 flex-col gap-3">

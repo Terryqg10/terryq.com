@@ -1,5 +1,10 @@
 import { z } from 'zod';
 
+// Zod prueba `new Function("")` para compilar validadores; con la CSP sin `unsafe-eval` el navegador
+// lo bloquea y lo anota en el panel de problemas de Chrome (buenas prácticas 96 en Contacto).
+// Sin JIT valida igual y no hay nada que bloquear.
+z.config({ jitless: true });
+
 /** Códigos de error por campo (spec §10.1). El cliente los traduce con `contact.errors.<código>`. */
 export const contactErrorCodes = {
   name: ['name.required'],

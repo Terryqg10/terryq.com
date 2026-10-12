@@ -13,7 +13,7 @@ export default async function AboutPage() {
   const portrait: StaticImageData | null = site.portrait;
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <AboutHero portrait={portrait} />
         <Story />

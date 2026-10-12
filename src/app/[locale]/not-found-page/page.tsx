@@ -28,7 +28,7 @@ export default async function NotFoundPage() {
   ] as const;
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <section
           aria-labelledby="not-found-title"
