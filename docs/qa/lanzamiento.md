@@ -1,5 +1,7 @@
 # Lanzamiento de v1 (T42 · spec §18.6 y §22)
 
+**v1 publicada el 2026-10-12.** Lo único que queda abierto es la prueba manual con lector de pantalla (T43).
+
 Resultados medidos el 2026-10-11 y 2026-10-12 sobre <https://terryq.com>. Lo marcado con ⏳ lo hace Terry en sus cuentas.
 
 ## Comprobaciones en producción
@@ -17,7 +19,8 @@ Resultados medidos el 2026-10-11 y 2026-10-12 sobre <https://terryq.com>. Lo mar
 | Search Console y envío del sitemap | Propiedad de dominio `terryq.com` verificada con el TXT `google-site-verification` (autorizado desde Cloudflare); sitemap `https://terryq.com/sitemap.xml` enviado el 2026-10-12 | ✅ |
 | Inspector de publicaciones de LinkedIn | `https://terryq.com`: tarjeta con la imagen Open Graph y el título «Terry Quiñonez · Diseño y desarrollo web en Madrid»; URL canónica `https://terryq.com` | ✅ |
 | Prueba de resultados enriquecidos de Google | | ⏳ (opcional) |
-| Prueba manual con lector de pantalla y zoom (T38) | | ⏳ |
+| Revisión por teclado y árbol de accesibilidad (5 páginas) | Sin fallos: un `h1`, sin saltos de nivel, sin controles sin nombre ni imágenes sin `alt`, foco visible en todo, orden de tabulación correcto, «Saltar al contenido» funciona. Detalle en `docs/qa/revision-teclado-y-arbol.md` | ✅ |
+| Prueba manual con lector de pantalla (VoiceOver/NVDA) y zoom al 200 % | Pendiente: tarea **T43** a cargo de Terry (`docs/qa/guion-prueba-manual.md`) | ⏳ |
 
 ## Conocido y aceptado
 - **Buenas prácticas 96 en Contacto:** Chrome registra un aviso de política CSP en el panel de problemas (no hay errores en la consola y el formulario funciona). Es un candidato de mejora, no un bloqueo.
@@ -26,7 +29,7 @@ Resultados medidos el 2026-10-11 y 2026-10-12 sobre <https://terryq.com>. Lo mar
 ## Definición de terminado de v1 (§22)
 1. Páginas de §8 en ES y EN con sus CA: ✅
 2. CI en verde en `main` con los presupuestos (ADR-0011) y 0 infracciones de axe: ✅
-3. Revisión manual (lector de pantalla, zoom al 200 %) y capturas aprobadas: ⏳ capturas aprobadas; falta la prueba con lector de pantalla
+3. Revisión manual (lector de pantalla, zoom al 200 %) y capturas aprobadas: ✅ capturas aprobadas y revisión por teclado y árbol de accesibilidad · ⏳ prueba con lector de pantalla real (T43)
 4. Formulario probado en producción en ES y EN: ✅
 5. Dominio, `www`, HTTPS, cabeceras A, sitemap enviado y OG correctos en LinkedIn: ✅
 6. Ningún marcador ni dato inventado; textos legales revisados por Terry: ✅
