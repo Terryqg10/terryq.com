@@ -19,7 +19,10 @@ const declaration = (name: string, value: string) => `--tq-${name}: ${value};`;
 const block = (indent: string, lines: readonly string[]) =>
   lines.map((line) => `${indent}${line}`).join('\n');
 
-/** Genera `tokens.css`: valores light en `:root` y valores dark bajo `prefers-color-scheme`. */
+/**
+ * Genera `tokens.css`: valores light en `:root` y valores dark bajo `prefers-color-scheme`, salvo
+ * que el visitante haya elegido el tema a mano (`<html data-theme="light|dark">`, ADR-0012).
+ */
 export function buildTokensCss(tokens: DesignTokens): string {
   const themed = [...tokens.color.tokens, ...tokens.shadow.tokens];
   const light = [
@@ -36,9 +39,18 @@ export function buildTokensCss(tokens: DesignTokens): string {
     '}',
     '',
     '@media (prefers-color-scheme: dark) {',
-    '  :root {',
+    "  :root:not([data-theme='light']) {",
     block('    ', dark),
     '  }',
+    '}',
+    '',
+    ":root[data-theme='light'] {",
+    '  color-scheme: light;',
+    '}',
+    '',
+    ":root[data-theme='dark'] {",
+    '  color-scheme: dark;',
+    block('  ', dark),
     '}',
     '',
   ].join('\n');

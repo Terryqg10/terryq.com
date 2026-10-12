@@ -44,3 +44,15 @@ test('el menú móvil abierto pasa axe', async ({ page }) => {
   await expect(page.getByRole('dialog', { name: 'Menú principal' })).toBeVisible();
   await axeCheck(page);
 });
+
+test('el tema elegido con el botón (contrario al del sistema) también pasa axe', async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Modo oscuro' }).filter({ visible: true }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await axeCheck(page);
+  await page.goto('/contacto');
+  await axeCheck(page);
+});
