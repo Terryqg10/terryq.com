@@ -46,7 +46,7 @@ export default async function CasePage({ params }: PageProps<'/[locale]/work/[sl
   );
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <JsonLd
         data={caseJsonLd(siteOrigin().origin, asLocale(locale), meta, {
           breadcrumbHome: seo('breadcrumbHome'),

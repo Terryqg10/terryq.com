@@ -49,7 +49,7 @@ export default function UiReviewPage() {
   const hb = getWork('hb-construcciones');
 
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container className="py-16">
         <SectionLabel kind="route">ui</SectionLabel>
         <h1 className="mt-2 mb-10 type-page">Primitivas de UI</h1>

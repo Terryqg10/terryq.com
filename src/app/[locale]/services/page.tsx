@@ -11,7 +11,7 @@ import { WebOffer } from '@/features/services/WebOffer';
 
 export default function ServicesPage() {
   return (
-    <main id="contenido">
+    <main id="contenido" tabIndex={-1} className="outline-none">
       <Container>
         <ServicesHeader />
         <WebOffer />

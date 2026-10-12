@@ -108,3 +108,22 @@ test('la política no impide el JavaScript propio: la página se hidrata', async
   await filter.click();
   await expect(filter).toHaveAttribute('aria-pressed', 'true');
 });
+
+test('el formulario no provoca violaciones de la CSP (zod sin JIT)', async ({ page }) => {
+  // Chrome anota el bloqueo de `new Function` en su panel de problemas aunque no salga en la consola.
+  await page.addInitScript(() => {
+    (window as unknown as { __csp: string[] }).__csp = [];
+    document.addEventListener('securitypolicyviolation', (event) => {
+      (window as unknown as { __csp: string[] }).__csp.push(
+        `${event.violatedDirective} · ${event.blockedURI}`,
+      );
+    });
+  });
+  for (const path of ['/contacto', '/en/contact']) {
+    await page.goto(path);
+    await page.evaluate(() => document.fonts.ready);
+    await page.getByRole('button', { name: /Enviar mensaje|Send message/ }).click();
+    const violations = await page.evaluate(() => (window as unknown as { __csp: string[] }).__csp);
+    expect(violations, path).toEqual([]);
+  }
+});
