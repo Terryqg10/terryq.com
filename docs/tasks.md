@@ -1,6 +1,6 @@
 # tasks.md — terryq.com
 
-> **Estado:** v1.0 · 2026-10-07 · Deriva de `docs/spec.md` v1.2 (aprobado).
+> **Estado:** **v1 publicada** (2026-10-12) en https://terryq.com · T00–T42 hechas; queda T43 (prueba manual con lector de pantalla) y T41b (Firewall en Deny, a partir del 2026-10-18) · Deriva de `docs/spec.md` v1.2 (aprobado).
 > **Cómo se usa:** Claude Code hace **una tarea por rama y por PR** (`t-XX-descripcion`), en orden. Antes de empezar una tarea lee las secciones del spec que cita. Al terminar, marca la casilla `[x]` en este archivo dentro del mismo PR y espera la revisión de Terry en el preview de Vercel.
 > **Si algo no está en el spec o en las fuentes de §0.1, para y pregunta.** No se inventa copy, ni datos, ni enlaces.
 
@@ -287,6 +287,11 @@
 - **Spec:** §18.6, §22 · **Depende de:** T39–T41
 - **Hacer:** la lista de §18.6: Search Console y sitemap, resultados enriquecidos, inspector de LinkedIn, Lighthouse en producción, securityheaders.com y envío real del formulario en ES y EN · README final (qué es, cómo está hecho, enlaces al spec, tareas y ADRs) · actualizar el estado de este archivo y del spec a «v1 publicada».
 - **CA:** se cumplen los 7 puntos de la definición de terminado de v1 (§22).
+
+### T43 · Prueba manual con lector de pantalla
+- **Spec:** §13 (A11, A13), §22 punto 3 · **Depende de:** T38, T42
+- **Hacer:** Terry sigue `docs/qa/guion-prueba-manual.md` con VoiceOver o NVDA (Inicio, un caso y Contacto, en ES y EN) y con el zoom al 200 %, y anota los resultados. Claude arregla lo que bloquee.
+- **CA:** los resultados quedan sin bloqueos (❌) en `docs/qa/lanzamiento.md`. La revisión por teclado y por el árbol de accesibilidad ya está hecha (`docs/qa/revision-teclado-y-arbol.md`).
 
 ---
 
