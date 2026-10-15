@@ -63,8 +63,8 @@ export const meta = {
     mobile: {
       src: mobile,
       alt: {
-        es: 'Sabroso Perú en el móvil: cabecera con el menú, titular «Perú en la mesa» y botones para reservar mesa, ver la carta y cómo llegar',
-        en: 'Sabroso Perú on a phone: a header with the menu, the headline «Perú en la mesa» and buttons to book a table, see the menu and get directions',
+        es: 'Sabroso Perú en el móvil: cabecera con el botón Reservas y un menú desplegable, titular «Perú en la mesa» y botones para reservar mesa, ver la carta y cómo llegar',
+        en: 'Sabroso Perú on a phone: a header with a Reservas button and a drop-down menu, the headline «Perú en la mesa» and buttons to book a table, see the menu and get directions',
       },
     },
     thumb: coverImage,
