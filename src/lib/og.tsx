@@ -23,6 +23,7 @@ const coverFiles = {
   'hb-construcciones': 'hb-portada-escritorio.webp',
   'zona-f': 'zonaf-escritorio.webp',
   'finanzas-personales': 'finanzas-escritorio.webp',
+  'sabroso-peru': 'sabroso-escritorio.webp',
 } as const satisfies Record<WorkSlug, string>;
 
 const coverBox = { width: 520, height: 360 } as const;

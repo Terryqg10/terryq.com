@@ -16,6 +16,7 @@ test('el sitemap lista las páginas indexables × 2 idiomas con sus alternates',
     '/trabajos/hb-construcciones',
     '/trabajos/zona-f',
     '/trabajos/finanzas-personales',
+    '/trabajos/sabroso-peru',
     '/servicios',
     '/sobre-mi',
     '/contacto',
@@ -26,6 +27,7 @@ test('el sitemap lista las páginas indexables × 2 idiomas con sus alternates',
     '/en/work/hb-construcciones',
     '/en/work/zona-f',
     '/en/work/finanzas-personales',
+    '/en/work/sabroso-peru',
     '/en/services',
     '/en/about',
     '/en/contact',
@@ -38,8 +40,8 @@ test('el sitemap lista las páginas indexables × 2 idiomas con sus alternates',
   // Cada entrada lleva sus alternates es y en.
   expect(xml).toContain(`hreflang="es" href="${origin}/servicios"`);
   expect(xml).toContain(`hreflang="en" href="${origin}/en/services"`);
-  expect((xml.match(/hreflang="es"/g) ?? []).length).toBe(20);
-  expect((xml.match(/hreflang="en"/g) ?? []).length).toBe(20);
+  expect((xml.match(/hreflang="es"/g) ?? []).length).toBe(22);
+  expect((xml.match(/hreflang="en"/g) ?? []).length).toBe(22);
   expect(xml).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}/);
 });
 

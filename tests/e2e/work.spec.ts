@@ -9,12 +9,12 @@ test('cabecera: etiqueta, h1, entradilla y el contador calculado', async ({ page
   await page.goto('/trabajos');
   await expect(page.getByRole('heading', { level: 1, name: 'Trabajos' })).toBeVisible();
   await expect(page.locator('main p', { hasText: /^\/trabajos$/ })).toBeVisible();
-  await expect(page.getByText('3 proyectos · 2026')).toBeVisible();
+  await expect(page.getByText('4 proyectos · 2026')).toBeVisible();
   await expect(page.getByText('Webs para clientes, productos propios')).toBeVisible();
 
   await page.goto('/en/work');
   await expect(page.getByRole('heading', { level: 1, name: 'Work' })).toBeVisible();
-  await expect(page.getByText('3 projects · 2026')).toBeVisible();
+  await expect(page.getByText('4 projects · 2026')).toBeVisible();
   await expect(page.locator('main p', { hasText: /^\/work$/ })).toBeVisible();
 });
 
@@ -22,8 +22,8 @@ test('filtros: grupo con 3 botones, contadores y aria-pressed', async ({ page })
   await page.goto('/trabajos');
   const group = page.getByRole('group', { name: 'Filtrar por tipo' });
   await expect(group).toBeVisible();
-  const all = group.getByRole('button', { name: /^Todo\s*3$/ });
-  const web = group.getByRole('button', { name: /^Web\s*3$/ });
+  const all = group.getByRole('button', { name: /^Todo\s*4$/ });
+  const web = group.getByRole('button', { name: /^Web\s*4$/ });
   const brand = group.getByRole('button', { name: /^Marca\s*1$/ });
   await expect(all).toHaveAttribute('aria-pressed', 'true');
   await expect(web).toHaveAttribute('aria-pressed', 'false');
@@ -34,18 +34,18 @@ test('filtros: grupo con 3 botones, contadores y aria-pressed', async ({ page })
   await expect(all).toHaveAttribute('aria-pressed', 'false');
 });
 
-test('CA-2.1: con «Marca» solo queda HB; con «Todo», las 3 filas en el orden del índice', async ({
+test('CA-2.1: con «Marca» solo queda HB; con «Todo», las 4 filas en el orden del índice', async ({
   page,
 }) => {
   await page.goto('/trabajos');
-  await expect(visibleRows(page)).toHaveCount(3);
+  await expect(visibleRows(page)).toHaveCount(4);
 
   await page.getByRole('button', { name: /^Marca/ }).click();
   await expect(visibleRows(page)).toHaveCount(1);
   await expect(visibleRows(page).first()).toContainText('HB Construcciones');
 
   await page.getByRole('button', { name: /^Web/ }).click();
-  await expect(visibleRows(page)).toHaveCount(3);
+  await expect(visibleRows(page)).toHaveCount(4);
 
   await page.getByRole('button', { name: /^Todo/ }).click();
   const names = await visibleRows(page)
@@ -55,6 +55,7 @@ test('CA-2.1: con «Marca» solo queda HB; con «Todo», las 3 filas en el orden
     '/trabajos/hb-construcciones',
     '/trabajos/zona-f',
     '/trabajos/finanzas-personales',
+    '/trabajos/sabroso-peru',
   ]);
 });
 
@@ -64,14 +65,14 @@ test('una región aria-live anuncia el número de proyectos al filtrar', async (
   await page.getByRole('button', { name: /^Marca/ }).click();
   await expect(live).toHaveText('1 proyecto');
   await page.getByRole('button', { name: /^Todo/ }).click();
-  await expect(live).toHaveText('3 proyectos');
+  await expect(live).toHaveText('4 proyectos');
 });
 
 test('sin JavaScript se ven todas las filas y los filtros no se muestran', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto('/trabajos');
-  await expect(visibleRows(page)).toHaveCount(3);
+  await expect(visibleRows(page)).toHaveCount(4);
   await expect(page.getByRole('group', { name: 'Filtrar por tipo' })).toBeHidden();
   await context.close();
 });
@@ -82,7 +83,7 @@ test('la tabla es una región enfocable y cada fila es un único enlace al caso'
   await page.goto('/trabajos');
   const region = page.getByRole('region', { name: 'Tabla de proyectos' });
   await expect(region).toHaveAttribute('tabindex', '0');
-  await expect(rows(page)).toHaveCount(3);
+  await expect(rows(page)).toHaveCount(4);
   for (const row of await rows(page).all()) {
     await expect(row.locator('a')).toHaveCount(1);
   }
