@@ -1,6 +1,6 @@
 # tasks.md — terryq.com
 
-> **Estado:** **v1 publicada** (2026-10-12) en https://terryq.com · T00–T42 hechas; queda T43 (prueba manual con lector de pantalla) y T41b (Firewall en Deny, a partir del 2026-10-18) · Deriva de `docs/spec.md` v1.2 (aprobado).
+> **Estado:** **v1 publicada** (2026-10-12) en https://terryq.com · T00–T42 hechas; queda T43 (prueba manual con lector de pantalla), T44 (caso Sabroso Perú, en revisión) y T41b (Firewall en Deny, a partir del 2026-10-18) · Deriva de `docs/spec.md` v1.2 (aprobado).
 > **Cómo se usa:** Claude Code hace **una tarea por rama y por PR** (`t-XX-descripcion`), en orden. Antes de empezar una tarea lee las secciones del spec que cita. Al terminar, marca la casilla `[x]` en este archivo dentro del mismo PR y espera la revisión de Terry en el preview de Vercel.
 > **Si algo no está en el spec o en las fuentes de §0.1, para y pregunta.** No se inventa copy, ni datos, ni enlaces.
 
@@ -292,6 +292,11 @@
 - **Spec:** §13 (A11, A13), §22 punto 3 · **Depende de:** T38, T42
 - **Hacer:** Terry sigue `docs/qa/guion-prueba-manual.md` con VoiceOver o NVDA (Inicio, un caso y Contacto, en ES y EN) y con el zoom al 200 %, y anota los resultados. Claude arregla lo que bloquee.
 - **CA:** los resultados quedan sin bloqueos (❌) en `docs/qa/lanzamiento.md`. La revisión por teclado y por el árbol de accesibilidad ya está hecha (`docs/qa/revision-teclado-y-arbol.md`).
+
+### T44 · Caso «Sabroso Perú»
+- **Spec:** §9.2, §8.3 · **Depende de:** T42
+- **Hacer:** cuarto caso (`sabroso-peru`, `status: demo`) con su `meta.ts`, MDX en ES y EN y capturas con `pnpm screenshots`. Inicio pasa a 4 tarjetas; `/trabajos` y la navegación entre casos pasan a 4. Actualizar el spec (3 → 4 casos).
+- **CA:** el build y los tests siguen en verde (contadores «4 proyectos» y «0N / 04»); el caso se genera en los dos idiomas (CA-3.1, CA-3.2); Terry revisa el copy y las capturas antes de fusionar.
 
 ---
 

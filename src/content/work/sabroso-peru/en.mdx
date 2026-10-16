@@ -1,0 +1,109 @@
+<CaseSection kind="challenge">
+
+A restaurant needs visitors to see the menu and book a table without friction, most often from their phone. I set out to do it with no accounts, no database and no server of my own, with accessibility and privacy built in from day one.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Booking by WhatsApp">
+
+a form with per-field validation that opens the restaurant's chat with the message already written. It says clearly that the booking is **not confirmed** until the restaurant replies.
+
+</SolutionItem>
+
+<SolutionItem title="Interactive menu">
+
+with a category filter, tags (vegetarian, gluten-free, spicy) and the allergens declared on every dish.
+
+</SolutionItem>
+
+<SolutionItem title="Takeaway">
+
+explains how to order by phone or WhatsApp, with no cart and no payment on the site.
+
+</SolutionItem>
+
+<SolutionItem title="Accessible by design">
+
+WCAG 2.1 level AA, keyboard navigation, visible focus, controls of at least 44 px and support for `prefers-reduced-motion`.
+
+</SolutionItem>
+
+<SolutionItem title="No data stored">
+
+what the customer types never leaves their browser: no cookies and no analytics.
+
+</SolutionItem>
+
+<SolutionItem title="Content that gets validated">
+
+the menu, the gallery and the reviews are checked at build time. A photo without alt text or a quote without a source and a date fails the build.
+
+</SolutionItem>
+
+<SolutionItem title="Legal footer and contact">
+
+opening hours, address, and legal notice, privacy and accessibility pages.
+
+</SolutionItem>
+
+<SolutionItem title="Demo mode">
+
+a banner on every page, `noindex` and a `robots.txt` that blocks the site, so it is never mistaken for a real restaurant.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+A complete and fast site: in the latest measurement, Lighthouse scores 99–100 for performance and 100 for accessibility, with 85 unit tests and 154 end-to-end tests. I built it with a specification, a plan, tasks and documented decisions.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js (App Router) + React 19**, with static pages.
+
+</DevItem>
+
+<DevItem label="Language and styles">
+
+**Strict TypeScript**, no `any`. **Tailwind CSS v4** with design tokens: components use no loose colours or sizes.
+
+</DevItem>
+
+<DevItem label="Validation">
+
+**Zod** on all incoming data: the form and the content. Types are derived from the schemas.
+
+</DevItem>
+
+<DevItem label="Testing">
+
+**Vitest** and **Testing Library** for logic and components; **Playwright** with **axe** for the full walkthrough and accessibility.
+
+</DevItem>
+
+<DevItem label="Method">
+
+Specification-driven development: spec, plan, 11 tasks with their review and 4 documented decisions (ADRs).
+
+</DevItem>
+
+<DevItem label="Deployment">
+
+**Vercel**, with CI on GitHub Actions.
+
+</DevItem>
+
+<DevItem label="Code">
+
+Public repository: `github.com/Terryqg10/sabroso-peru`
+
+</DevItem>
+
+</CaseSection>

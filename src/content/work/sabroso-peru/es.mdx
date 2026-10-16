@@ -1,0 +1,109 @@
+<CaseSection kind="challenge">
+
+Un restaurante necesita que quien llega a su web vea la carta y reserve sin fricción, casi siempre desde el móvil. Quise resolverlo sin cuentas, sin base de datos y sin servidor propio, cuidando la accesibilidad y la privacidad desde el primer día.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Reserva por WhatsApp">
+
+un formulario con validación por campo que abre el chat del restaurante con el mensaje ya escrito. Avisa de que la reserva **no está confirmada** hasta que el restaurante responda.
+
+</SolutionItem>
+
+<SolutionItem title="Carta interactiva">
+
+con filtro por categoría, etiquetas (vegetariano, sin gluten, picante) y alérgenos declarados en cada plato.
+
+</SolutionItem>
+
+<SolutionItem title="Para llevar">
+
+explica cómo pedir por teléfono o WhatsApp, sin carrito ni cobro en la web.
+
+</SolutionItem>
+
+<SolutionItem title="Accesible desde el diseño">
+
+nivel AA de WCAG 2.1, navegación con teclado, foco visible, controles de al menos 44 px y respeto de `prefers-reduced-motion`.
+
+</SolutionItem>
+
+<SolutionItem title="Sin guardar datos">
+
+lo que escribe el cliente no sale de su navegador: no hay cookies ni analítica.
+
+</SolutionItem>
+
+<SolutionItem title="Contenido que se valida">
+
+la carta, la galería y las reseñas se comprueban al compilar. Una foto sin texto alternativo o una cita sin fuente y fecha hacen fallar el build.
+
+</SolutionItem>
+
+<SolutionItem title="Pie legal y contacto">
+
+horarios, dirección, páginas de aviso legal, privacidad y accesibilidad.
+
+</SolutionItem>
+
+<SolutionItem title="Modo demostración">
+
+una franja visible en todas las páginas, `noindex` y un `robots.txt` que bloquea el sitio, para que no se confunda con un restaurante real.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+Un sitio completo y rápido: en la última medición, Lighthouse da 99–100 en rendimiento y 100 en accesibilidad, con 85 tests unitarios y 154 de extremo a extremo. Lo construí con especificación, plan, tareas y decisiones documentadas.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js (App Router) + React 19**, con páginas estáticas.
+
+</DevItem>
+
+<DevItem label="Lenguaje y estilos">
+
+**TypeScript estricto**, sin `any`. **Tailwind CSS v4** con tokens de diseño: los componentes no usan colores ni medidas sueltas.
+
+</DevItem>
+
+<DevItem label="Validación">
+
+**Zod** en todos los datos de entrada: el formulario y el contenido. Los tipos salen de los esquemas.
+
+</DevItem>
+
+<DevItem label="Pruebas">
+
+**Vitest** y **Testing Library** para la lógica y los componentes; **Playwright** con **axe** para el recorrido completo y la accesibilidad.
+
+</DevItem>
+
+<DevItem label="Método">
+
+Desarrollo guiado por especificación: spec, plan, 11 tareas con su revisión y 4 decisiones documentadas (ADR).
+
+</DevItem>
+
+<DevItem label="Despliegue">
+
+**Vercel**, con CI en GitHub Actions.
+
+</DevItem>
+
+<DevItem label="Código">
+
+Repositorio público: `github.com/Terryqg10/sabroso-peru`
+
+</DevItem>
+
+</CaseSection>

@@ -23,21 +23,24 @@ const images = (work: (typeof works)[number]): WorkImage[] => [
 ];
 
 describe('índice de trabajos', () => {
-  it('sigue el orden HB → Zona F → Finanzas y no repite slugs', () => {
+  it('sigue el orden HB → Zona F → Finanzas → Sabroso Perú y no repite slugs', () => {
     expect(works.map((work) => work.slug)).toEqual([
       'hb-construcciones',
       'zona-f',
       'finanzas-personales',
+      'sabroso-peru',
     ]);
     expect(new Set(works.map((work) => work.slug)).size).toBe(works.length);
     expect([...workSlugs]).toEqual(works.map((work) => work.slug));
   });
 
   it('la posición y el siguiente son circulares', () => {
-    expect(getPosition('hb-construcciones')).toBe('01 / 03');
-    expect(getPosition('finanzas-personales')).toBe('03 / 03');
+    expect(getPosition('hb-construcciones')).toBe('01 / 04');
+    expect(getPosition('finanzas-personales')).toBe('03 / 04');
+    expect(getPosition('sabroso-peru')).toBe('04 / 04');
     expect(getNextWork('hb-construcciones').slug).toBe('zona-f');
-    expect(getNextWork('finanzas-personales').slug).toBe('hb-construcciones');
+    expect(getNextWork('finanzas-personales').slug).toBe('sabroso-peru');
+    expect(getNextWork('sabroso-peru').slug).toBe('hb-construcciones');
     expect(getWork('zona-f').name).toBe('Zona F');
   });
 });
