@@ -5,8 +5,8 @@ import mobile from './images/sabroso-movil.webp';
 const coverImage = {
   src: cover,
   alt: {
-    es: 'Portada de Sabroso Perú en escritorio: titular «Perú en la mesa», botones para reservar mesa y ver la carta, y los horarios, sobre un fondo oscuro con acento ámbar',
-    en: 'Sabroso Perú home page on desktop: the headline «Perú en la mesa», buttons to book a table and see the menu, and the opening hours, on a dark background with an amber accent',
+    es: 'Portada de Sabroso Perú en escritorio: cabecera con el emblema de la marca, titular «Perú en la mesa», botones para reservar mesa y ver la carta, el logotipo y los horarios, sobre un fondo oscuro con acento ámbar',
+    en: 'Sabroso Perú home page on desktop: a header with the brand emblem, the headline «Perú en la mesa», buttons to book a table and see the menu, the logo and the opening hours, on a dark background with an amber accent',
   },
 };
 
@@ -63,8 +63,8 @@ export const meta = {
     mobile: {
       src: mobile,
       alt: {
-        es: 'Sabroso Perú en el móvil: cabecera con el botón Reservas y un menú desplegable, titular «Perú en la mesa» y botones para reservar mesa, ver la carta y cómo llegar',
-        en: 'Sabroso Perú on a phone: a header with a Reservas button and a drop-down menu, the headline «Perú en la mesa» and buttons to book a table, see the menu and get directions',
+        es: 'Sabroso Perú en el móvil: cabecera con el emblema, el botón Reservas y un menú desplegable, titular «Perú en la mesa» y botones para reservar mesa, ver la carta y cómo llegar',
+        en: 'Sabroso Perú on a phone: a header with the emblem, a Reservas button and a drop-down menu, the headline «Perú en la mesa» and buttons to book a table, see the menu and get directions',
       },
     },
     thumb: coverImage,
