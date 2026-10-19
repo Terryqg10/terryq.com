@@ -74,23 +74,43 @@ export function WorkTableClient({ labels, counts, previews, children }: WorkTabl
     };
     const hide = () => setSlug(null);
 
+    // Al abrir un caso la vista previa se queda donde está y se apaga: ni sigue al puntero ni salta
+    // al borde de la tabla cuando el enlace recibe el foco con el clic.
+    let leaving = false;
+    const onClick = () => {
+      leaving = true;
+      hide();
+    };
+
+    // Si se vuelve atrás con la tabla en caché, la vista previa vuelve a funcionar al salir y entrar.
+    const onLeave = () => {
+      leaving = false;
+      hide();
+    };
+
     const onMove = (event: PointerEvent) => {
+      if (leaving) return;
       const row = rowOf(event.target);
       if (row) show(row, event.clientX);
       else hide();
     };
     const onFocus = (event: FocusEvent) => {
+      // Con ratón, el foco del clic no cuenta: solo el de teclado (`:focus-visible`).
+      if (leaving || !(event.target instanceof Element) || !event.target.matches(':focus-visible'))
+        return;
       const row = rowOf(event.target);
       if (row) show(row, null);
     };
 
     host.addEventListener('pointermove', onMove);
-    host.addEventListener('pointerleave', hide);
+    host.addEventListener('pointerleave', onLeave);
+    host.addEventListener('click', onClick);
     host.addEventListener('focusin', onFocus);
     host.addEventListener('focusout', hide);
     return () => {
       host.removeEventListener('pointermove', onMove);
-      host.removeEventListener('pointerleave', hide);
+      host.removeEventListener('pointerleave', onLeave);
+      host.removeEventListener('click', onClick);
       host.removeEventListener('focusin', onFocus);
       host.removeEventListener('focusout', hide);
     };

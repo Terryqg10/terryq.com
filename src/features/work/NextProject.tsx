@@ -4,6 +4,7 @@ import type { WorkSlug } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { ViewTransition } from 'react';
 
 /** Siguiente proyecto, en orden circular HB → Zona F → Finanzas → HB (spec §8.3, UI19). */
 export async function NextProject({ slug }: { slug: WorkSlug }) {
@@ -31,12 +32,15 @@ export async function NextProject({ slug }: { slug: WorkSlug }) {
             {cta('cardCta')}
           </span>
         </div>
-        <Image
-          src={next.images.preview.src}
-          alt={next.images.preview.alt[locale]}
-          sizes="(min-width: 1024px) 58vw, 100vw"
-          className="aspect-[16/10] w-full rounded-xl border border-line bg-surface-sunken object-cover object-top lg:flex-[7]"
-        />
+        {/* Misma transición compartida que en Inicio y Trabajos: la imagen viaja hasta la portada del caso. */}
+        <ViewTransition name={`work-${next.slug}`} share="morph" default="none">
+          <Image
+            src={next.images.preview.src}
+            alt={next.images.preview.alt[locale]}
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            className="aspect-[16/10] w-full rounded-xl border border-line bg-surface-sunken object-cover object-top lg:flex-[7]"
+          />
+        </ViewTransition>
       </Link>
     </nav>
   );

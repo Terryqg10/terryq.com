@@ -112,6 +112,17 @@ const shots: Shot[] = [
     url: 'https://sabroso-peru.vercel.app/',
     viewport: phone,
   },
+  {
+    name: 'finanzas-movil',
+    slug: 'finanzas-personales',
+    url: 'https://finanzas-personales-roan.vercel.app/login',
+    viewport: phone,
+    prepare: async (page) => {
+      await page.getByRole('button', { name: 'Probar la demo' }).click();
+      await page.waitForURL((url) => !url.pathname.startsWith('/login'), { timeout: 30_000 });
+      await page.getByText('Modo demo').first().waitFor();
+    },
+  },
 ];
 
 async function capture(browser: Browser, shot: Shot) {

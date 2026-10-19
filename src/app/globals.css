@@ -323,6 +323,45 @@
   animation-timing-function: var(--ease-tq);
 }
 
+/* La imagen que viaja va por encima de toda la página. Con el fundido cruzado por defecto, las dos
+   capturas se ven a medias a la vez (sobre el titular, sobre la cabecera). Aquí la de destino va
+   opaca desde el principio y la de origen se apaga en el primer tramo; ambas se recortan igual. */
+::view-transition-old(.morph),
+::view-transition-new(.morph) {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+::view-transition-old(.morph) {
+  animation: tq-morph-out 450ms var(--ease-tq) both;
+}
+
+::view-transition-new(.morph) {
+  animation: none;
+}
+
+@keyframes tq-morph-out {
+  0%,
+  20% {
+    opacity: 1;
+  }
+  70%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* La página anterior no se desvanece por encima del caso: sin esto, su captura (con otro scroll y
+   otra cabecera) se ve un instante sobre la portada, mientras la imagen viaja. Solo se anima la imagen. */
+::view-transition-old(root) {
+  display: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-image-pair(*),

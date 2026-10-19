@@ -16,8 +16,9 @@ export function CaseHero({ meta }: { meta: WorkMeta }) {
         transitionName={`work-${meta.slug}`}
         sizes="(min-width: 1280px) 1200px, 100vw"
       />
-      <div className="absolute right-[72px] -bottom-10 hidden w-50 md:block">
-        <PhoneFrame image={meta.images.mobile} sizes="200px" />
+      {/* El teléfono espera a que la imagen principal llegue (450ms) y entra con un fundido. */}
+      <div className="absolute right-[72px] -bottom-10 hidden w-50 tq-fade-in [--tq-delay:450ms] motion-reduce:animate-none md:block">
+        <PhoneFrame image={meta.images.mobile} sizes="200px" priority />
       </div>
     </figure>
   );

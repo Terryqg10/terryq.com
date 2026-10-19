@@ -1,5 +1,6 @@
 import type { WorkMeta } from '../../types';
 import cover from './images/finanzas-escritorio.webp';
+import mobile from './images/finanzas-movil.webp';
 
 const coverImage = {
   src: cover,
@@ -53,8 +54,13 @@ export const meta = {
   testimonial: null,
   images: {
     cover: coverImage,
-    // Provisional: aún no hay captura móvil de Finanzas; la sustituye `pnpm screenshots` (T35).
-    mobile: coverImage,
+    mobile: {
+      src: mobile,
+      alt: {
+        es: 'Finanzas Personales en el móvil, en modo demo: saldo total, resumen del mes y barra de navegación inferior',
+        en: 'Finanzas Personales on a phone, in demo mode: total balance, monthly summary and bottom navigation bar',
+      },
+    },
     thumb: coverImage,
     preview: coverImage,
     pieces: [],
