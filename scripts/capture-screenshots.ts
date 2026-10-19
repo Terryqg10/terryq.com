@@ -10,7 +10,7 @@ import sharp from 'sharp';
  *
  * Zona F: solo la interfaz (partidos en vivo, cuotas y boleto). Nunca el hero ni las promociones
  * con jugadores, escudos o patrocinadores. Finanzas: modo demo, con datos de ejemplo.
- * Sabroso Perú: la portada, con la franja de demostración visible.
+ * Sabroso Perú: la portada.
  */
 const root = new URL('../src/content/work/', import.meta.url);
 
