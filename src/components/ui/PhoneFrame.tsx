@@ -5,10 +5,12 @@ import type { FrameImage } from './frame-image';
 export type PhoneFrameProps = {
   image: FrameImage;
   sizes: string;
+  /** Carga la imagen ya (no en diferido): evita que el teléfono aparezca vacío y luego se rellene. */
+  priority?: boolean;
 };
 
 /** Marco de teléfono: bisel de 6px en `inverse-bg` y proporción 9/19 (artboards). */
-export async function PhoneFrame({ image, sizes }: PhoneFrameProps) {
+export async function PhoneFrame({ image, sizes, priority = false }: PhoneFrameProps) {
   const locale = await getLocale();
 
   return (
@@ -17,6 +19,7 @@ export async function PhoneFrame({ image, sizes }: PhoneFrameProps) {
         src={image.src}
         alt={image.alt[locale]}
         sizes={sizes}
+        priority={priority}
         className="block size-full rounded-2xl bg-surface-sunken object-cover object-top"
       />
     </div>
