@@ -30,7 +30,9 @@ const settle = (page: Page) => page.waitForTimeout(1500);
 
 /** Atelier Malva: oculta el botón flotante del chat, que en móvil tapa el texto de la franja de demostración. */
 async function hideChatButton(page: Page) {
-  await page.addStyleTag({ content: 'button[aria-label="Abrir chat de ayuda"]{display:none !important}' });
+  await page.addStyleTag({
+    content: 'button[aria-label="Abrir chat de ayuda"]{display:none !important}',
+  });
 }
 
 /** Zona F: salta el hero y las promociones (jugadores, escudos) hasta «En vivo ahora». */

@@ -119,7 +119,13 @@ test('CA-3.1: un slug desconocido devuelve la 404', async ({ request }) => {
 });
 
 test('el siguiente proyecto es circular: HB → Zona F → Finanzas → HB', async ({ page }) => {
-  const order = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru', 'atelier-malva'];
+  const order = [
+    'hb-construcciones',
+    'zona-f',
+    'finanzas-personales',
+    'sabroso-peru',
+    'atelier-malva',
+  ];
   for (const [index, slug] of order.entries()) {
     await page.goto(`/trabajos/${slug}`);
     const next = page.getByRole('navigation', { name: 'Siguiente proyecto' });

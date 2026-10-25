@@ -1,7 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { axeCheck } from './utils';
 
-const slugs = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru', 'atelier-malva'];
+const slugs = [
+  'hb-construcciones',
+  'zona-f',
+  'finanzas-personales',
+  'sabroso-peru',
+  'atelier-malva',
+];
 
 test('el orden de la portada sin reseñas es Hero → Trabajos → Servicios → Sobre mí → ¿Hablamos?', async ({
   page,
