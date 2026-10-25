@@ -1,7 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { axeCheck } from './utils';
 
-const slugs = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru'];
+const slugs = [
+  'hb-construcciones',
+  'zona-f',
+  'finanzas-personales',
+  'sabroso-peru',
+  'atelier-malva',
+];
 
 test('el orden de la portada sin reseñas es Hero → Trabajos → Servicios → Sobre mí → ¿Hablamos?', async ({
   page,
@@ -40,7 +46,7 @@ test('cada tarjeta de trabajo es un único enlace al caso, en el orden del índi
 }) => {
   await page.goto('/');
   const cards = page.locator('section[aria-labelledby="work-t"] > ul > li');
-  await expect(cards).toHaveCount(4);
+  await expect(cards).toHaveCount(5);
   for (const [index, slug] of slugs.entries()) {
     const card = cards.nth(index);
     await expect(card.locator('a')).toHaveCount(1); // sin enlaces anidados

@@ -16,7 +16,8 @@ jobs:
   ci:
     name: ci
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 45 min: la instalación de los navegadores de Playwright (apt) llegó a tardar 19 min y el job entero rozaba el límite de 30.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
 

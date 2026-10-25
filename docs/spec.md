@@ -53,7 +53,7 @@ Portfolio bilingüe (ES principal, EN secundario) de un desarrollador web. **Pú
 ## 2. Alcance
 
 ### 2.1 Dentro de v1
-Páginas (ES y EN): Inicio, Trabajos, 4 casos (HB Construcciones, Zona F, Finanzas Personales, Sabroso Perú), Servicios (con proceso e IA), Sobre mí, Contacto, Aviso legal, Privacidad y 404. Tema claro y oscuro según el sistema, con un botón para cambiarlo (ADR-0012). Formulario con envío por email. Botón flotante de WhatsApp. SEO completo (metadata, OG, sitemap, robots, JSON-LD, hreflang). Analítica sin cookies. CI con tests, accesibilidad y Lighthouse. Despliegue en Vercel con terryq.com.
+Páginas (ES y EN): Inicio, Trabajos, 5 casos (HB Construcciones, Zona F, Finanzas Personales, Sabroso Perú, Atelier Malva), Servicios (con proceso e IA), Sobre mí, Contacto, Aviso legal, Privacidad y 404. Tema claro y oscuro según el sistema, con un botón para cambiarlo (ADR-0012). Formulario con envío por email. Botón flotante de WhatsApp. SEO completo (metadata, OG, sitemap, robots, JSON-LD, hreflang). Analítica sin cookies. CI con tests, accesibilidad y Lighthouse. Despliegue en Vercel con terryq.com.
 
 ### 2.2 Fuera de v1
 Blog (D9), línea Contenido/vídeo, CMS o base de datos, email de confirmación al remitente (ADR-006), página /cookies (no hay cookies, §15.3), avatar animado con ojos que siguen al cursor (espera la ilustración), redirección desde terryquinonez.com (dominio no registrado).
@@ -448,7 +448,7 @@ Para cada página: **artboards** de referencia (en `docs/design/artboards/`), **
 
 | # | Sección | Contenido | Comportamiento |
 |---|---|---|---|
-| 1 | Cabecera | `SectionLabel` `/trabajos`, h1 `type-page`, entradilla (F1 §4) y a la derecha «4 proyectos · 2026» en mono (calculado) | — |
+| 1 | Cabecera | `SectionLabel` `/trabajos`, h1 `type-page`, entradilla (F1 §4) y a la derecha «5 proyectos · 2026» en mono (calculado) | — |
 | 2 | Lista (`aria-label` «Lista de proyectos») | Filtros: `<div role="group" aria-label="Filtrar por tipo">` con 3 botones (Todo · Web · Marca) y su número. Debajo, la tabla | **Filtros (UI14):** botones con `aria-pressed`. El activo va relleno con `ink` y los demás con contorno. El número se calcula a partir de `meta.categories` (Todo 3 · Web 3 · Marca 1). Al cambiar el filtro, una región `aria-live="polite"` oculta anuncia «N proyectos». Sin JS se ven todas las filas y los filtros no se muestran |
 | | | **Tabla, desde `md`:** contenedor `Card` con `role="region"`, `aria-label` «Tabla de proyectos» y `tabindex="0"`. Cabecera en `text-label` (Año 1 · Proyecto 6 · Tipo 3 · Estado 2). Cada fila es un `<a>` al caso con rejilla de 12 columnas: año (mono) · miniatura 96×60 + nombre (`body-strong` 17px) + resumen · tipo · `StatusBadge` + flecha | Hover: fondo `paper` y la flecha se desplaza 4px. Vista previa flotante (UI15, §6.6) junto a la fila con hover o foco, solo con puntero fino |
 | | | **Móvil (< `md`):** cada proyecto es una fila apilada dentro de la misma `Card`: miniatura 96×60 a la izquierda; a la derecha el nombre, el resumen y una línea mono «2026 · Web para cliente · ● Online»; flecha a la derecha. **Sin scroll horizontal** y sin vista previa | Decisión de este spec (no hay artboard): ver la pregunta P2 en §21 |
@@ -460,16 +460,16 @@ Para cada página: **artboards** de referencia (en `docs/design/artboards/`), **
 **CA-2.3** A 390px no hay scroll horizontal y cada fila mide ≥44px de alto.
 
 ### 8.3 Caso de estudio (`/trabajos/[slug]`, `/en/work/[slug]`)
-**Artboards:** `caso-hb-escritorio`, `caso-movil`. **Una sola plantilla para los cuatro casos** (UI21). El contenido sale de `meta.ts` + `<locale>.mdx` (§9).
+**Artboards:** `caso-hb-escritorio`, `caso-movil`. **Una sola plantilla para los cinco casos** (UI21). El contenido sale de `meta.ts` + `<locale>.mdx` (§9).
 
 | # | Bloque | Contenido | Comportamiento |
 |---|---|---|---|
-| 1 | Cabecera (UI17) | «← Trabajos» (enlace a /trabajos), posición «01 / 04», ruta en mono `/trabajos/<slug>`, h1 `type-title` con `meta.title`, y la fila de metadatos: nombre · sector o tipo · `StatusBadge` · año · dominio | — |
+| 1 | Cabecera (UI17) | «← Trabajos» (enlace a /trabajos), posición «01 / 05», ruta en mono `/trabajos/<slug>`, h1 `type-title` con `meta.title`, y la fila de metadatos: nombre · sector o tipo · `StatusBadge` · año · dominio | — |
 | 2 | Imagen principal | `BrowserFrame` (`meta.images.cover`, con `priority`) sobre `surface-sunken`, `rounded-3xl`, y `PhoneFrame` (`meta.images.mobile`) que sobresale del bloque | Lleva `<ViewTransition name="work-<slug>">` (§6.6) |
 | 3 | Ficha + narrativa (UI18) | **Desde `lg`:** `<aside aria-label="Ficha del proyecto">` sticky (top 104px), 4/12: `CaseFacts` (`<dl>`) con las filas de `meta.facts` + «Mi papel» (texto común, §9.4) + Año + Estado + `meta.notice` si existe, y el **único** botón `primary` de la página: «Abrir la web ↗» (`meta.siteUrl`). Si `meta.demoUrl` existe, debajo va un `secondary` «Probar la demo ↗». **Narrativa** 8/12 con las secciones del MDX | En móvil (UI20) la ficha va completa justo después de la imagen, sin sticky |
 | 4 | Secciones del MDX | `<CaseSection id kind>` en este orden: **reto** → **solución** (filas de 12 columnas: idea en negrita 4 + explicación 8, y piezas en imagen con `figcaption`) → **propuesta de identidad** (solo HB: `BrandKit` con 4 tiles: Color · Negativo · Monocromo · Icono, 2×2 en móvil) → **resultado** (con el testimonio solo si `meta.testimonial` existe) → **para desarrolladores** | **La numeración (01, 02…) se calcula según el orden de las secciones presentes.** Zona F y Finanzas no tienen identidad, así que quedan 01 reto · 02 solución · 03 resultado · 04 para desarrolladores. Las etiquetas salen de §9.4.2 |
 | 5 | Para desarrolladores | `<details>` nativo, **cerrado por defecto**. Dentro, un `<dl>` de filas etiqueta + texto (`<DevItem label>`) | El `<summary>` es enfocable, tiene ≥44px de alto y un icono que gira con `aria-hidden` |
-| 6 | Siguiente proyecto (UI19) | `<nav aria-label="Siguiente proyecto">` con una tarjeta grande: «Siguiente proyecto · 02 / 04», nombre, resumen, captura y «Ver caso →» | El orden es circular: HB → Zona F → Finanzas → Sabroso Perú → HB |
+| 6 | Siguiente proyecto (UI19) | `<nav aria-label="Siguiente proyecto">` con una tarjeta grande: «Siguiente proyecto · 02 / 05», nombre, resumen, captura y «Ver caso →» | El orden es circular: HB → Zona F → Finanzas → Sabroso Perú → Atelier Malva → HB |
 
 **CA-3.1** Las 3 páginas se generan en el build en los dos idiomas (6 rutas). Un slug desconocido devuelve la 404.
 **CA-3.2** Si a un caso le falta el MDX de un idioma, una imagen o un `alt` en algún idioma, **el build falla** (§9.2).
@@ -600,7 +600,7 @@ export interface Review {
 ```
 
 ### 9.2 Trabajos (`src/content/work/`)
-- `index.ts` exporta `works: readonly WorkMeta[]` en el orden HB → Zona F → Finanzas → Sabroso Perú, más `getWork(slug)`, `getNextWork(slug)` y `getPosition(slug)` («01 / 04»).
+- `index.ts` exporta `works: readonly WorkMeta[]` en el orden HB → Zona F → Finanzas → Sabroso Perú → Atelier Malva, más `getWork(slug)`, `getNextWork(slug)` y `getPosition(slug)` («01 / 05»).
 - `<slug>/meta.ts` exporta `meta` con `satisfies WorkMeta`. Los datos salen literalmente de F1 §3.2, §4 y §5 y de 01b §3–§5.
 - `<slug>/es.mdx` y `en.mdx`: solo la narrativa, con los componentes de `features/work/mdx-components.tsx`:
 
@@ -649,7 +649,7 @@ export const site = {
 - Los textos se copian **literalmente** de F1 v2.1 y 01b v2. Se usa el formato enriquecido de next-intl (`t.rich`) para negritas, enlaces y spans en `ink`. No se trocean frases para meter etiquetas.
 - Next-intl se tipa con `AppConfig['Messages']` a partir de `es.json`: una clave que no existe es un error de TypeScript.
 - **Test de paridad:** `es.json` y `en.json` tienen exactamente las mismas claves y ningún valor vacío (§17.3).
-- **Mi papel** (común a los cuatro casos): «Dirección del proyecto, especificación, diseño, revisión y despliegue. Implementación asistida por IA (Claude Code).» / «Project lead, specification, design, review and deployment. AI-assisted implementation (Claude Code).»
+- **Mi papel** (común a los cinco casos): «Dirección del proyecto, especificación, diseño, revisión y despliegue. Implementación asistida por IA (Claude Code).» / «Project lead, specification, design, review and deployment. AI-assisted implementation (Claude Code).»
 
 #### 9.4.2 Texto de interfaz que está en los artboards y no en F1 / 01b
 Va a `messages` tal cual. **[prop]** = propuesto en este spec, pendiente de que lo revise Terry (§21).

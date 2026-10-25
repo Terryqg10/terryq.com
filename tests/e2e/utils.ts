@@ -4,7 +4,13 @@ import { expect, type Page } from '@playwright/test';
 export const locales = ['es', 'en'] as const;
 export type TestLocale = (typeof locales)[number];
 
-const workSlugs = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru'] as const;
+const workSlugs = [
+  'hb-construcciones',
+  'zona-f',
+  'finanzas-personales',
+  'sabroso-peru',
+  'atelier-malva',
+] as const;
 
 /** Rutas públicas por idioma (spec §5.2). ES sin prefijo, EN con `/en`. */
 export const routes: Readonly<Record<TestLocale, readonly string[]>> = {
