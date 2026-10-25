@@ -4,6 +4,7 @@ export const workSlugs = [
   'zona-f',
   'finanzas-personales',
   'sabroso-peru',
+  'atelier-malva',
 ] as const;
 
 export type WorkSlug = (typeof workSlugs)[number];

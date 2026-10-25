@@ -10,7 +10,7 @@ import sharp from 'sharp';
  *
  * Zona F: solo la interfaz (partidos en vivo, cuotas y boleto). Nunca el hero ni las promociones
  * con jugadores, escudos o patrocinadores. Finanzas: modo demo, con datos de ejemplo.
- * Sabroso Perú: la portada.
+ * Sabroso Perú: la portada. Atelier Malva: la portada (con la franja que invita a probar el panel).
  */
 const root = new URL('../src/content/work/', import.meta.url);
 
@@ -27,6 +27,11 @@ type Shot = {
 };
 
 const settle = (page: Page) => page.waitForTimeout(1500);
+
+/** Atelier Malva: oculta el botón flotante del chat, que en móvil tapa el texto de la franja de demostración. */
+async function hideChatButton(page: Page) {
+  await page.addStyleTag({ content: 'button[aria-label="Abrir chat de ayuda"]{display:none !important}' });
+}
 
 /** Zona F: salta el hero y las promociones (jugadores, escudos) hasta «En vivo ahora». */
 async function scrollLiveMatchesIntoView(page: Page, offset: number) {
@@ -111,6 +116,20 @@ const shots: Shot[] = [
     slug: 'sabroso-peru',
     url: 'https://sabroso-peru.vercel.app/',
     viewport: phone,
+  },
+  {
+    name: 'atelier-escritorio',
+    slug: 'atelier-malva',
+    url: 'https://estudio-peluqueria.vercel.app/',
+    viewport: desktop,
+    prepare: hideChatButton,
+  },
+  {
+    name: 'atelier-movil',
+    slug: 'atelier-malva',
+    url: 'https://estudio-peluqueria.vercel.app/',
+    viewport: phone,
+    prepare: hideChatButton,
   },
 ];
 

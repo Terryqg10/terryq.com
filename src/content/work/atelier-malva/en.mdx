@@ -1,0 +1,109 @@
+<CaseSection kind="challenge">
+
+A hair salon needs clients to book in a minute, without calling, and needs to manage its schedule without two appointments ever overlapping. I set out to do it with real-time availability and a database that prevents overlaps by itself, with privacy built in from day one.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Booking with no double bookings">
+
+service, stylist, day and time, with the free slots shown live. The database prevents a stylist from having two overlapping appointments, even when two people book at the same moment.
+
+</SolutionItem>
+
+<SolutionItem title="Manage the appointment, with or without an account">
+
+a personal link by email to view, change or cancel (only its fingerprint is stored), or an account with a magic link, no password.
+
+</SolutionItem>
+
+<SolutionItem title="Admin panel">
+
+a weekly schedule by stylist, moving and cancelling appointments with an email notice, services, hours and holidays.
+
+</SolutionItem>
+
+<SolutionItem title="A panel anyone can try">
+
+with one click you enter a **read-only** account enforced by the database itself, and other people's data appears masked.
+
+</SolutionItem>
+
+<SolutionItem title="Privacy by design">
+
+deletion and anonymisation on request, anti-abuse limits that store only fingerprints with an expiry, and pages that say what is stored.
+
+</SolutionItem>
+
+<SolutionItem title="Accessible and responsive">
+
+WCAG AA level, controls of at least 44 px and an automated sweep of 18 widths between 320 and 1280 px.
+
+</SolutionItem>
+
+<SolutionItem title="Demo mode">
+
+notices asking for fictional data in the forms, and a before-and-after gallery with AI-generated images, labelled as such.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+A complete booking website with tested security: 480 unit tests, 255 integration tests against the database and 1130 end-to-end tests. I built it with a specification, a plan, 44 tasks with their review and evidence, and 31 documented decisions.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js 16 (App Router) + React 19**, with server actions.
+
+</DevItem>
+
+<DevItem label="Language and styles">
+
+**Strict TypeScript**, no `any`. **Tailwind CSS v4** with design tokens and a contrast-checked palette.
+
+</DevItem>
+
+<DevItem label="Data and security">
+
+**Supabase** (Postgres, Auth and Realtime) with row-level security on every table and SQL functions for the critical operations.
+
+</DevItem>
+
+<DevItem label="Validation">
+
+**Zod** on all external input; types are derived from the schemas.
+
+</DevItem>
+
+<DevItem label="Testing">
+
+**Vitest** and **Testing Library**; integration tests against a local Supabase; **Playwright** with **axe** for the full flow and accessibility.
+
+</DevItem>
+
+<DevItem label="Method">
+
+Specification-driven development: spec, plan, 44 tasks with their review and 31 documented decisions (ADRs).
+
+</DevItem>
+
+<DevItem label="Deployment">
+
+**Vercel** and **Supabase**, with CI on GitHub Actions and a daily keep-alive.
+
+</DevItem>
+
+<DevItem label="Code">
+
+Public repository: `github.com/Terryqg10/estudio-peluqueria`
+
+</DevItem>
+
+</CaseSection>

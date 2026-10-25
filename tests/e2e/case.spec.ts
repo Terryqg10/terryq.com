@@ -6,28 +6,35 @@ const cases = [
     slug: 'hb-construcciones',
     es: 'Una web para que pedir presupuesto sea tan fácil como mandar un WhatsApp',
     en: 'A website that makes asking for a quote as easy as sending a WhatsApp',
-    position: '01 / 04',
+    position: '01 / 05',
     sections: ['01', '02', '03', '04', '05'],
   },
   {
     slug: 'zona-f',
     es: 'Cómo sería una casa de apuestas pensada para el usuario',
     en: 'What a betting site designed around the user could look like',
-    position: '02 / 04',
+    position: '02 / 05',
     sections: ['01', '02', '03', '04'],
   },
   {
     slug: 'finanzas-personales',
     es: 'Mis finanzas, mes a mes, sin hojas de cálculo',
     en: 'My finances, month by month, without spreadsheets',
-    position: '03 / 04',
+    position: '03 / 05',
     sections: ['01', '02', '03', '04'],
   },
   {
     slug: 'sabroso-peru',
     es: 'Reservar mesa en un minuto, desde el móvil y sin crear una cuenta',
     en: 'Booking a table in a minute, from your phone and without creating an account',
-    position: '04 / 04',
+    position: '04 / 05',
+    sections: ['01', '02', '03', '04'],
+  },
+  {
+    slug: 'atelier-malva',
+    es: 'Una peluquería con reserva en tiempo real y un panel que puedes probar',
+    en: 'A hair salon with real-time booking and an admin panel you can try',
+    position: '05 / 05',
     sections: ['01', '02', '03', '04'],
   },
 ] as const;
@@ -112,19 +119,19 @@ test('CA-3.1: un slug desconocido devuelve la 404', async ({ request }) => {
 });
 
 test('el siguiente proyecto es circular: HB → Zona F → Finanzas → HB', async ({ page }) => {
-  const order = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru'];
+  const order = ['hb-construcciones', 'zona-f', 'finanzas-personales', 'sabroso-peru', 'atelier-malva'];
   for (const [index, slug] of order.entries()) {
     await page.goto(`/trabajos/${slug}`);
     const next = page.getByRole('navigation', { name: 'Siguiente proyecto' });
-    await expect(next).toContainText(`Siguiente proyecto · 0${((index + 1) % 4) + 1} / 04`);
+    await expect(next).toContainText(`Siguiente proyecto · 0${((index + 1) % 5) + 1} / 05`);
     await expect(next.getByRole('link')).toHaveAttribute(
       'href',
-      `/trabajos/${order[(index + 1) % 4]}`,
+      `/trabajos/${order[(index + 1) % 5]}`,
     );
   }
-  await page.goto('/en/work/sabroso-peru');
+  await page.goto('/en/work/atelier-malva');
   const next = page.getByRole('navigation', { name: 'Next project' });
-  await expect(next).toContainText('Next project · 01 / 04');
+  await expect(next).toContainText('Next project · 01 / 05');
   await expect(next.getByRole('link')).toHaveAttribute('href', '/en/work/hb-construcciones');
 });
 

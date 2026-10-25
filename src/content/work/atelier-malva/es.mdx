@@ -1,0 +1,109 @@
+<CaseSection kind="challenge">
+
+Una peluquería necesita que la clienta reserve en un minuto, sin llamar, y que el salón gestione su agenda sin que dos citas se pisen. Quise resolverlo con disponibilidad en tiempo real y una base de datos que lo impida por sí misma, cuidando la privacidad de quien reserva desde el primer día.
+
+</CaseSection>
+
+<CaseSection kind="solution">
+
+<SolutionItem title="Reserva sin doble reserva">
+
+servicio, estilista, día y hora, con las horas libres al momento. La base de datos impide que una estilista tenga dos citas solapadas, aunque dos personas reserven a la vez.
+
+</SolutionItem>
+
+<SolutionItem title="Gestionar la cita, con o sin cuenta">
+
+un enlace personal por email para ver, cambiar o cancelar (solo se guarda su huella), o una cuenta por enlace mágico, sin contraseña.
+
+</SolutionItem>
+
+<SolutionItem title="Panel de administración">
+
+agenda semanal por estilista, mover y cancelar citas con aviso por email, servicios, horarios y vacaciones.
+
+</SolutionItem>
+
+<SolutionItem title="Un panel que cualquiera puede probar">
+
+con un clic entras en una cuenta de **solo lectura** que impone la propia base de datos, y los datos de otras personas aparecen enmascarados.
+
+</SolutionItem>
+
+<SolutionItem title="Privacidad desde el diseño">
+
+borrado y anonimización a petición, límites contra el abuso que guardan solo huellas con caducidad, y páginas que cuentan qué se guarda.
+
+</SolutionItem>
+
+<SolutionItem title="Accesible y responsive">
+
+nivel AA de WCAG, controles de al menos 44 px y un barrido automático de 18 anchos entre 320 y 1280 px.
+
+</SolutionItem>
+
+<SolutionItem title="Modo demostración">
+
+avisos de datos ficticios en los formularios y galería antes y después con imágenes generadas con IA, señaladas como tales.
+
+</SolutionItem>
+
+</CaseSection>
+
+<CaseSection kind="outcome">
+
+Una web de reservas completa y con seguridad probada: 480 tests unitarios, 255 de integración contra la base de datos y 1130 de extremo a extremo. La construí con especificación, plan, 44 tareas con su revisión y evidencia, y 31 decisiones documentadas.
+
+</CaseSection>
+
+<CaseSection kind="developers">
+
+<DevItem label="Base">
+
+**Next.js 16 (App Router) + React 19**, con acciones de servidor.
+
+</DevItem>
+
+<DevItem label="Lenguaje y estilos">
+
+**TypeScript estricto**, sin `any`. **Tailwind CSS v4** con tokens de diseño y una paleta validada por contraste.
+
+</DevItem>
+
+<DevItem label="Datos y seguridad">
+
+**Supabase** (Postgres, Auth y Realtime) con seguridad por filas en todas las tablas y funciones SQL para las operaciones críticas.
+
+</DevItem>
+
+<DevItem label="Validación">
+
+**Zod** en toda entrada externa; los tipos salen de los esquemas.
+
+</DevItem>
+
+<DevItem label="Pruebas">
+
+**Vitest** y **Testing Library**; pruebas de integración contra Supabase local; **Playwright** con **axe** para el recorrido completo y la accesibilidad.
+
+</DevItem>
+
+<DevItem label="Método">
+
+Desarrollo guiado por especificación: spec, plan, 44 tareas con su revisión y 31 decisiones documentadas (ADR).
+
+</DevItem>
+
+<DevItem label="Despliegue">
+
+**Vercel** y **Supabase**, con CI en GitHub Actions y un keep-alive diario.
+
+</DevItem>
+
+<DevItem label="Código">
+
+Repositorio público: `github.com/Terryqg10/estudio-peluqueria`
+
+</DevItem>
+
+</CaseSection>
